@@ -1,0 +1,8 @@
+query TorontoProducts {
+    productsByRegions(bizRegionIDs:["182","183", "7", "5", "24", "26"], limit: 12) {
+        ...ProductItem
+        business {
+            ...BusinessItem
+        }
+    }
+}

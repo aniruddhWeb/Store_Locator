@@ -1,0 +1,77 @@
+.root {
+    padding: 0 40px;
+    width: calc(100% - 80px);
+}
+
+.header {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-family: Windsor;
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+}
+
+.search {
+    flex-grow: 1;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 16px 0;
+}
+
+.searchInnerWrapper {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 30px;
+}
+
+.searchInnerWrapper > svg {
+    cursor: pointer;
+}
+
+.searchInnerWrapper > svg:hover {
+    transform: scale(1.1);
+}
+
+.searchInnerWrapper > input {
+    width: 0;
+    transition: 0.3s width;
+}
+
+.searchInnerWrapper > input,
+.searchInnerWrapper > input:hover,
+.searchInnerWrapper > input:focus {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.searchInnerWrapper > input:focus,
+.searchInnerWrapper.focused > input {
+    width: 300px;
+    font-family: SuisseIntl;
+    font-weight: 400;
+    font-size: 14px;
+    color: #000000;
+}
+
+
+@media only screen and (max-width: 860px) {
+    .root {
+        padding: 0 16px;
+        width: calc(100% - 32px);
+    }
+    .header {
+        margin-top: 16px;
+    }
+}

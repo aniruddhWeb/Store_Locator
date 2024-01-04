@@ -1,0 +1,103 @@
+.loading {
+    display: flex;
+    align-self: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    opacity: 1;
+    transition: opacity 200ms ease-in-out;
+}
+
+.image {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 20px;
+    object-fit: contain;
+}
+
+.loadingNoMargin {
+    margin: 0 !important;
+}
+
+.loadingSmallMargin {
+    margin: 16px 0 0 0 !important;
+}
+
+.loadingOverlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    top: 0;
+    margin: 0 !important;
+    background: rgba(255, 255, 255, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.loadingOverlayProducts {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    top: 132px;
+    margin: 0 !important;
+    background: rgba(255, 255, 255, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.loadingOverlayProductsInProduct {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    top: 136px;
+    margin: 0 !important;
+    background: rgba(255, 255, 255, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.loadingOverlayMap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: 0 !important;
+    background: rgba(255, 255, 255, 0.8);
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.loadingInvisible {
+    opacity: 0;
+    margin: 0 !important;
+    height: 0 !important;
+}
+
+.loadingInvisible * {
+    opacity: 0;
+}
+
+@media only screen and (max-width: 860px) {
+    .loadingOverlay {
+        left: 0;
+        bottom: 0;
+    }
+    .loadingOverlayProducts {
+        left: 0;
+        bottom: 0;
+        top: 148px;
+    }
+    .loadingOverlayProductsInProduct {
+        left: 0;
+        bottom: 0;
+        top: 140px;
+    }
+}

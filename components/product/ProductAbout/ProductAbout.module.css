@@ -1,0 +1,124 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: #000000;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 20px;
+    padding: 0 0 20px 40px;
+}
+
+.title {
+    font-family: Windsor;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    text-overflow: initial;
+    display: block;
+    color: #000000;
+    overflow: hidden;
+}
+
+.description {
+    color: #000000;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    text-overflow: initial;
+    overflow: hidden;
+    white-space: pre-wrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 100;
+    -webkit-box-orient: vertical;
+    margin-top: 12px;
+    margin-right: 40px;
+}
+
+.description div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.description ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.description ol {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.description p {
+    padding: 0;
+    margin: 16px 0;
+}
+
+.description img {
+    border-radius: 10px;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.subDescription {
+    margin-top: 24px;
+    color: #000000;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    text-overflow: initial;
+    overflow: hidden;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+}
+
+@media only screen and (max-width: 860px) {
+    .root {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-top: 32px;
+        padding-bottom: 16px;
+    }
+    .title {
+        width: 100%;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .description {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 4px;
+        margin-right: 0;
+    }
+}
+

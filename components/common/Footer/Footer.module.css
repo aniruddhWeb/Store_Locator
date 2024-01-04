@@ -1,0 +1,620 @@
+.footerContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.rootContainer {
+  display: flex;
+  width: 100%;
+  background-color: #000000;
+  align-items: center;
+  flex-direction: column;
+  z-index: 11;
+}
+
+.root {
+  width: min(100%, 1440px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 48px;
+}
+
+.rootMobile {
+  width: min(100%, 1440px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 24px;
+}
+
+.mailingListContainer {
+  background: #EF845C;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 116px;
+}
+
+.mailingList {
+  display: flex;
+  padding: 0 40px;
+  width: calc(min(100%, 1440px) - 80px);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mailingListIconContainer {
+  display: flex;
+  margin-bottom: -24px;
+}
+
+.mailingListIcon {
+  display: flex;
+}
+
+.mailingListText {
+  display: flex;
+  flex: 1;
+  text-align: left;
+  color: #000000;
+  padding: 0;
+  margin-left: 80px;
+  margin-right: 40px;
+  font-family: Windsor;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 125%;
+}
+
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 318px;
+}
+
+.middleColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 16px 0 16px;
+  width: 350px;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 318px;
+}
+
+.logoIcon {
+  width: 107px;
+  height: 127px;
+}
+
+.logoColumn {
+  padding-top: 80px;
+  opacity: 1;
+  transition: all 0.25s ease-out;
+}
+.logoColumn:hover {
+  transform: scale(1.05);
+}
+.logoColumn:active {
+  transform: scale(0.95);
+}
+
+.navigationItems {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  padding-top: 80px;
+}
+
+.navigationItemsRight {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding-top: 80px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.link {
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 0;
+  opacity: 1;
+  transition: all 0.25s ease-out;
+}
+.link:hover {
+  transform: scale(1.05);
+}
+.link:active {
+  transform: scale(0.95);
+}
+
+.linkCorp {
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 0;
+  opacity: 1;
+  transition: all 0.25s ease-out;
+}
+.linkCorp:hover {
+  font-weight: bold;
+  transform: scale(1.05);
+}
+.linkCorp:active {
+  transform: scale(0.95);
+}
+
+.linkTrademark {
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 0;
+  opacity: 0.5;
+}
+
+.vendPlat {
+  display: flex;
+  flex-direction: row;
+  padding: 24px 0 0 0;
+}
+
+.appleButton {
+  width: 135px;
+  height: 40px;
+  padding: 0 16px 0 0;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.25s ease-out;
+}
+.appleButton:hover {
+  transform: scale(1.05);
+}
+.appleButton:active {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.googleButton {
+  width: 135px;
+  height: 40px;
+  padding: 0 0 0 16px;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.25s ease-out;
+}
+.googleButton:hover {
+  transform: scale(1.05);
+}
+.googleButton:active {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.googleIcon {
+  width: 135px;
+  height: 40px;
+}
+.appleIcon {
+  width: 135px;
+  height: 40px;
+}
+
+.socialContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  height: 56px;
+}
+
+.locationIcon {
+  width: 20px;
+  height: 20px;
+  max-height: 36px;
+  max-width: 36px;
+  margin: 16px;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.25s ease-out;
+}
+
+.locationIcon:last-child {
+  width: auto;
+  height: 17px;
+}
+
+.locationIcon:hover {
+  transform: scale(1.05);
+}
+.locationIcon:active {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.top {
+  margin-top: 32px;
+  transition: all 0.25s ease-out;
+}
+.top:hover {
+  transform: scale(1.05);
+}
+.top:active {
+  transform: scale(0.95);
+}
+
+.middle {
+  width: 100%;
+}
+
+.navigationMobile {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+}
+
+.navigationItemsMobile {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: right;
+  padding: 24px 32px;
+}
+
+.linkMobile {
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0 8px 16px 8px;
+
+  opacity: 1;
+  transition: all 0.25s ease-out;
+}
+.linkMobile:hover {
+  font-weight: bold;
+  transform: scale(1.05);
+}
+.linkMobile:active {
+  transform: scale(0.95);
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.bottomLeft {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 0 32px;
+}
+.bottomLeftCopyright {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+
+.bottomRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.navigationItemsMobileBottom {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.linkMobileBottom {
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0 8px 16px 8px;
+
+  opacity: 1;
+  transition: all 0.25s ease-out;
+}
+.linkMobileBottom:hover {
+  font-weight: bold;
+  transform: scale(1.05);
+}
+.linkMobileBottom:active {
+  transform: scale(0.95);
+}
+
+.linkTrademarkMobile {
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  padding-left: 8px;
+  opacity: 0.5;
+}
+
+.locationIconMobile {
+  width: 22px;
+  height: 22px;
+  padding: 0 48px 24px 0;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.25s ease-out;
+}
+.locationIconMobile:hover {
+  transform: scale(1.05);
+}
+.locationIconMobile:active {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.vendPlatMobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 24px
+}
+
+.appleButtonMobile {
+  width: 135px;
+  height: 40px;
+  padding: 0;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.25s ease-out;
+}
+.appleButtonMobile:hover {
+  transform: scale(1.05);
+}
+.appleButtonMobile:active {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.googleButtonMobile {
+  width: 135px;
+  height: 40px;
+  padding: 0;
+  cursor: pointer;
+  opacity: 1;
+  margin-top: 8px;
+  transition: all 0.25s ease-out;
+}
+.googleButtonMobile:hover {
+  transform: scale(1.05);
+}
+.googleButtonMobile:active {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.issueButton {
+  color: white;
+  font-size: 12px;
+  line-height: 16px;
+  font-family: SuisseIntl;
+  padding-left: 8px;
+  display: flex;
+  align-items: center;
+}
+.issueContainer {
+  display: flex;
+  margin-bottom: 34px;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.25s ease-out;
+}
+
+.issueContainer:hover {
+  transform: scale(1.05);
+}
+.issueContainer:active {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.region {
+  color: #ffffff;
+  font-family: SuisseIntl;
+  font-size: 16px;
+  margin: 2px 8px;
+  transition: all 0.25s ease-out;
+  cursor: pointer;
+}
+.region:hover {
+  transform: scale(1.05);
+}
+.region:active {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.regionWrapper {
+  display: flex;
+  margin-top: 12px;
+  margin-bottom: 40px;
+  width: calc(0.65 * min(100%, 1440px) - 80px);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.registerButton {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  margin-bottom: 32px;
+  background: #61AB62;
+  margin-right: 16px;
+  cursor: pointer;
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  transition: all 300ms ease-in-out;
+  font-family: SuisseIntlMono;
+  font-style: normal;
+  font-size: 14px;
+}
+.registerButton:hover {
+  transform: scale(1.05);
+}
+.registerButton:active {
+  transform: scale(0.95);
+}
+
+.reportModalMobile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.reportModalDesktop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 860px) {
+  .rootMobile {
+    display: none;
+  }
+  .reportModalMobile {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .root {
+    display: none;
+  }
+  .rootContainer {
+    margin-top: 0;
+  }
+  .region {
+    font-size: 12px;
+    margin: 4px 8px;
+  }
+  .regionWrapper{
+    margin-top: 0;
+    margin-bottom: 24px;
+    align-items: flex-start;
+    width: calc(100% - 32px);
+  }
+  .registerButton {
+    min-width: 148px;
+    margin-right: 0;
+  }
+  .reportModalDesktop {
+    display: none;
+  }
+  .issueContainer {
+    margin-bottom: 32px;
+    margin-top: 16px;
+  }
+  .mailingListContainer {
+    background: #EF845C;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 356px;
+    padding-top: 8px;
+  }
+  .mailingList {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .mailingListIconContainer {
+    display: flex;
+    margin-bottom: 0;
+    width: 130px;
+    height: 130px;
+    border-radius: 65px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+  }
+  .mailingListIcon {
+    display: flex;
+    margin-bottom: 0;
+  }
+  .mailingListText {
+    display: flex;
+    flex: unset;
+    text-align: center;
+    color: #000000;
+    padding: 0 16px;
+    margin: 24px 0 32px;
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 125%;
+  }
+  .linkTrademarkMobile {
+    text-align: center;
+  }
+}

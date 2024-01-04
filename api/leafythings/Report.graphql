@@ -1,0 +1,3 @@
+query ReportIssue($name: String!, $emailFrom: String!, $description: String!, $city: String!, $regionID: String!, $province: String!, $stepsReproduce: String!, $page: String!, $originalPage: String) {
+    reportIssue(name: $name, emailFrom: $emailFrom, description: $description, city: $city, regionID: $regionID, province: $province, stepsReproduce: $stepsReproduce, page: $page, originalPage: $originalPage)
+}

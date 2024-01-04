@@ -1,0 +1,22 @@
+query MapDealsQuery($plRegionID: Int!, $limit: Int, $offset: Int!) {
+    dealListByRegRandom(plRegionID: $plRegionID, limit: $limit, offset: $offset) {
+        ...DealItem
+    }
+}
+
+query MapBusinessQuery($lat1: Float!,$lng1: Float!,$lat2: Float!,$lng2: Float!, $sort: String, $plSlugType: String, $plRegionID: Int) {
+    businessByCoordinates(firstLatitude: $lat1, firstLongitude: $lng1, secondLatitude: $lat2, secondLongitude: $lng2, sort: $sort, plSlugType: $plSlugType, plRegionID: $plRegionID) {
+        ...BusinessItem
+        bizIsFeatured
+        bizIsVerified
+        bizHasMapPin
+        bizFeaturedPosition
+        contact {
+            bizLatitude
+            bizLongitude
+            provinceInitial
+            regionSlug
+            regionName
+        }
+    }
+}

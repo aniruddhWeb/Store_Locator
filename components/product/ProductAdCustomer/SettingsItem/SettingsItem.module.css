@@ -1,0 +1,65 @@
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 12px;
+    border: 1px solid #E6E6E6;
+    border-radius: 10px;
+    transition: all 300ms ease-in-out;
+}
+
+.root:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    flex: 1;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.rightContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.totalImpression {
+    width: 180px;
+    margin-left: 40px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    white-space: nowrap;
+    text-overflow: initial;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+    color: #000000;
+}
+
+.settingController {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.value {
+    width: 32px;
+    margin-left: 12px;
+    font-family: SuisseIntl;
+    font-weight: 600;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 16px;
+    text-align: right;
+    color: #61AB62;
+}

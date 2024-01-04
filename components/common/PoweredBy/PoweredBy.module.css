@@ -1,0 +1,47 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease-out;
+    cursor: pointer;
+    position: fixed;
+    top: 32px;
+    right: 40px;
+}
+.root:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+.root:active {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.icon {
+    display: flex;
+    width: 164px;
+    height: 38px;
+}
+
+.horizontalIcon {
+    display: none;
+}
+
+@media only screen and (max-width: 860px) {
+    .root {
+        top: unset;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #FFFFFF;
+        padding: 8px 0;
+        z-index: 99;
+    }
+    .icon {
+        display: none;
+    }
+    .horizontalIcon {
+        display: flex;
+    }
+}

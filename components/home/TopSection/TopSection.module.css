@@ -1,0 +1,96 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    transition: all 0.25s ease-out;
+    padding: 56px 0 16px;
+    overflow-x: visible !important;
+}
+
+.contentContainer {
+    display: flex;
+    flex: 1; /* 0.5; */
+    flex-direction: column;
+    align-items: center; /* flex-start; */
+    justify-content: center;
+    background: #FFFFFF;
+    position: relative;
+    transition: all 0.25s ease-out;
+}
+
+.contentDescription {
+    font-family: Nimbus;
+    font-style: normal;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+    line-height: 115%;
+    text-transform: uppercase;
+    color: #000000;
+    transition: all 0.25s ease-out;
+}
+
+.contentDescriptionHighLight {
+    color: #61AB62;
+    background: transparent;
+    position: relative;
+}
+
+.leafyIcon {
+    margin-left: -10px;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 860px) {
+    .root {
+        padding: 48px 0 8px;
+    }
+    .leafyIcon {
+        margin-left: -8px;
+        width: 28px;
+        height: 28px;
+        margin-right: 4px;
+    }
+    .contentDescription {
+        font-family: Nimbus;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 115%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .root {
+        padding: 48px 0 0;
+    }
+    .leafyIcon {
+        margin-left: -4px;
+        width: 24px;
+        height: 24px;
+        margin-right: 4px;
+    }
+    .contentDescription {
+        font-family: Nimbus;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 115%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #000000;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}

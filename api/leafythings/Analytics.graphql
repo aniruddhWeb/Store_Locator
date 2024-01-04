@@ -1,0 +1,11 @@
+mutation AnalyticsSave($input: AnalyticsSave) {
+    analyticsSave(input: $input)
+}
+
+mutation AnalyticsSaveSearch($input: AnalyticsSearch) {
+    analyticsSaveSearch(input: $input)
+}
+
+mutation AnalyticsBannerClick($userAction: String!, $userIP: String) {
+    analyticsBannerClick(userAction: $userAction, userIP: $userIP)
+}

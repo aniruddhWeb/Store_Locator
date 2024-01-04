@@ -1,0 +1,129 @@
+fragment ProvinceItem on Province {
+  plProvinceID
+  plName
+  plInitials
+  country {
+    plCountryID
+    plCountryName
+    plCountrySlug
+  }
+}
+
+fragment LocationItem on Region {
+  plRegionID
+  plProvinceID
+  plName
+  plSlug
+  province {
+    ...ProvinceItem
+  }
+  plLatitude
+  plLongitude
+}
+
+query locationAllListProvinceForUser {
+  locationListProvinceForUser {
+    plProvinceID
+    plName
+    plInitials
+    country {
+      plCountryID
+      plCountryName
+      plCountrySlug
+    }
+  }
+}
+
+query locationListRegionByProvinceForUser($provinceId: Int!) {
+  locationListRegionByProvinceForUser(provinceId: $provinceId) {
+    plRegionID
+    plProvinceID
+    plName
+    plSlug
+    province {
+      plProvinceID
+      plName
+      plInitials
+      country {
+        plCountryID
+        plCountryName
+        plCountrySlug
+      }
+    }
+    plLatitude
+    plLongitude
+  }
+}
+
+query locationListRegion($offset: Int, $limit: Int, $plCountryID: Int, $sortPopular: Boolean) {
+  locationListRegion(offset: $offset, limit: $limit, plCountryID: $plCountryID, sortPopular: $sortPopular) {
+    plRegionID
+    plProvinceID
+    plName
+    plSlug
+    province {
+      plProvinceID
+      plName
+      plInitials
+      country {
+        plCountryID
+        plCountryName
+        plCountrySlug
+      }
+    }
+    plLatitude
+    plLongitude
+  }
+}
+
+query locationSearchRegion($search: String!) {
+  locationSearchRegion(slug: $search) {
+    plRegionID
+    plProvinceID
+    plName
+    plSlug
+    province {
+      plProvinceID
+      plName
+      plInitials
+      country {
+        plCountryID
+        plCountryName
+        plCountrySlug
+      }
+    }
+    plLatitude
+    plLongitude
+  }
+}
+
+query userRegion($clientIp: String) {
+  userRegion(clientIp: $clientIp) {
+    plRegionID
+    plProvinceID
+    plName
+    plSlug
+    province {
+      plProvinceID
+      plName
+      plInitials
+      country {
+        plCountryID
+        plCountryName
+        plCountrySlug
+      }
+    }
+    plLatitude
+    plLongitude
+  }
+}
+
+query locationFooterPosition  {
+  locationFooterPosition  {
+    ...LocationItem
+  }
+}
+
+query userRegionCountry($clientIp: String) {
+  userRegionCountry(clientIp: $clientIp)
+}

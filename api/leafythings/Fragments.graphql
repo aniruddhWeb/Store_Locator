@@ -1,0 +1,195 @@
+fragment BusinessItem on Business {
+    bizBusinessID
+    bizName
+    bizSlug
+    plType
+    bizClaim
+    bizClaimUnblurred
+    bizIsLite
+    mdaLocalFileName
+    rvwScoreAvg
+    isOpen
+    rvwCount
+    bizIsVerified
+    contact {
+        linkContactMethod
+        provinceInitial
+        regionSlug
+        regionName
+    }
+}
+
+fragment ProductItem on Product {
+    mdaLocalFileName
+    prdName
+    prdInStock
+    prdInStockForBrand
+    prdPriceEighthOunce
+    prdPriceHalfGram
+    prdPriceHalfOunce
+    prdPriceOneGram
+    prdPriceOneOunce
+    prdPricePerUnit
+    prdPriceQuarterOunce
+    prdPriceTwoGrams
+    prdProductID
+    prdProductTypes
+    prdProductCategories
+    prdCBDPercentage
+    prdTHCPercentage
+    prdSlug
+    plSlugType
+    rvwScoreAvg
+    rvwCount
+    prdStatus
+    prdPublishDate
+}
+
+fragment DealItem on BusinessDeals {
+    dlsApplyTo
+    dlsDealsID
+    dlsName
+    dlsSlug
+    mdaLocalFileName
+    business {
+        bizBusinessID
+        plType
+        bizName
+        bizSlug
+        contact {
+            provinceInitial
+            regionSlug
+            regionName
+        }
+    }
+}
+
+fragment ReviewItem on Review {
+    rvwComment
+    canDeleteReview
+    rvwCreationDate
+    rvwReply
+    rvwReplyCreatedAt
+    rvwReplyAuthorName {
+        bizName
+        username
+        usrUserID
+    }
+    rvwReviewID
+    rvwScore
+    username
+}
+
+fragment ContactItem on Contact {
+    bizChat
+    bizEmailAddress
+    bizIntersection
+    bizLatitude
+    bizLongitude
+    bizPhone
+    bizStreetAddress
+    bizText
+    bizWebsiteURL
+    linkContactMethod
+    bizPostal
+    bizRegionID
+    regionSlug
+    regionName
+    plProvinceID
+    provinceInitial
+    provinceName
+}
+
+fragment WorkingHourItem on WorkingHours {
+    ophBusinessID
+    ophCloseTime
+    ophDayOfWeek
+    ophIsOpen
+    ophOpenTime
+}
+
+fragment BlogItem on Blog {
+    authorName {
+        username
+        bizName
+    }
+    blgBlogID
+    blgDescription
+    blgPublishedAt
+    blgSlug
+    blgTitle
+    mdaLocalFileName
+    plType
+    types
+}
+
+fragment CurrentUser on CurrentUser {
+    email
+    username
+    usrFirstName
+    usrLastName
+    usrUserID
+    email_verified_at
+    userRoles
+    usrSubscription
+}
+
+fragment ProvinceItem on Province {
+    plProvinceID
+    plName
+    plInitials
+    country {
+        plCountryID
+        plCountryName
+        plCountrySlug
+    }
+}
+
+fragment LocationItem on Region {
+    plRegionID
+    plProvinceID
+    plName
+    plSlug
+    province {
+        ...ProvinceItem
+    }
+    plLatitude
+    plLongitude
+}
+
+fragment ProductTypeItem on ProductType {
+    available
+    name
+    slug
+    id
+    categoriesItems {
+        available
+        name
+        slug
+        id
+        categoriesItems{
+            available
+            name
+            slug
+            id
+        }
+    }
+    typeItems {
+        available
+        name
+        slug
+        id
+        categoriesItems {
+            available
+            name
+            slug
+            id
+            categoriesItems{
+                available
+                name
+                slug
+                id
+            }
+        }
+    }
+}

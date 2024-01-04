@@ -1,0 +1,45 @@
+generates:
+  generated/graphql.ts:
+    schema: api/leafythings/schema.graphql
+    documents:
+      - ./api/leafythings/*.graphql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo:
+          apolloReactHooksImportFrom: '@apollo/client'
+          apolloReactCommonImportFrom: '@apollo/client'
+
+  generated/app.ts:
+    schema: api/app/schema.graphql
+    documents:
+      - ./api/app/*.graphql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo:
+          apolloReactHooksImportFrom: '@apollo/client'
+          apolloReactCommonImportFrom: '@apollo/client'
+    config:
+      skipTypename: true
+      withHooks: false
+      withHOC: false
+      withComponent: false
+
+  generated/contentful.ts:
+    schema: api/contentful/schema.graphql
+    documents:
+      - ./api/contentful/*.graphql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo:
+          apolloReactHooksImportFrom: '@apollo/client'
+          apolloReactCommonImportFrom: '@apollo/client'
+
+config:
+  skipTypename: true
+  withHooks: true
+  withHOC: false
+  withComponent: false
+

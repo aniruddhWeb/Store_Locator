@@ -1,0 +1,211 @@
+@import './base.css';
+
+.container {
+    margin-left: 0;
+    margin-right: 0;
+    width: min(100%, 1440px);
+    overflow: hidden;
+}
+
+.fullContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.relativeContainer {
+    position: relative;
+}
+
+.horizontalLayout {
+    display: flex;
+    width: min(100%, 1440px);
+    margin-top: 32px;
+    flex: 1 1 auto;
+    flex-direction: row;
+}
+
+.fullOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background: rgba(0,0,0, 0.4);
+}
+
+.flexVerticalContainer {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: visible;
+    flex-direction: column;
+    display: flex;
+    min-height: 720px;
+}
+
+.flexHorizontalContainer {
+    flex: 1;
+    flex-direction: row;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: visible;
+}
+
+.height-full {
+    height: 100%;
+}
+
+.border-bottom {
+    border-bottom: 2px solid #000000;
+}
+
+.transition-opacity {
+    transition-property: opacity;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.disableLink a {
+    pointer-events: none !important;
+}
+
+.disableLink div {
+    pointer-events: none !important;
+}
+
+.disableLink input {
+    pointer-events: none !important;
+}
+
+.ReactModalPortal {
+    z-index: 999;
+}
+
+.ReactModal__Overlay {
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+}
+
+.react-viewer-transition {
+    transition: none !important;
+}
+
+.react-viewer-mask {
+    background: rgba(0, 0, 0, 0.6) !important;
+}
+
+.react-viewer-close {
+    z-index: 1007 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    top: 0 !important;
+    bottom: 40px !important;
+    right: unset !important;
+    width: 100vw !important;
+    height: calc(100vh - 40px) !important;
+    border-radius: unset !important;
+    background: transparent !important;
+}
+
+.react-viewer-close > i {
+    cursor: pointer;
+    display: flex !important;
+    align-self: flex-end !important;
+    top: unset !important;
+    left: unset !important;
+    margin: 24px 16px !important;
+}
+
+.content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    align-items: center;
+    justify-content: space-between;
+    overflow: visible;
+    margin: 0;
+    flex-direction: column;
+    opacity: 0;
+    background-color: #f1f1f1;
+    transition: 300ms;
+}
+
+#dutchie-embed {
+    height: 400px;
+}
+
+.main-container {
+    padding-left: 54px;
+    padding-right: 54px;
+}
+
+.priceText {
+    color: #000000;
+    font-family: Windsor;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.priceUnitText {
+    color: #8C9B99;
+    font-family: Gilroy;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.priceUnitTextSmall {
+    color: #8C9B99;
+    font-family: Gilroy;
+    font-weight: 900;
+    font-size: 15px;
+}
+
+@media only screen and (max-width: 860px) {
+    .flexVerticalContainer {
+        margin-top: 16px;
+        min-height: unset;
+    }
+    .flexHorizontalContainer {
+        flex-direction: column;
+    }
+    .priceText {
+        color: #000000;
+        font-family: Windsor;
+        font-weight: 900;
+        font-size: 16px;
+    }
+    .priceUnitText {
+        color: #8C9B99;
+        font-family: Gilroy;
+        font-weight: 900;
+        font-size: 16px;
+    }
+    .priceUnitTextSmall {
+        color: #8C9B99;
+        font-family: Gilroy;
+        font-weight: 900;
+        font-size: 12px;
+    }
+    .horizontalLayout {
+        margin-top: 0;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,438 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    text-decoration: none;
+    color: #000000;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.rootGrid {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    text-decoration: none;
+    color: #000000;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.rootColumn {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    text-decoration: none;
+    color: #000000;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.cardGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: all 300ms ease-in-out;
+}
+.cardGrid:hover {
+    transform: scale(1.05);
+}
+.cardGrid:active {
+    transform: scale(0.95);
+}
+
+.cardColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 240px;
+    max-width: 240px;
+    transition: all 300ms ease-in-out;
+}
+.cardColumn:hover {
+    transform: scale(1.05);
+}
+.cardColumn:active {
+    transform: scale(0.95);
+}
+
+.cardRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px 20px;
+    transition: all 300ms ease-in-out;
+    background: rgba(152,204,198, 0.1);
+    border-radius: 10px;
+}
+.cardRow:hover {
+    transform: scale(1.05);
+}
+.cardRow:active {
+    transform: scale(0.95);
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 32px;
+    padding-top: 12px;
+}
+
+.nameDealRow {
+    font-family: Windsor;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0;
+    text-align: left;
+    text-decoration: none;
+    margin-top: 8px;
+    width: 232px;
+    max-width: 232px;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.typeDealGrid {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #EF845C;
+    letter-spacing: 0;
+    margin-top: 16px;
+    text-decoration: none;
+    text-align: center;
+    text-overflow: ellipsis;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.typeDealColumn {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #EF845C;
+    letter-spacing: 0;
+    margin-top: 16px;
+    text-decoration: none;
+    text-align: center;
+    text-overflow: ellipsis;
+    width: 164px;
+    max-width: 164px;
+    overflow: hidden;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.typeDealRow {
+    font-family: Gilroy;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+}
+
+.nameDealGrid {
+    font-family: Gilroy;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 17px;
+    letter-spacing: 0;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 4px;
+    text-overflow: ellipsis;
+    width: 164px;
+    max-width: 164px;
+    display: block;
+    overflow: hidden;
+}
+
+.nameDealColumn {
+    font-family: Gilroy;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 17px;
+    letter-spacing: 0;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 4px;
+    text-overflow: ellipsis;
+    width: 164px;
+    max-width: 164px;
+    display: block;
+    overflow: hidden;
+}
+
+.businessDealGrid {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    color: #000000;
+    letter-spacing: 0;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 4px;
+    width: 164px;
+    max-width: 164px;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+}
+
+.businessDealColumn {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    color: #000000;
+    letter-spacing: 0;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 4px;
+    width: 164px;
+    max-width: 164px;
+    text-overflow: ellipsis;
+    display: block;
+    overflow: hidden;
+}
+
+.dealCardImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.dealCardImageColumnContainer {
+    display: flex;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 10px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: relative;
+    padding: 0;
+    width: 164px;
+    height: 164px;
+}
+
+.dealCardImageRowContainer {
+    display: flex;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 10px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: relative;
+    padding: 0;
+    width: 132px;
+    height: 132px;
+}
+
+.dealCardImageGridContainer {
+    display: flex;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 10px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: relative;
+    padding: 0;
+    width: 164px;
+    height: 164px;
+}
+
+
+.businessTypeWrapper {
+    padding: 8px;
+    position: absolute;
+    background: transparent;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.businessTypeContainer {
+    box-shadow: 0 16px 16px rgba(0, 0, 0, 0.05);
+    position: relative;
+    background: #ffffff;
+    border-radius: 16px;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    display: flex;
+}
+
+@media only screen and (max-width: 860px) {
+    .dealCardImageGridContainer {
+        width: 100%;
+        aspect-ratio: 1;
+        height: auto;
+        max-width: 200px;
+        max-height: 200px;
+    }
+    .dealCardImageColumnContainer {
+        width: 132px;
+        height: 132px;
+    }
+    .root {
+        width: 164px;
+        max-width: 164px;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+        margin-top: 0;
+    }
+    .rootColumn {
+        width: 164px;
+        max-width: 164px;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+        margin-top: 0;
+    }
+    .rootGrid {
+        flex: 1;
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0;
+    }
+    .cardGrid {
+        width: 100%;
+        max-width: 100%;
+    }
+    .cardColumn {
+        width: 164px;
+        max-width: 164px;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .cardRow {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background: unset;
+    }
+    .nameDealGrid {
+        text-overflow: ellipsis;
+        width: calc(100% - 16px);
+        max-width: calc(100% - 16px);
+        display: block;
+        overflow: hidden;
+    }
+    .nameDealColumn {
+        text-overflow: ellipsis;
+        display: block;
+        overflow: hidden;
+        width: calc(100% - 16px);
+        max-width: calc(100% - 16px);
+    }
+    .businessDealGrid {
+        text-overflow: ellipsis;
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        overflow: hidden;
+    }
+    .businessDealColumn {
+        text-overflow: ellipsis;
+        display: block;
+        overflow: hidden;
+        width: 132px;
+        max-width: 132px;
+    }
+    .nameDealRow {
+        font-family: Gilroy;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 17px;
+        letter-spacing: 0;
+        text-align: center;
+        text-decoration: none;
+        margin-top: 16px;
+        text-overflow: ellipsis;
+        display: block;
+        overflow: hidden;
+        width: calc(100% - 16px);
+        max-width: calc(100% - 16px);
+    }
+    .typeDealRow {
+        display: none;
+    }
+    .cardContent {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        padding-top: 0;
+    }
+    .typeDealColumn {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+

@@ -1,0 +1,548 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: center;
+    text-decoration: none;
+    color: #000000;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    transition: all 300ms ease-in-out;
+    position: relative;
+}
+
+.cardRow {
+    width: calc(100% - 48px);
+    display: flex;
+    padding: 24px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 300ms ease-in-out;
+}
+
+.cardColumn {
+    display: flex;
+    margin-left: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    transition: all 300ms ease-in-out;
+}
+
+.nameBusiness {
+    align-self: flex-start;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: left;
+    text-overflow: ellipsis;
+    width: calc(100% - 24px);
+    max-width: calc(100% - 24px);
+    overflow: hidden;
+    text-decoration: none;
+    white-space: initial;
+    display: -webkit-box;
+    color: #000000 !important;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    transition: all 300ms ease-in-out;
+}
+.nameBusiness:hover {
+    transform: scale(1.05);
+}
+.nameBusiness:active {
+    transform: scale(0.95);
+}
+
+.rateContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+.rate {
+    display: flex;
+    flex-direction: row;
+}
+
+.reviewCount {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 5px 3px 5px;
+}
+
+.noReview {
+    font-family: SuisseIntlMono;
+    font-size: 12px;
+    color: #8C9B99;
+}
+
+.buttonsContainer {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px;
+    margin-top: 16px;
+    width: calc(100% - 32px);
+}
+
+.businessImage {
+    border-radius: 10px;
+    object-fit: cover;
+}
+.businessImageContainer {
+    display: flex;
+    background: #ffffff;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+    width: 56px;
+    height: 56px;
+}
+
+.productInfoContainer {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+    display: none;
+}
+
+.productImage {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.imageLoop {
+    display: flex;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+}
+
+.outOfStockContainer {
+    display: flex;
+    max-width: 148px;
+    min-width: 108px;
+    position: absolute;
+    bottom: 16px;
+    padding: 8px;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border-radius: 16px;
+}
+
+.outOfStockText {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #000000;
+}
+
+.productImageContainer {
+    display: flex;
+    background: #ffffff;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0;
+    width: 270px;
+    height: 270px;
+}
+
+.productNameContainer {
+    margin-top: 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nameProduct {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: calc(100% - 32px);
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.descriptionProduct {
+    margin-top: 24px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    text-overflow: ellipsis;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    text-decoration: none;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
+
+.productInfoContainerVisible {
+    display: flex;
+    overflow: visible;
+    transition: all 300ms ease-in-out;
+    opacity: 1;
+}
+
+.productImageVisible {
+    border-radius: 10px;
+}
+
+.productImageGray {
+    filter: grayscale(1) opacity(0.5);
+}
+
+.nameProductVisible {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    text-overflow: ellipsis;
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    padding-left: 16px;
+    padding-right: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.productDetailsRowContainer {
+    display: flex;
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    padding-top: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    justify-content: flex-start;
+}
+
+.productDetailsContainer {
+    display: flex;
+    margin-top: 8px;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 8px;
+    border-radius: 10px;
+    padding: 12px;
+    background: #F2F2F2;
+}
+
+.productDetailsTypeContainer {
+    display: flex;
+    margin-top: 8px;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 8px;
+    border-radius: 10px;
+    padding: 12px;
+    background: #61AB62;
+}
+
+.productDetailsTitle {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    margin-right: 8px;
+    color: #000000;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    letter-spacing: 0;
+    text-decoration: none;
+    display: block;
+}
+
+.productDetailsValue {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #61AB62;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    letter-spacing: 0;
+    text-decoration: none;
+    display: block;
+}
+
+.productDetailsTypeValue {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFFFFF;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    letter-spacing: 0;
+    text-decoration: none;
+    display: block;
+}
+
+.shareContainer {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.productPropertyRowContainer {
+    flex-wrap: wrap;
+    margin-top: 16px;
+    display: flex;
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.productEffectContainer {
+    display: flex;
+    margin-top: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.productEffectRowContainer {
+    display: flex;
+    margin-top: 4px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.productEffectItemContainer {
+    display: flex;
+    min-width: 56px;
+    margin-top: 8px;
+    margin-right: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px;
+    padding: 12px;
+    background: rgba(97, 171, 98, 0.1);
+}
+
+.productEffectsTitle {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #61AB62;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    letter-spacing: 0;
+    text-decoration: none;
+    display: block;
+}
+
+
+.productUsesContainer {
+    display: flex;
+    margin-top: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.productUsesRowContainer {
+    display: flex;
+    margin-top: 4px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.productUsesItemContainer {
+    display: flex;
+    min-width: 56px;
+    margin-top: 8px;
+    margin-right: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px;
+    padding: 12px;
+    background: rgba(239,132,92, 0.1);
+}
+
+.productUsesTitle {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #EF845C;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    letter-spacing: 0;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+.productTimeContainer {
+    display: flex;
+    margin-top: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.productTimeRowContainer {
+    display: flex;
+    margin-top: 4px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.productTimeItemContainer {
+    display: flex;
+    min-width: 56px;
+    margin-top: 8px;
+    margin-right: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 10px;
+    padding: 12px;
+    background: rgba(152,204,198, 0.1);
+}
+
+.productTimeTitle {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #98CCC6;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    letter-spacing: 0;
+    text-decoration: none;
+    display: block;
+}
+
+.productPropertyValue {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-top: 8px;
+    letter-spacing: 0;
+    text-decoration: none;
+    display: block;
+}
+
+@media only screen and (min-width: 860px) {
+    .imageLoop {
+        display: none;
+    }
+    .imageViewer {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .root {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+        padding: 0;
+    }
+    .cardRow {
+        display: none;
+    }
+    .cardColumn {
+        padding: 0;
+        align-items: flex-start;
+        flex: 1;
+    }
+    .rateContainer {
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .nameBusiness {
+        text-overflow: ellipsis;
+        width: 100%;
+        text-align: left;
+        max-width: 100%;
+        display: block;
+        overflow: hidden;
+    }
+    .businessImageContainer {
+        width: 48px;
+        height: 48px;
+    }
+    .productInfoContainer {
+        opacity: 1;
+        height: unset;
+        padding-bottom: 16px;
+        overflow: visible;
+        display: flex;
+    }
+    .shareContainer {
+        display: flex;
+        top: 4px;
+    }
+    .buttonsContainer {
+        display: flex;
+    }
+}

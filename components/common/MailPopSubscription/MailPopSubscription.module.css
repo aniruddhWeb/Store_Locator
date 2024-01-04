@@ -1,0 +1,422 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  overflow-y: scroll;
+}
+
+.root {
+  align-self: center;
+  display: flex;
+  width: 340px;
+  margin-left: 16px;
+  padding: 40px 24px 32px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  justify-content: center;
+  position: relative;
+}
+
+.mailPreferencesRoot {
+  position: relative;
+  display: flex;
+  height: 100%;
+  overflow: scroll;
+  width: 340px;
+  margin-left: -20px;
+  padding: 48px 24px 32px 44px;
+  margin-right: 16px;
+  background: #EFF7EF;
+  flex-direction: column;
+  border-radius: 10px;
+  max-height: 570px;
+}
+.mailPreferencesRoot::-webkit-scrollbar{
+  display: block;
+  width: 10px;
+}
+.mailPreferencesRoot::-webkit-scrollbar-track {
+  display: block;
+  background: transparent;
+  border-radius: 6px;
+}
+.mailPreferencesRoot::-webkit-scrollbar-thumb {
+  display: block;
+  background: rgba(97,171,98,0.5);
+  border-radius: 6px;
+  background-clip: padding-box;
+}
+.mailPreferencesRoot::-webkit-scrollbar-thumb:hover {
+  background: rgba(97,171,98,1);
+}
+
+.ageNotConfirm {
+  margin-top: 24px;
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: #EF845C;
+  text-overflow: ellipsis;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  text-decoration: none;
+  white-space: initial;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.ageNotConfirm:hover {
+  transform: scale(1.05);
+}
+.ageNotConfirm:active {
+  transform: scale(0.95);
+}
+
+.title {
+  margin-top: 40px;
+  font-family: Windsor;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 38px;
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: initial;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.text {
+  margin: 16px 0;
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: pre-line;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+}
+
+.border {
+  margin-top: 24px;
+  width: calc(100% - 40px);
+  height: 1px;
+  opacity: 0.1;
+  background: #000000;
+}
+
+.caption {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  width: calc(100% - 40px);
+
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #000000;
+
+  text-decoration: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: initial;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.singleInput {
+  margin-top: 24px;
+  width: calc(100% - 40px);
+  max-width: calc(100% - 40px);
+  outline: none;
+  padding: 0 20px;
+  border-width: 0;
+  display: flex;
+  height: 56px;
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  background: rgba(97,171,98,0.1);
+  border-radius: 10px;
+}
+.singleInput::placeholder {
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #0E5E0F;
+}
+.singleInput:focus {
+  color: #000000 !important;
+  width: calc(100% - 42px);
+  max-width: calc(100% - 42px);
+  height: 54px !important;
+  border: 1px solid #61AB62 !important;
+  background: #FFFFFF !important;
+}
+.singleInput:focus::placeholder {
+  color: rgba(0,0,0,0.5) !important;
+}
+
+.closeDesktopIcon {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px;
+  align-self: flex-end;
+  opacity: 0.5;
+  color: #000000;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.closeDesktopIcon:hover {
+  opacity: 1;
+}
+.closeDesktopIcon:active {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.closeMobileIcon {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 12px;
+  align-self: flex-end;
+  opacity: 0.5;
+  color: #000000;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+.closeMobileIcon:hover {
+  opacity: 1;
+}
+.closeMobileIcon:active {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.checkContainer {
+  display: flex;
+  background: #EFF7EF;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 32px;
+  height: calc(100% - 64px);
+}
+
+.checkTitleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.checkTitle {
+  font-family: Windsor;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: #61AB62;
+}
+
+.checkAll {
+  margin-top: 4px;
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: right;
+  color: #000000;
+  opacity: 0.5;
+}
+
+.checkBlockContainer {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 300ms ease-in-out;
+}
+
+.checkBlockContainerDisabled {
+  opacity: 0.5;
+  pointer-events: none !important;
+}
+
+.checkBlockTitle {
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+.checkBlockRowContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.checkBoxItem {
+  display: flex;
+  margin-right: 8px;
+  margin-top: 10px;
+  min-width: 120px;
+}
+
+.checkBoxItemText {
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+}
+
+.businessRegister {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 24px;
+  max-width: 340px;
+}
+
+.agreeText {
+  margin: 12px 0 0 0;
+  padding: 0;
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  width: 240px;
+  font-size: 12px;
+  line-height: 18px;
+  color: #000000;
+}
+.agreeText a {
+  color: #000000 !important;
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+.mobileButton {
+  flex-direction: column;
+  align-items: center;
+  display: none;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+  background: #FFFFFF;
+  padding-bottom: 16px;
+}
+
+.desktopButton {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+}
+
+@media only screen and (max-width: 860px) {
+  .closeMobileIcon {
+    display: flex;
+  }
+  .closeDesktopIcon {
+    display: none;
+  }
+  .mobileButton {
+    display: flex;
+  }
+  .desktopButton {
+    display: none;
+  }
+  .wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .root {
+    max-width: 380px;
+    width: calc(100vw - 80px);
+    margin-left: 0;
+    border-radius: 10px 10px 0 0;
+  }
+  .mailPreferencesRoot {
+    max-width: 380px;
+    width: calc(100vw - 80px);
+    overflow: visible;
+    padding: 40px 24px 32px;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    max-height: unset;
+    height: unset;
+  }
+  .icon {
+    width: 110px;
+    height: 110px;
+  }
+  .singleInput {
+    margin-top: 16px;
+  }
+  .checkContainer {
+    padding: 24px 20px;
+    width: calc(100% - 40px);
+    min-width: unset;
+    box-shadow: unset;
+  }
+  .checkBoxItem {
+    min-width: 120px;
+  }
+  .checkBlockTitle {
+    text-align: center;
+  }
+  .selectContainer {
+    margin-top: 16px;
+  }
+  .checkTitleContainer {
+    flex-direction: column;
+  }
+  .agreeContainer {
+    width: 100%;
+    max-width: unset;
+  }
+}

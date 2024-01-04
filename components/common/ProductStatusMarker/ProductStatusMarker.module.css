@@ -1,0 +1,43 @@
+.root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 100px;
+    padding: 8px 16px 8px 8px;
+}
+
+.root.outOfStock, .root.discontinued {
+    background-color: #FFFFFF;
+}
+
+.root.outOfStock {
+    padding: 8px 16px;
+}
+
+.root.seasonal {
+    background-color: #32A071;
+}
+
+.root.exclusive {
+    background-color: #000000;
+}
+
+.text {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.text.outOfStock, .text.discontinued {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.text.seasonal {
+    color: #FFFFFF;
+}
+
+.text.exclusive {
+    color: #F2FC53;
+}

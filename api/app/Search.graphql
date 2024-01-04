@@ -1,0 +1,169 @@
+query searchProducts($withPrice: Boolean, $countryId: Int, $plRegionId: Int, $latitudeGPS: Float, $longitudeGPS: Float, $sort: [[String]], $isGlobalSearch: Boolean, $search: String!, $offset: Int, $limit: Int, $type: String, $productGenetics: [String], $prdProductType: [[String]], $prdProductCategories: [[String]]) {
+    busProdDealSearchByName(withPrice: $withPrice, countryId: $countryId, plRegionID: $plRegionId, latitudeGPS: $latitudeGPS, longitudeGPS: $longitudeGPS, sort: $sort, isGlobalSearch: $isGlobalSearch, offset: $offset, limit: $limit, name: $search, type: $type, prdGenetics: $productGenetics, prdProductType: $prdProductType, prdProductCategories: $prdProductCategories) {
+        products {
+            mdaLocalFileName
+            prdName
+            prdInStock
+            prdInStockForBrand
+            prdPriceEighthOunce
+            prdPriceHalfGram
+            prdPriceHalfOunce
+            prdPriceOneGram
+            prdPriceOneOunce
+            prdPricePerUnit
+            prdPriceQuarterOunce
+            prdPriceTwoGrams
+            prdProductID
+            prdProductTypes
+            prdProductCategories
+            prdCBDPercentage
+            prdTHCPercentage
+            prdSlug
+            plSlugType
+            rvwScoreAvg
+            rvwCount
+            prdStatus
+            prdPublishDate
+            business(offset: 0, limit: 1) {
+                bizName
+                bizSlug
+                plType
+                contact {
+                    provinceInitial
+                    regionSlug
+                    regionName
+                }
+            }
+        }
+    }
+}
+
+query searchBusiness($countryId: Int, $plRegionId: Int, $latitudeGPS: Float, $longitudeGPS: Float, $isGlobalSearch: Boolean, $search: String!, $offset: Int, $limit: Int, $type: String, $productGenetics: [String], $prdProductType: [[String]], $prdProductCategories: [[String]]) {
+    busProdDealSearchByName(countryId: $countryId, plRegionID: $plRegionId, latitudeGPS: $latitudeGPS, longitudeGPS: $longitudeGPS, isGlobalSearch: $isGlobalSearch, offset: $offset, limit: $limit, name: $search, type: $type,  prdGenetics: $productGenetics, prdProductType: $prdProductType, prdProductCategories: $prdProductCategories) {
+        business {
+            bizBusinessID
+            bizName
+            bizSlug
+            plType
+            bizClaim
+            mdaLocalFileName
+            rvwScoreAvg
+            rvwCount
+            isOpen
+            bizIsVerified
+            contact {
+                linkContactMethod
+                provinceInitial
+                regionSlug
+                regionName
+            }
+        }
+    }
+}
+
+query searchDeals($countryId: Int, $plRegionId: Int, $latitudeGPS: Float, $longitudeGPS: Float, $isGlobalSearch: Boolean, $search: String!, $offset: Int, $limit: Int, $type: String, $productGenetics: [String], $prdProductType: [[String]], $prdProductCategories: [[String]]) {
+    busProdDealSearchByName(countryId: $countryId, plRegionID: $plRegionId, latitudeGPS: $latitudeGPS, longitudeGPS: $longitudeGPS, isGlobalSearch: $isGlobalSearch, offset: $offset, limit: $limit, name: $search, type: $type, prdGenetics: $productGenetics, prdProductType: $prdProductType, prdProductCategories: $prdProductCategories) {
+        deals {
+            dlsApplyTo
+            dlsDealsID
+            dlsName
+            dlsSlug
+            mdaLocalFileName
+            business(offset: 0, limit: 1) {
+                bizBusinessID
+                plType
+                bizName
+                bizSlug
+                contact {
+                    provinceInitial
+                    regionSlug
+                    regionName
+                }
+            }
+        }
+    }
+}
+
+query searchProductTypes($withPrice: Boolean, $countryId: Int, $plRegionId: Int, $latitudeGPS: Float, $longitudeGPS: Float, $sort: [[String]], $isGlobalSearch: Boolean, $search: String!, $offset: Int, $limit: Int, $type: String, $productGenetics: [String], $prdProductType: [[String]], $prdProductCategories: [[String]]) {
+    busProdDealSearchByName(withPrice: $withPrice, countryId: $countryId, plRegionID: $plRegionId, latitudeGPS: $latitudeGPS, longitudeGPS: $longitudeGPS, sort: $sort, isGlobalSearch: $isGlobalSearch, offset: $offset, limit: $limit, name: $search, type: $type, prdGenetics: $productGenetics, prdProductType: $prdProductType, prdProductCategories: $prdProductCategories) {
+        products {
+            prdSlug
+            prdProductID
+            prdName
+            prdProductTypes
+            prdProductCategories
+        }
+        productTypes {
+            available
+            name
+            counter
+            slug
+            id
+            categoriesItems {
+                available
+                name
+                counter
+                slug
+                id
+                categoriesItems{
+                    available
+                    name
+                    counter
+                    slug
+                    id
+                }
+            }
+            typeItems {
+                available
+                name
+                counter
+                slug
+                id
+                categoriesItems {
+                    available
+                    name
+                    counter
+                    slug
+                    id
+                    categoriesItems{
+                        available
+                        name
+                        counter
+                        slug
+                        id
+                    }
+                }
+            }
+        }
+    }
+}
+
+query searchCounts($countryId: Int, $plRegionId: Int, $latitudeGPS: Float, $longitudeGPS: Float, $sort: [[String]], $isGlobalSearch: Boolean, $search: String!, $offset: Int, $limit: Int, $type: String, $productGenetics: [String], $prdProductType: [[String]], $prdProductCategories: [[String]]) {
+    busProdDealSearchByName(showPagination: true, countryId: $countryId, plRegionID: $plRegionId, latitudeGPS: $latitudeGPS, longitudeGPS: $longitudeGPS, sort: $sort, isGlobalSearch: $isGlobalSearch, offset: $offset, limit: $limit, name: $search, type: $type, prdGenetics: $productGenetics, prdProductType: $prdProductType, prdProductCategories: $prdProductCategories) {
+        productsPagination{
+            totalCount
+        }
+        businessPagination{
+            totalCount
+        }
+        dealsPagination{
+            totalCount
+        }
+    }
+}
+
+query searchSuggestBrands($search: String!, $countryId: Int) {
+    busProdDealSearchByName(offset: 0, limit: 3, name: $search, type: "Businesses", showBrand: true, countryId: $countryId) {
+        business{
+            plType
+            bizName
+            bizSlug
+            contact {
+                regionSlug
+                provinceInitial
+            }
+            bizBusinessID
+            mdaLocalFileName
+        }
+    }
+}

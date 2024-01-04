@@ -1,0 +1,55 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.25s ease-out;
+    position: relative;
+}
+
+.background {
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.backgroundLogo {
+    opacity: 0.1;
+    height: 460px;
+    width: 360px;
+    margin-bottom: -180px;
+    margin-left: -180px;
+    aspect-ratio: 1;
+}
+
+.greenBackground {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(97, 171, 98, 0.1);
+}
+
+@media only screen and (max-width: 860px) {
+    .root {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 32px;
+    }
+    .backgroundLogo {
+        height: 280px;
+        width: 280px;
+        margin-bottom: -80px;
+        margin-left: -80px;
+    }
+}

@@ -1,0 +1,96 @@
+query BusinessNameBySlug($bizSlug: String!, $plSlugType: String!, $regionSlug: String) {
+    businessBySlug(bizSlug: $bizSlug, plSlugType: $plSlugType, regionSlug: $regionSlug) {
+        bizBusinessID
+        bizName
+        bizClaim
+        bizClaimUnblurred
+        bizSlug
+        plType
+        bizTags
+        dutchieAPI
+        rvwScoreAvg
+        mdaLocalFileName
+        rvwCount
+        reviews(limit: 1, offset: 0) {
+            username
+            rvwComment
+            rvwScore
+        }
+        contact {
+            bizPhone
+            bizEmailAddress
+            bizWebsiteURL
+            bizPostal
+            bizLongitude
+            bizLatitude
+            bizStreetAddress
+            bizIntersection
+            provinceName
+            provinceInitial
+            regionSlug
+            regionName
+        }
+        workingHours {
+            ...WorkingHourItem
+        }
+    }
+}
+
+query ProductNameBySlug($bizSlug: String!, $plSlugType: String!, $prdSlug: String!, $regionSlug: String) {
+    productBySlug(bizSlug: $bizSlug, plSlugType: $plSlugType, prdSlug: $prdSlug, regionSlug: $regionSlug) {
+        prdName
+        prdProductID
+        prdSlug
+        prdDescription
+        mdaLocalFileName
+        rvwCount
+        rvwScoreAvg
+        reviews(offset: 0, limit: 100) {
+            rvwReviewID
+            username
+            rvwComment
+            rvwScore
+        }
+        business {
+            bizBusinessID
+            bizClaim
+            bizClaimUnblurred
+            bizName
+            bizSlug
+            plType
+            contact {
+                provinceInitial
+                regionSlug
+                regionName
+            }
+        }
+    }
+}
+
+query DealNameBySlug($bizSlug: String!, $dlsSlug: String!) {
+    dealBySlug(bizSlug: $bizSlug, dlsSlug: $dlsSlug) {
+        dlsName
+        dlsDealsID
+        dlsSlug
+        mdaLocalFileName
+    }
+}
+
+query BlogNameBySlug($blgSlug: String!) {
+    blogBySlug(blgSlug: $blgSlug) {
+        blgTitle
+        blgBlogID
+        blgSlug
+        mdaLocalFileName
+    }
+}
+
+query RegionNameBySlug($regionSlug: String!) {
+    locationSearchRegion(slug: $regionSlug) {
+        ...LocationItem
+    }
+}
+
+query ProductTypeNameBySlug($prdTypeSlug: String!) {
+    productTypeBySlug(slug: $prdTypeSlug)
+}

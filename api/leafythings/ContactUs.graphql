@@ -1,0 +1,3 @@
+query ContactUsSend($regionID: String!, $province: String!, $city: String!, $emailFrom: String!, $message: String!, $name: String!, $subject: String!) {
+    contactUs(emailFrom: $emailFrom, message: $message, name: $name, subject: $subject, RegionID: $regionID, province: $province, city: $city)
+}

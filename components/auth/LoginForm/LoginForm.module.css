@@ -1,0 +1,220 @@
+.root {
+    display: flex;
+    width: min(100%, 420px);
+    background: #FFFFFF;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    align-self: center;
+    margin: 8px 0 8px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    align-self: center;
+    width: calc(min(100%, 420px) - 80px);
+    padding: 40px 40px 32px;
+}
+
+.title {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    color: #000000;
+}
+
+.subTitle {
+    margin-top: 16px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 16px;
+}
+
+.singleInputError {
+    background: rgba(239, 92, 92, 0.1) !important;
+    border: 1px solid #EF5C5C !important;
+}
+
+.singleInput {
+    width: calc(100% - 40px);
+    max-width: calc(100% - 40px);
+    outline: none;
+    padding: 0 20px;
+    border-width: 0;
+    display: flex;
+    height: 56px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    background: rgba(97,171,98,0.1);
+    border-radius: 10px;
+    margin-top: 24px;
+}
+.singleInput::placeholder {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0E5E0F;
+}
+.singleInput:focus {
+    color: #000000 !important;
+    width: calc(100% - 42px);
+    max-width: calc(100% - 42px);
+    height: 54px !important;
+    border: 1px solid #61AB62 !important;
+    background: #FFFFFF !important;
+}
+.singleInput:focus::placeholder {
+    color: rgba(0,0,0,0.5) !important;
+}
+
+.forgotPassword {
+    cursor: pointer;
+    margin: 24px 0 16px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none !important;
+    font-size: 14px;
+    line-height: 18px;
+    align-self: flex-end;
+    text-align: right;
+    color: #EF845C !important;
+    transition: all 300ms ease-in-out;
+}
+.forgotPassword:hover {
+    transform: scale(1.01);
+}
+.forgotPassword:active {
+    transform: scale(0.99);
+}
+
+.policyText {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #000000 !important;
+    text-decoration: none !important;
+    margin: 16px 0 0;
+    padding: 0;
+    max-width: 260px;
+}
+
+.policyText a {
+    color: #000000 !important;
+    text-decoration: none !important;
+    font-weight: bold;
+}
+
+.registerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 20px;
+    width: calc(100% - 40px);
+    max-width: calc(100% - 40px);
+    background: rgba(97,171,98,0.2);
+}
+
+.registerTitle {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #000000;
+}
+
+.registerButton {
+    font-family: SuisseIntl;
+    margin-top: 16px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none !important;
+    color: #EF845C !important;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.registerButton:hover {
+    transform: scale(1.01);
+}
+.registerButton:active {
+    transform: scale(0.99);
+}
+
+.errorText {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    align-self: flex-start;
+    text-align: left;
+    color: #e3342f !important;
+    text-decoration: none !important;
+    margin: 4px 00px 0 0;
+    padding: 0;
+    max-width: 260px;
+}
+
+@media only screen and (max-width: 480px) {
+    .root {
+        width: calc(100% - 40px);
+        padding: 8px 0 0;
+        margin: 0 0 8px;
+    }
+    .main {
+        width: calc(100% - 32px);
+        padding: 24px 16px 16px;
+    }
+    .singleInput {
+        margin-right: 0 !important;
+        width: calc(100% - 32px);
+        max-width: 320px;
+        padding: 0 16px;
+    }
+    .forgotPassword {
+        margin: 16px 0 0;
+    }
+    .singleInput {
+        margin-top: 16px;
+    }
+    .title {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .registerButton {
+        margin-top: 8px;
+    }
+    .subTitle {
+        margin-top: 8px;
+        margin-bottom: 16px;
+        font-size: 12px;
+        line-height: 16px;
+    }
+}

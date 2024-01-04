@@ -1,0 +1,362 @@
+query Banners {
+    bannerCollection {
+        limit
+        skip
+        total
+        items {
+            title
+            shortLink
+            buttonText
+            shortDescription
+            type
+            plCountryId
+            businessName
+            image {
+                url
+                height
+                width
+            }
+        }
+    }
+}
+
+query Carousel {
+    carouselImageCollection(order: [order_ASC]) {
+        limit
+        skip
+        total
+        items {
+            title
+            order
+            url
+            plCountryId
+            imageMobile {
+                url
+                height
+                width
+            }
+            image {
+                url
+                height
+                width
+            }
+        }
+    }
+}
+
+query OurStory {
+    ourStoryContent(id: "550uSL8aaiLN1SB3qwRgY0") {
+        title
+        description
+        url
+        button
+        image {
+            url
+        }
+    }
+}
+
+query YoutubeLink {
+    socialLink(id: "2msYLlK9oc98v4UJ94UnCL") {
+        url
+        title
+    }
+}
+
+query FacebookLink {
+    socialLink(id: "7urpgpzLqjIbQdb89S7Spb") {
+        url
+        title
+    }
+}
+
+query InstagramLink {
+    socialLink(id: "1pvUF9wCzZ4LMcUxhFUPhU") {
+        url
+        title
+    }
+}
+
+query EmailLink {
+    socialLink(id: "5h2Pg9uh30dcsufSH6gsWa") {
+        url
+        title
+    }
+}
+
+query GooglePlayLink {
+    socialLink(id: "2rvQD97xMT8WeNrXjFUxXJ") {
+        url
+        title
+    }
+}
+
+query AppleStoreLink {
+    socialLink(id: "5koDYMM0j8OnBm4S30dusR") {
+        url
+        title
+    }
+}
+
+query TermsOfService {
+    staticPage(id: "6BI9WsJoUpiSbX0B6bQqmb") {
+        title
+        body {
+            json
+        }
+    }
+}
+
+query PrivacyPolicy {
+    staticPage(id: "6EyXHd8I20fqZsJIF5EF4q") {
+        title
+        body {
+            json
+        }
+    }
+}
+
+query FAQItems {
+    faqCollection {
+        items {
+            index
+            description
+            title
+        }
+    }
+}
+
+query AboutConnect {
+    aboutItem(id: "6IAmifpLOra6Ctnu7dVvId") {
+        title
+        image {
+            url
+        }
+        description
+    }
+}
+
+query AboutMission {
+    aboutItem(id: "1Ne0djcK7JxdJDQUNqVTRV") {
+        title
+        image {
+            url
+        }
+        description
+    }
+}
+
+query AboutVideo {
+    aboutVideo(id: "5eEBC8i6tgW47FGOHg4EuM") {
+        title
+        description
+        url
+    }
+}
+
+query HomeTopSection {
+    homeTopSection(id: "6ps0dzvMFVEX0PnZaEEz2G") {
+        text
+        image {
+            url
+        }
+        link
+        imageMobile {
+            url
+        }
+        highlights
+    }
+    homeTopSectionCollection {
+        limit
+        skip
+        total
+        items {
+            text
+            image {
+                url
+            }
+            link
+            plCountryId
+            imageMobile {
+                url
+            }
+            highlights
+        }
+    }
+}
+
+query TorontoLanding {
+    torontoLanding(id: "35qeoUVurNM1bwFpdc0EWe" ){
+        title
+        torontoTexts
+        landingTitles
+        landingHighlights
+        mainCardEast {
+            url
+        }
+        mainCardWest {
+            url
+        }
+        etobicokeMapBkg {
+            url
+        }
+        scarboroughMapBkg {
+            url
+        }
+        northYorkMapBkg{
+            url
+        }
+        mississaugaMapBkg{
+            url
+        }
+        aboutDeliveryBkg{
+            url
+        }
+        orderDelivaryBkg{
+            url
+        }
+        deliveryMapBkg {
+            url
+        }
+        appleBlackButton{
+            url
+        }
+        googleBlackButton{
+            url
+        }
+        phoneBkg{
+            url
+        }
+        phoneMobileBkg{
+            url
+        }
+        downloadAppCannabisBkg{
+            url
+        }
+        adviceProductBkg{
+            url
+        }
+        orderMailBkg{
+            url
+        }
+        footerBkg{
+            url
+        }
+        unbeatableIcon{
+            url
+        }
+        deliveryIcon{
+            url
+        }
+        serviceIcon{
+            url
+        }
+        flowerIcon{
+            url
+        }
+        extractsConcentratesIcon{
+            url
+        }
+        ediblesIcon{
+            url
+        }
+    }
+}
+
+query News {
+    newsCollection(order: [sys_firstPublishedAt_ASC]) {
+        limit
+        skip
+        total
+        items {
+            title
+            subTitle
+            url
+            iframe
+            topic
+            mobileIframe
+            image {
+                url
+                height
+                width
+            }
+        }
+    }
+}
+
+query ProductTypeBanners {
+    productMenuItemCollection {
+        limit
+        skip
+        total
+        items {
+            title
+            type
+            url
+            text
+            image {
+                url
+                height
+                width
+            }
+        }
+    }
+}
+
+
+query ProductTypeHeaders {
+    productHeaderCollection {
+        limit
+        skip
+        total
+        items {
+            title
+            type
+            text
+            textUrlMap
+            backgroundImage {
+                url
+                height
+                width
+            }
+        }
+    }
+}
+
+
+query ServiceGroups {
+    serviceGroupCollection(order: [order_ASC]) {
+        limit
+        skip
+        total
+        items {
+            title
+            servicesCollection {
+                items {
+                    sys {
+                        id
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+query Services($where: ServiceFilter) {
+    serviceCollection(where: $where) {
+        limit
+        skip
+        total
+        items {
+            name
+            image {
+                width
+                height
+                url
+            }
+            description
+            url
+        }
+    }
+}

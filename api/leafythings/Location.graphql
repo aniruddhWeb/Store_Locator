@@ -1,0 +1,54 @@
+query locationListRegion($offset: Int, $limit: Int, $plCountryID: Int, $sortPopular: Boolean) {
+  locationListRegion(offset: $offset, limit: $limit, plCountryID: $plCountryID, sortPopular: $sortPopular) {
+    ...LocationItem
+  }
+}
+
+query locationAllListProvince {
+  locationListProvince(offset: 0, limit: 9999) {
+    ...ProvinceItem
+  }
+}
+
+query locationAllListProvinceForUser {
+  locationListProvinceForUser {
+    ...ProvinceItem
+  }
+}
+
+query locationListRegionByProvince($provinceId: Int!) {
+  locationListRegionByProvince(provinceId: $provinceId, offset: 0, limit: 9999) {
+    ...LocationItem
+  }
+}
+
+query locationListRegionByProvinceForUser($provinceId: Int!) {
+  locationListRegionByProvinceForUser(provinceId: $provinceId) {
+    ...LocationItem
+  }
+}
+
+query locationSearchRegion($search: String!) {
+  locationSearchRegion(slug: $search) {
+    ...LocationItem
+  }
+}
+
+query locationGetNearestRegionId($plCountryID: Int) {
+  locationListRegion(offset: 0, limit: 999, plCountryID: $plCountryID) {
+    ...LocationItem
+  }
+  userRegionId
+}
+
+query userRegion($clientIp: String) {
+  userRegion(clientIp: $clientIp) {
+    ...LocationItem
+  }
+}
+
+query locationFooterPosition  {
+  locationFooterPosition  {
+    ...LocationItem
+  }
+}

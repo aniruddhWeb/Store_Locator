@@ -1,0 +1,168 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: #000000;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 20px 40px 32px;
+    width: calc(min(100%, 980px) - 80px);
+    max-width: calc(min(100%, 980px) - 80px);
+    align-self: center;
+}
+
+.description {
+    color: #000000;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    text-overflow: initial;
+    display: block;
+    margin-top: 12px;
+    margin-right: 40px;
+}
+
+.description div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.description ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.description ol {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.description p {
+    padding: 0;
+    margin: 16px 0;
+}
+
+.description a {
+    color: #32A071 !important;
+    text-decoration: none !important;
+    font-weight: 700;
+}
+
+.description img {
+    border-radius: 10px;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.description h2 {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    margin: 24px 0 0;
+    padding: 0;
+    color: #000000;
+}
+
+.description h3 {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    margin: 24px 0 0;
+    padding: 0;
+}
+
+.description h4 {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    margin: 16px 0 0;
+    padding: 0;
+}
+
+.subDescription {
+    margin-top: 24px;
+    color: #000000;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    text-overflow: initial;
+    overflow: hidden;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+}
+
+@media only screen and (max-width: 860px) {
+    .root {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-top: 32px;
+        padding-bottom: 16px;
+    }
+    .description {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 4px;
+        margin-right: 0;
+    }
+    .description h2 {
+        font-family: Windsor;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        margin: 24px 0 0;
+        padding: 0;
+        color: #000000;
+    }
+    .description h3 {
+        font-family: Windsor;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        color: #000000;
+        margin: 24px 0 0;
+        padding: 0;
+    }
+    .description h4 {
+        font-family: Windsor;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        color: #000000;
+        margin: 24px 0 0;
+        padding: 0;
+    }
+}
+

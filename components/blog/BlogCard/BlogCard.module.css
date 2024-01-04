@@ -1,0 +1,182 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    text-decoration: none;
+    color: #000000;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.cardColumnGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: all 300ms ease-in-out;
+}
+.cardColumnGrid:hover {
+    transform: scale(1.05);
+}
+.cardColumnGrid:active {
+    transform: scale(0.95);
+}
+
+.cardColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 400px;
+    max-width: 400px;
+    margin-left: 20px;
+    margin-right: 20px;
+    transition: all 300ms ease-in-out;
+}
+.cardColumn:hover {
+    transform: scale(1.05);
+}
+.cardColumn:active {
+    transform: scale(0.95);
+}
+
+.titleBlog {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    letter-spacing: 0;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 14px;
+    overflow: hidden;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.authorContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 8px;
+}
+
+.nameAuthor {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
+
+.publishedDate {
+    margin-left: 8px;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
+
+.typeBlog {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    color: #EF845C;
+    letter-spacing: 0;
+    margin-top: 20px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.blogImage {
+    border-radius: 10px;
+    object-fit: cover;
+}
+.blogImageContain {
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.blogImageContainer {
+    display: flex;
+    object-fit: cover;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border-radius: 10px;
+    align-items: flex-start;
+    justify-content: flex-end;
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 220px;
+}
+
+@media only screen and (max-width: 860px) {
+    .cardColumn {
+        width: 292px;
+        max-width: 292px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+    .blogImageContainer {
+        height: 180px;
+    }
+    .titleBlog {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .nameAuthor {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .publishedDate {
+        font-size: 12px;
+        line-height: 14px;
+    }
+    .typeBlog {
+        margin-top: 12px;
+    }
+}
+
+
+
+@media only screen and (max-width: 330px) {
+    .cardColumn {
+        width: 256px;
+        max-width: 256px;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}

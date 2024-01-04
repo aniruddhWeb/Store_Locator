@@ -1,0 +1,115 @@
+.root {
+    display: flex;
+    width: min(100%, 420px);
+    background: #FFFFFF;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    align-self: center;
+    margin: 8px 0 8px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    align-self: center;
+    width: calc(min(100%, 420px) - 80px);
+    padding: 40px 40px 32px;
+}
+
+.title {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 16px;
+}
+
+.singleInputError {
+    background: rgba(239, 92, 92, 0.1) !important;
+    border: 1px solid #EF5C5C !important;
+}
+
+.singleInput {
+    width: calc(100% - 40px);
+    max-width: calc(100% - 40px);
+    outline: none;
+    padding: 0 20px;
+    border-width: 0;
+    display: flex;
+    height: 56px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    background: rgba(97,171,98,0.1);
+    border-radius: 10px;
+    margin-top: 24px;
+}
+.singleInput::placeholder {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0E5E0F;
+}
+.singleInput:focus {
+    color: #000000 !important;
+    width: calc(100% - 42px);
+    max-width: calc(100% - 42px);
+    height: 54px !important;
+    border: 1px solid #61AB62 !important;
+    background: #FFFFFF !important;
+}
+.singleInput:focus::placeholder {
+    color: rgba(0,0,0,0.5) !important;
+}
+
+.errorText {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    align-self: flex-start;
+    text-align: left;
+    color: #e3342f !important;
+    text-decoration: none !important;
+    margin: 4px 00px 0 0;
+    padding: 0;
+    max-width: 260px;
+}
+
+@media only screen and (max-width: 480px) {
+    .root {
+        width: calc(100% - 40px);
+        padding: 8px 0 0;
+        margin: 0 0 8px;
+    }
+    .main {
+        width: calc(100% - 32px);
+        padding: 24px 16px 16px;
+    }
+    .singleInput {
+        margin-right: 0 !important;
+        width: calc(100% - 32px);
+        max-width: 320px;
+        padding: 0 16px;
+        margin-top: 16px;
+    }
+    .title {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}

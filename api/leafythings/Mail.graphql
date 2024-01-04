@@ -1,0 +1,3 @@
+query SubscribeMail($email: String!, $name: String! $userRegionID: String, $mailPreferences: String) {
+    userSubscription(email: $email, name: $name, usrRegionID: $userRegionID, mailPreferences: $mailPreferences)
+}

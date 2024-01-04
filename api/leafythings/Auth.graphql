@@ -1,0 +1,45 @@
+query CurrentUser {
+    currentUser {
+        ...CurrentUser
+    }
+}
+
+mutation LoginUser($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+        token
+        currentUser {
+            ...CurrentUser
+        }
+    }
+}
+
+mutation RegisterUser($input: UserInput!, $wired: Boolean, $source: String) {
+    userRegister(input: $input, wired: $wired, source: $source) {
+        token
+        currentUser {
+            ...CurrentUser
+        }
+    }
+}
+
+mutation SendPasswordEmail($email: String!) {
+    resetPassword(email: $email)
+}
+
+mutation ResetPassword($email: String!, $password: String!, $token: String!) {
+    newPassword(email: $email, password: $password, token: $token) {
+        token
+        currentUser {
+            ...CurrentUser
+        }
+    }
+}
+
+mutation UserVerification($id: String!, $code: String!) {
+    userVerification(id: $id, code: $code)
+}
+
+
+mutation ResendVerification($userId: String!) {
+    resendEmailConfirm(userId: $userId)
+}

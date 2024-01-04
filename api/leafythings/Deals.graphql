@@ -1,0 +1,35 @@
+query dealListByTypeByReg($type: String, $linkProvinceID: Int!, $plRegionID: Int, $offset: Int, $limit: Int) {
+    dealListByTypeByReg(dlsApplyTo: $type, linkProvinceID: $linkProvinceID, plRegionID: $plRegionID, offset: $offset, limit: $limit) {
+        ...DealItem
+    }
+}
+
+query dealBySlug($dealSlug: String!, $bizSlug: String!) {
+    dealBySlug(dlsSlug: $dealSlug, bizSlug: $bizSlug) {
+        dlsApplyTo
+        dlsDealsID
+        dlsName
+        dlsSlug
+        mdaLocalFileName
+        dlsExpireDate
+        dlsExpireDateToronto
+        dlsDescription
+        dlsInstructions
+        dlsCouponCode
+        dlsUrl
+        business {
+            bizBusinessID
+            bizClaim
+            bizClaimUnblurred
+            rvwScoreAvg
+            rvwCount
+            plType
+            bizName
+            bizSlug
+            mdaLocalFileName
+            contact {
+                ...ContactItem
+            }
+        }
+    }
+}

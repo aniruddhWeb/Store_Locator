@@ -1,0 +1,115 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+    opacity: 1;
+    background: #000000;
+    border-radius: 10px;
+    width: 198px;
+    transition: all 0.25s ease-out;
+    cursor: pointer;
+    padding: 16px;
+    text-decoration: none !important;
+}
+.root:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+.root:active {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.rootFullWidth {
+    display: flex;
+}
+
+.rootSuccess {
+    background: #61AB62 !important;
+}
+
+.rootError {
+    background: #EF5C5C !important;
+}
+
+.rootDesktop {
+    display: flex;
+}
+
+.rootMobile {
+    display: none;
+}
+
+.rootSuccessDisabled {
+    cursor: default;
+}
+.rootSuccessDisabled:hover {
+    opacity: 1;
+    transform: scale(1);
+}
+.rootSuccessDisabled:active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.rootErrorDisabled {
+    cursor: default;
+}
+.rootErrorDisabled:hover {
+    opacity: 1;
+    transform: scale(1);
+}
+.rootErrorDisabled:active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.rootDisabled {
+    cursor: default;
+    background: rgba(0, 0, 0, 0.3) !important;
+}
+.rootDisabled:hover {
+    opacity: 1;
+    transform: scale(1);
+}
+.rootDisabled:active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.buttonText {
+    align-self: center;
+    font-family: SuisseIntlMono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 100%;
+    text-align: center;
+    text-overflow: ellipsis;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-decoration: none !important;
+    color: #FFFFFF !important;
+}
+
+
+@media only screen and (max-width: 860px) {
+    .rootFullWidth {
+        width: calc(100% - 64px);
+    }
+    .rootDesktop {
+        display: none;
+    }
+    .rootMobile {
+        display: flex;
+    }
+}

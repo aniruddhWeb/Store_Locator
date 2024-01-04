@@ -1,0 +1,19 @@
+.marker {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    background: #00A1FF;
+    border: 2px solid #FFFFFF;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.markerStandalone {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    background: #00A1FF;
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}

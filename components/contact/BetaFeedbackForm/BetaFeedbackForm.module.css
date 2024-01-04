@@ -1,0 +1,187 @@
+.root {
+    display: flex;
+    gap: 144px;
+    padding: 0 80px 48px 80px;
+    justify-content: flex-start;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: calc(50% - 70px);
+}
+
+.singleInput {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.singleInput > label {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #0E5E0F;
+}
+
+.singleInput > input[type="text"] {
+    width: calc(100% - 60px);
+    height: calc(48px - 30px);
+    border-radius: 10px;
+    background: rgba(97, 171, 98, 0.1);
+    padding: 15px 40px 15px 20px;
+    color: #000000;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    border: none;
+    outline: none;
+}
+
+.singleInput textarea {
+    width: calc(100% - 60px);
+    min-height: 100px;
+    border-radius: 10px;
+    background: rgba(97, 171, 98, 0.1);
+    padding: 15px 40px 15px 20px;
+    color: #000000;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+.singleInput.withRadio {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.radioGroup {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.optionWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.optionWrapper:hover {
+    transform: scale(1.05);
+}
+
+.radioCircle {
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(97, 171, 98, 0.3);
+    padding: 2px;
+}
+
+.radioCircle > div {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.radioCircle.checkedRadio > div {
+    background: #61AB62;
+}
+
+.radioLabel {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #000000;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: calc(50% - 70px);
+}
+
+.descriptionImage {
+    display: flex;
+    width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    max-width: 561px;
+    max-height: 561px;
+}
+
+.description > span {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+}
+
+.submitBtn {
+    width: 234px;
+    height: 48px;
+    background: #000000;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: SuisseIntlMono;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 24px;
+}
+
+.submitBtn.disabled {
+    background: #303030;
+    cursor: default;
+}
+
+.submitBtn:hover:not(.disabled) {
+    transform: scale(1.05);
+}
+
+.withError {
+    border: 1px solid rgb(210, 35, 35) !important;
+}
+
+@media (max-width: 860px) {
+    .root {
+        flex-direction: column;
+        gap: 48px;
+        padding: 0 16px 24px 16px;
+    }
+    .submitBtn {
+        width: 100%;
+    }
+    .descriptionImage {
+        max-width: 100%;
+        max-height: 280px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+}

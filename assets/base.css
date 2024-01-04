@@ -1,0 +1,293 @@
+:root {
+  margin: 0;
+  --primary: #ffffff;
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important; /* IE 11 */
+}
+
+html {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+h1 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+h2 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+h3 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+h4 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+h5 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+h6 {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+.bodyDisableScroll {
+  touch-action: none;
+  -webkit-overflow-scrolling: none;
+  overflow: hidden;
+  /* Other browsers */
+  overscroll-behavior: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: scroll;
+}
+
+a {
+  text-decoration: none;
+}
+
+#__next {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow: visible;
+}
+
+img {
+  pointer-events: none;
+  -khtml-user-select: none;
+  -o-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.pretty {
+  margin-right: 8px !important;
+}
+
+.displayNone {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  height: 0;
+  width: 0;
+  background: transparent;
+  display: none;
+}
+::-webkit-scrollbar-thumb {
+  display: none;
+  height: 0;
+  width: 0;
+  background: transparent;
+}
+
+#nprogress {
+  pointer-events: none;
+}
+
+#nprogress .bar {
+  background: #32A071;
+
+  position: fixed;
+  z-index: 1031;
+  top: 151px;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+}
+
+/* Fancy blur effect */
+#nprogress .peg {
+  display: none;
+}
+
+#nprogress .spinner {
+  display: none;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
+
+#nprogress .spinner-icon {
+  display: none;
+
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: #32A071;
+  border-left-color: #32A071;
+  border-radius: 50%;
+
+  -webkit-animation: nprogress-spinner 400ms linear infinite;
+  animation: nprogress-spinner 400ms linear infinite;
+}
+
+.nprogress-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.nprogress-custom-parent #nprogress .spinner,
+.nprogress-custom-parent #nprogress .bar {
+  position: absolute;
+}
+
+@media only screen and (max-width: 860px) {
+  #nprogress .bar {
+    top: 61px;
+  }
+}
+
+@-webkit-keyframes nprogress-spinner {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes nprogress-spinner {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes spinners-react-circular {
+  0% { stroke-dashoffset: 306; }
+  50% { stroke-dasharray: 40, 134; }
+  100% {
+    stroke-dasharray: 1, 174;
+    stroke-dashoffset: 132;
+  }
+}
+
+.__react_component_tooltip {
+  background: unset !important;
+  border: unset !important;
+}
+.__react_component_tooltip:before {
+  display: none !important;
+}
+.__react_component_tooltip:after {
+  display: none !important;
+}
+
+.grecaptcha-badge {
+  margin: 24px 0 16px 0 !important;
+  border-radius: 10px !important;
+  box-shadow: unset !important;
+  overflow: hidden !important;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'SuisseIntlMono';
+  font-style: normal;
+  src: url('/fonts/SuisseIntlMono.ttf') format('truetype');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Medium.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Light.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Black.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Gilroy';
+  src: url('/fonts/Gilroy-Black.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Nimbus';
+  src: url('/fonts/Nimbus-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'SuisseIntl';
+  font-style: normal;
+  src: url('/fonts/SuisseIntl-Regular.otf') format('opentype');
+}
+
+
+@font-face {
+  font-display: swap;
+  font-family: 'SuisseIntl';
+  font-style: normal;
+  font-weight: bold;
+  src: url('/fonts/SuisseIntl-Bold.otf') format('opentype');
+}
+
+
+@font-face {
+  font-display: swap;
+  font-family: 'Windsor';
+  font-style: normal;
+  src: url('/fonts/Windsor-Regular.otf') format('opentype');
+}

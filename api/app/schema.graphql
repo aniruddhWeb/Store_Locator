@@ -1,0 +1,254 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Country {
+    plCountryID: Int!
+    plCountryName: String!
+    plCountrySlug: String!
+}
+
+type User {
+    accountManager: User
+    bizCount(published: Boolean): Int
+    bizName: String
+    email: String
+    email_verified_at: Date
+    mailPreferences: [String]
+    province: Province
+    region: Region
+    rvwCount: Int
+    userRoles: [String]
+    username: String
+    usrBirthDate: Date
+    usrCreationDate: Date
+    usrFirstName: String
+    usrLastLoginDate: Date
+    usrLastName: String
+    usrProvinceID: String
+    usrRegionID: String
+    usrRegistrationIP: String
+    usrSubscription: Int
+    usrUserID: String
+}
+
+type CurrentUser {
+    accountManager: User
+    availableClaim: Boolean
+    email: String!
+    email_verified_at: Date
+    mailPreferences: [String]
+    userRoles: [String]
+    username: String!
+    usrBirthDate: Date
+    usrCreationDate: Date
+    usrFirstName: String
+    usrLastLoginDate: Date
+    usrLastModifiedDate: Date
+    usrLastName: String
+    usrLocationLatitude: String
+    usrLocationLongitude: String
+    usrProvinceID: String
+    usrRegionID: String
+    usrSubscription: Int
+    usrUserID: String!
+}
+
+type Location {
+    provinces: [Province!]
+    regions: [Region!]
+}
+
+type Province {
+    country: Country!
+    plCountryID: String!
+    plDescription: String
+    plInitials: String!
+    plName: String!
+    plProvinceID: Int!
+}
+
+type Region {
+    bizCount: Int
+    mdaLocalFileName: String
+    plDescription: String
+    plDescription2: String
+    plFooterPosition: Int
+    plLatitude: Float
+    plLongitude: Float
+    plName: String!
+    plNeighbourhood: String
+    plProvinceID: Int!
+    plRegionID: Int!
+    plSlug: String!
+    province: Province!
+}
+
+
+type ProductType {
+    amountSpent: Float
+    available: Boolean
+    businessCounter: Int
+    categoriesItems: [ProductType]
+    counter: Int
+    engagements: Float
+    id: Int
+    name: String
+    parent: String
+    parentBusinessId: String
+    price: Int
+    slug: String
+    totalImpressions: Int
+    typeItems: [ProductType]
+    typeParent: String
+    typeParentName: [String]
+    typePriceBrand: Float
+    typePriceDelivery: Float
+    typePriceDispensary: Float
+    typePriceMail: Float
+}
+
+type Contact {
+    bizChat: String
+    bizEmailAddress: String
+    bizIntersection: String
+    bizLatitude: Float
+    bizLongitude: Float
+    bizPhone: String
+    bizPostal: String
+    bizRegionID: String
+    bizStreetAddress: String
+    bizText: String
+    bizWebsiteURL: String
+    linkContactMethod: [String]
+    plCountryID: Int
+    plProvinceID: Int
+    plProvinceIDs: [Int]
+    provinceInitial: String
+    provinceInitials: String
+    provinceName: String
+    provinceNames: [String]
+    regionName: String
+    regionSlug: String
+}
+
+type Business {
+    bizBusinessID: String!
+    bizClaim: Int
+    bizIsVerified: Int
+    bizName: String!
+    bizSlug: String!
+    contact: Contact
+    mdaLocalFileName: String
+    plType: String
+    rvwCount: Int
+    isOpen: Boolean
+    rvwScoreAvg: Float
+}
+
+type Product {
+    business(latitudeFront: Float, limit: Int, longitudeFront: Float, offset: Int, regionID: Int): [Business!]!
+    mdaLocalFileName: String
+    plSlugType: String
+    prdCBDPercentage: String
+    prdInStock: Boolean
+    prdInStockForBrand: Int
+    prdName: String!
+    prdPriceEighthOunce: Float
+    prdPriceHalfGram: Float
+    prdPriceHalfOunce: Float
+    prdPriceOneGram: Float
+    prdPriceOneOunce: Float
+    prdPricePerUnit: Float
+    prdPriceQuarterOunce: Float
+    prdPriceTwoGrams: Float
+    prdProductCategories: String
+    prdProductID: String!
+    prdProductTypes: String
+    prdPublishDate: Date
+    prdSlug: String!
+    prdStatus: String
+    prdTHCPercentage: String
+    rvwCount: Int
+    rvwScoreAvg: Float
+}
+
+type BusinessDeals {
+    bizName: String! @deprecated(reason: "bizName is deprecated. Use business[0] instead.")
+    business(limit: Int, offset: Int): [Business!]!
+    dlsApplyTo: String
+    dlsCouponCode: String
+    dlsCreationDate: Date
+    dlsDealsID: String!
+    dlsDescription: String
+    dlsExpireDate: Date
+    dlsExpireDateToronto: Date
+    dlsInstructions: String
+    dlsName: String!
+    dlsPublishDate: Date
+    dlsSlug: String!
+    dlsStatus: Boolean
+    dlsUrl: String
+    mdaLocalFileName: String
+}
+
+type Pagination {
+    limit: Int
+    offset: Int
+    totalCount: Int
+}
+
+type List {
+    business: [Business!]
+    businessPagination: Pagination
+    deals: [BusinessDeals!]
+    dealsPagination: Pagination
+    productGenetics: [String]
+    productTypes: [ProductType]
+    products: [Product!]
+    productsPagination: Pagination
+}
+
+type Query {
+    currentUser: CurrentUser
+    locationListProvinceForUser: [Province]!
+    locationListRegionByProvinceForUser(provinceId: Int!): [Region!]!
+    locationSearchRegion(limit: Int, offset: Int, slug: String, sortPopular: Boolean): [Region!]!
+    locationListRegion(limit: Int, offset: Int, plCountryID: Int, showAll: Boolean, sortPopular: Boolean): [Region!]!
+    userRegion(clientIp: String): Region
+    userRegionCountry(clientIp: String): String
+    locationFooterPosition: [Region!]!
+    productListTypes(brandFilter: Boolean, strainNameFilter: Boolean, businessType: [String]): List!
+    strainNameSearch(limit: Int, offset: Int, strainName: String!): [ProductType]!
+    busProdDealSearchByName(
+        countryId: Int,
+        isGlobalSearch: Boolean,
+        latitudeGPS: Float,
+        limit: Int,
+        longitudeGPS: Float,
+        name: String!,
+        offset: Int,
+        plRegionID: Int,
+        prdGenetics: [String],
+        prdProductCategories: [[String]],
+        prdProductType: [[String]],
+        showBrand: Boolean,
+        showPagination: Boolean,
+        sort: [[String]],
+        type: String
+        withPrice: Boolean
+    ): List!
+    reportIssue(city: String!, description: String!, emailFrom: String!, name: String!, originalPage: String, page: String, province: String!, regionID: String!, stepsReproduce: String): Boolean!
+}
+
+type Mutation {
+    analyticsSaveSearch(input: AnalyticsSearch): Boolean
+}
+
+input AnalyticsSearch {
+    searchWords: String!
+    tag: String!
+}
+
+scalar Date

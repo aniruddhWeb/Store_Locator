@@ -1,0 +1,187 @@
+.form{
+    width: 100%;
+}
+
+.title{
+    font-family: Windsor;
+    font-size: 32px;
+    line-height: 38px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.multiInput {
+    margin-top: 20px;
+    width: calc(100% - 40px);
+    max-width: calc(100% - 40px);
+    outline: none;
+    padding: 16px 20px;
+    border-width: 0;
+    resize: none;
+    display: flex;
+    min-height: 68px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    background: rgba(97,171,98,0.1);
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 860px) {
+    .multiInput {
+        margin-top: 10px;
+        padding: 8px 20px;
+    }
+}
+
+.multiInput::placeholder {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0E5E0F;
+}
+.multiInput:focus {
+    color: #000000 !important;
+    width: calc(100% - 40px) !important;
+    max-width: calc(100% - 42px) !important;
+    min-height: 66px !important;
+    border: 1px solid #61AB62 !important;
+    background: #FFFFFF !important;
+}
+.multiInput:focus::placeholder {
+    color: rgba(0,0,0,0.5) !important;
+}
+
+.infoTitle{
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    font-family: Windsor;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+@media only screen and (max-width: 860px) {
+    .infoTitle {
+        margin-top: 15px;
+    }
+}
+
+.singleRowInput {
+    margin-top: 20px;
+    width: calc(100% - 40px);
+    max-width: calc(100% - 40px);
+    outline: none;
+    padding: 0 20px;
+    border-width: 0;
+    display: flex;
+    height: 48px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    background: rgba(97,171,98,0.1);
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 860px) {
+    .singleRowInput {
+        margin-top: 10px;
+    }
+}
+
+.singleRowInput:not(:last-child) {
+    margin-right: 24px;
+}
+.singleRowInput::placeholder {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0E5E0F;
+}
+.singleRowInput:focus {
+    color: #000000 !important;
+    width: calc(100% - 40px) !important;
+    max-width: calc(100% - 42px) !important;
+    height: 46px !important;
+    border: 1px solid #61AB62 !important;
+    background: #FFFFFF !important;
+}
+.singleRowInput:focus::placeholder {
+    color: rgba(0,0,0,0.5) !important;
+}
+
+.singleRowInputError {
+    background: rgba(239, 92, 92, 0.1) !important;
+    height: 46px !important;
+    border: 1px solid #EF5C5C !important;
+}
+
+.inputWrapper {
+    width: 100%;
+}
+.recaptchaWrapper{
+    margin: 4px 0;
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 860px) {
+    .recaptchaWrapper {
+        margin:0
+    }
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.reportButton {
+    cursor: pointer;
+    font-size: 14px;
+    font-family: SuisseIntlMono;
+    border-radius: 10px;
+    width: 206px;
+    height: 48px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 860px) {
+    .reportButton {
+        margin-bottom: 7px;
+    }
+}
+
+.enabledButton {
+    background-color: #000000;
+}
+
+.errorText {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    align-self: flex-start;
+    text-align: left;
+    color: #e3342f !important;
+    text-decoration: none !important;
+    margin: 6px 0 0 0;
+}

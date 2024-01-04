@@ -1,0 +1,540 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  padding-top: 24px;
+  padding-bottom: 24px;
+  position: relative;
+}
+
+.rootNoShadow {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-shadow: 0 0 0;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.rootNoTitle {
+  margin-top: -16px;
+  padding-top: 0;
+}
+
+.rootNoTitleMargin {
+  margin-top: 32px;
+  padding-top: 24px;
+}
+
+.control {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 32px;
+  padding-bottom: 16px;
+  position: relative;
+}
+
+.controlLeft {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 8px;
+  position: relative;
+}
+
+.controlNoTitle {
+  padding-top: 0;
+  padding-bottom: 8px;
+}
+
+.controlHidden {
+  display: none;
+}
+
+.title {
+  color: #000000;
+  flex: 1;
+  font-family: Windsor;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0;
+  text-align: left;
+  margin-left: 20px;
+  text-overflow: initial;
+  display: block;
+  overflow: hidden;
+}
+
+.titleLeft {
+  color: #000000;
+  font-family: Windsor;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0;
+  text-align: left;
+  margin-left: 40px;
+  text-overflow: initial;
+  display: block;
+  overflow: hidden;
+  width: 100%;
+}
+
+.buttonContainer {
+  display: flex;
+  align-self: flex-end;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.actionsContainer {
+   display: flex;
+   align-self: center;
+   flex-direction: row;
+   justify-content: flex-end;
+   align-items: center;
+}
+
+.seeAll {
+  margin-left: 24px;
+  margin-right: 0;
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  min-height: 24px;
+  text-align: center;
+  color: #000000 !important;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  background: #D8DFDE;
+  border-radius: 10px;
+  padding: 8px 16px;
+}
+.seeAll:hover {
+  transform: scale(1.05);
+}
+.seeAll:active {
+  transform: scale(0.95);
+}
+
+.buttonLeftDisabled {
+  height: 24px;
+  overflow: hidden;
+  width: 0;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}
+.buttonRightDisabled {
+  height: 24px;
+  overflow: hidden;
+  width: 0;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}
+
+.buttonLeft {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 300ms ease-in-out;
+  background: #D8DFDE;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 8px;
+}
+.buttonLeft:hover {
+  opacity: 1;
+  border-radius: 10px;
+  transform: scale(1.2);
+}
+.buttonLeft:active {
+  opacity: 0.5;
+  transform: scale(0.8);
+}
+
+.buttonRight {
+  height: 24px;
+  width: 24px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 300ms ease-in-out;
+  background: #D8DFDE;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 8px;
+}
+.buttonRight:hover {
+  opacity: 1;
+  border-radius: 10px;
+  transform: scale(1.2);
+}
+.buttonRight:active {
+  opacity: 0.5;
+  transform: scale(0.8);
+}
+
+.left {
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+
+.leftDisabled {
+  transform: rotate(180deg);
+  opacity: 0.2;
+  cursor: auto;
+}
+
+.right {
+  cursor: pointer;
+}
+
+.rightDisabled {
+  opacity: 0.2;
+  cursor: auto;
+}
+
+.emptyContainer {
+  width: 100%;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.emptyContainerNoTitle {
+  margin-bottom: 20px;
+}
+
+.emptyText {
+  color: #000000;
+  font-family: Windsor;
+  font-size: 18px;
+  line-height: 21px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0;
+  text-align: center;
+  margin-top: 48px;
+  text-overflow: initial;
+  text-decoration: none;
+  white-space: initial;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  width: 100%;
+}
+
+.horizontalScrollContainer {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden !important;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.scrollContent {
+  min-width: min(100%, 1440px);
+  overflow-x: visible;
+  overflow-y: inherit;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  cursor: grab;
+}
+
+.scrollContentSecond {
+  min-width: calc(min(100%, 1440px) - 40px);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.scrollContentThird {
+  justify-content: space-between;
+}
+
+.thirdScrollContentContainer {
+  min-width: min(100%, 1440px);
+  overflow-x: visible;
+  overflow-y: inherit;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  cursor: grab;
+  justify-content: flex-start;
+}
+
+.thirdScrollContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.thirdScrollContentSecond {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.thirdMobileScrollContent {
+  display: none;
+  min-width: min(100%, 1440px);
+  overflow-x: visible;
+  overflow-y: inherit;
+  white-space: nowrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.thirdMobileScrollContentSecond {
+  min-width: calc(min(100%, 1440px) - 40px);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.thirdScrollBorder {
+  display: flex;
+  width: calc(100% - 80px);
+  align-self: center;
+  background: black;
+  height: 1px;
+  opacity: 0.1;
+}
+
+.thirdScrollBorderMobile {
+  display: none;
+  width: calc(100% - 80px);
+  align-self: center;
+  background: black;
+  height: 1px;
+  opacity: 0.1;
+}
+
+.thirdMobileScrollContentHidden {
+  display: none !important;
+}
+
+.paginatingContentMobile {
+  display: none;
+}
+
+.rootNoBottomMargin {
+  padding-bottom: 0;
+}
+
+@media only screen and (max-width: 1366px) {
+  .scrollContentThird {
+    min-width: calc(min(100%, 1440px) - 40px);
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: flex-start;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .emptyContainerNoTitle {
+    margin-bottom: 80px;
+  }
+  .scrollContent {
+    cursor: default;
+  }
+  .scrollContentSecond {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .thirdScrollContentSecond {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .thirdMobileScrollContentSecond {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .titleLeft {
+    margin-left: 16px;
+    font-size: 14px;
+    line-height: 17px;
+    width: unset;
+    flex: 1;
+  }
+  .titleLarge {
+    font-size: 17px;
+    line-height: 20px;
+  }
+  .titleLeftWithActions {
+    margin-top: 8px;
+  }
+  .controlLeft {
+    align-items: center;
+    padding-bottom: 0;
+  }
+  .controlLeftWithActions {
+    align-items: flex-start;
+    padding-bottom: 0;
+  }
+  .title {
+    margin-left: 16px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .control {
+    padding-top: 24px;
+    padding-bottom: 0;
+  }
+  .controlNoTitle {
+    justify-content: flex-end;
+  }
+  .buttonLeft {
+    display: none;
+  }
+  .buttonRight {
+    display: none;
+  }
+  .buttonRightDisabled {
+    display: none;
+  }
+  .buttonLeftDisabled {
+    display: none;
+  }
+  .buttonContainer {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .actionsContainer {
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  .seeAll:not(:only-child) {
+    margin-bottom: 12px;
+  }
+  .seeAll {
+    min-height: unset;
+    margin-left: 20px;
+    margin-right: 16px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    font-family: Gilroy;
+  }
+  .seeAll:not(:only-child) {
+    margin-bottom: 12px;
+  }
+  .root {
+    margin-top: 16px;
+    box-shadow: 0 0 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .rootNoTitle {
+    margin-top: 8px;
+    padding-top: 0;
+  }
+  .rootNoTitleMargin {
+    margin-top: 16px;
+    padding-top: 0;
+  }
+  .rootNoTopMargin {
+    margin-top: 0;
+  }
+  .thirdScrollContentContainer {
+    display: none;
+  }
+  .thirdScrollContentContainerVisible {
+    display: flex;
+  }
+  .thirdScrollContent {
+    display: none;
+  }
+  .thirdScrollContentSecondVisible {
+    display: flex;
+  }
+  .thirdMobileScrollContent {
+    display: flex;
+    min-width: min(100%, 1440px);
+  }
+  .thirdScrollBorder {
+    width: calc(100% - 32px);
+  }
+  .thirdScrollBorderMobile {
+    display: flex;
+    margin-bottom: 24px;
+    width: calc(100% - 32px);
+  }
+  .scrollContentThird {
+    min-width: calc(min(100%, 1440px) - 16px);
+    padding-left: 8px;
+    padding-right: 8px;
+    justify-content: flex-start;
+  }
+  .paginatingContentMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    margin: -32px 40px 0 24px;
+    transition: all 0.25s ease-out;
+    opacity: 1;
+  }
+  .paginatingContentMobileHidden {
+    width: 0;
+    margin: 0;
+    opacity: 0;
+  }
+  .paginatingContentMobileHidden * {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .emptyText {
+    width: calc(100% - 32px);
+    padding: 0 16px;
+  }
+}
+
+@media only screen and (min-width: 860px) {
+  .title {
+    flex: 0;
+    margin-left: 0;
+    position: absolute;
+    align-self: center;
+    text-align: center;
+  }
+  .buttonContainer {
+    width: 100%;
+    margin-right: 40px;
+  }
+}

@@ -1,0 +1,73 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    width: calc(min(100%, 1440px) - 40px);
+    padding: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    transition: all 300ms ease-in-out;
+}
+
+.column {
+    width: calc(min(100%, 1440px) * 0.5 - 40px);
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.itemRoot {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 84px);
+    margin: 20px;
+    padding: 32px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(97,171,98,0.1);
+}
+
+.title {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    color: #0E5E0F;
+    transition: all 300ms ease-in-out;
+}
+
+.description {
+    margin-top: 24px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 175%;
+    color: #000000;
+    transition: all 300ms ease-in-out;
+}
+
+@media only screen and (max-width: 860px) {
+    .root {
+        flex-direction: column;
+        width: calc(100% - 32px);
+        padding: 16px;
+    }
+    .column {
+        width: 100%;
+    }
+    .itemRoot {
+        width: calc(100% - 48px);
+        margin: 0 0 16px;
+        padding: 24px;
+    }
+    .title {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .description {
+        margin-top: 16px;
+        font-size: 12px;
+        line-height: 175%;
+    }
+}

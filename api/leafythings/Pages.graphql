@@ -1,0 +1,77 @@
+query homePageDataStatus($provinceID: Int!, $regionID: Int!, $offset: Int, $limit: Int) {
+    businessAllByLocation(linkProvinceID: $provinceID, plRegionID: $regionID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query homePageData($provinceID: Int!, $regionID: Int!, $offset: Int, $limit: Int, $featuredOffset: Int, $featuredLimit: Int) {
+    businessMonthlyTopPicks(plRegionID: $regionID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+    businessFeaturedBrands(linkProvinceID: $provinceID, offset: 0, limit: 999) {
+        ...BusinessItem
+    }
+    businessFeaturedDeliveries(linkProvinceID: $provinceID, plRegionID: $regionID, offset: $featuredOffset, limit: $featuredLimit) {
+        ...BusinessItem
+    }
+    businessFeaturedDispensary(linkProvinceID: $provinceID, plRegionID: $regionID, offset: $featuredOffset, limit: $featuredLimit) {
+        ...BusinessItem
+    }
+    businessFeaturedMail(linkProvinceID: $provinceID, offset: 0, limit: 999) {
+        ...BusinessItem
+    }
+    businessAllVerified(linkProvinceID: $provinceID, plRegionID: $regionID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+    businessAllByLocation(linkProvinceID: $provinceID, plRegionID: $regionID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+    blogListByType(offset: 0, limit: 3) {
+        ...BlogItem
+    }
+}
+
+query verifiedPageData($provinceId: Int!, $regionID: Int, $offset: Int, $limit: Int) {
+    businessVerifiedBrands(linkProvinceID: $provinceId, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+    businessVerifiedDeliveries(linkProvinceID: $provinceId, plRegionID: $regionID,offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+    businessVerifiedDispensary(linkProvinceID: $provinceId, plRegionID: $regionID,offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+    businessVerifiedMail(linkProvinceID: $provinceId,offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query featuredPageData($provinceId: Int!, $regionID: Int, $offset: Int, $limit: Int) {
+    businessFeaturedBrands(linkProvinceID: $provinceId, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+    businessFeaturedDeliveries(linkProvinceID: $provinceId, plRegionID: $regionID,offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+    businessFeaturedDispensary(linkProvinceID: $provinceId, plRegionID: $regionID,offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+    businessFeaturedMail(linkProvinceID: $provinceId,offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query allPageData($provinceId: Int!, $regionID: Int, $offset: Int, $limit: Int) {
+    businessAllBrands(linkProvinceID: $provinceId, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+    businessAllDeliveries(linkProvinceID: $provinceId, plRegionID: $regionID,offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+    businessAllDispensary(linkProvinceID: $provinceId, plRegionID: $regionID,offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+    businessAllMail(linkProvinceID: $provinceId,offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}

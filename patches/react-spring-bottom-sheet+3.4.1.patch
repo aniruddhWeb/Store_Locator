@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-spring-bottom-sheet/dist/style.css b/node_modules/react-spring-bottom-sheet/dist/style.css
+index 42ab6ce..8ac2a06 100644
+--- a/node_modules/react-spring-bottom-sheet/dist/style.css
++++ b/node_modules/react-spring-bottom-sheet/dist/style.css
+@@ -36,7 +36,7 @@
+ [data-rsbs-overlay],
+ [data-rsbs-backdrop],
+ [data-rsbs-root]:after {
+-  z-index: 3;
++  z-index: 30;
+   -ms-scroll-chaining: none;
+       overscroll-behavior: none;
+   touch-action: none;

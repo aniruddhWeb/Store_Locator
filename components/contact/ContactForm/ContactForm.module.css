@@ -1,0 +1,209 @@
+.root {
+    display: flex;
+    width: calc(min(100%, 1440px) - 80px);
+    padding: 40px 40px 64px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.rowContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.singleRowInput {
+    margin-top: 24px;
+    width: 320px;
+    max-width: 100%;
+    outline: none;
+    padding: 0 20px;
+    border-width: 0;
+    display: flex;
+    height: 56px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    background: rgba(97,171,98,0.1);
+    border-radius: 10px;
+}
+.singleRowInput:not(:last-child) {
+    margin-right: 24px;
+}
+.singleRowInput::placeholder {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0E5E0F;
+}
+.singleRowInput:focus {
+    color: #000000 !important;
+    width: 318px !important;
+    max-width: calc(100% - 2px) !important;
+    height: 54px !important;
+    border: 1px solid #61AB62 !important;
+    background: #FFFFFF !important;
+}
+.singleRowInput:focus::placeholder {
+    color: rgba(0,0,0,0.5) !important;
+}
+
+.selectContainer {
+    margin-top: 24px;
+    width: 324px;
+    max-width: 100%;
+    outline: none;
+    padding: 0 20px 0 16px;
+    border-width: 0;
+    display: flex;
+    height: 56px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0E5E0F;
+    background: rgba(97,171,98,0.1);
+    border-radius: 10px;
+}
+
+.selectInput {
+    width: 100%;
+    max-width: 100%;
+    outline: none;
+    border-width: 0;
+    display: flex;
+    height: 56px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0E5E0F;
+    background: transparent;
+}
+
+.selectInput option {
+    width: 100%;
+    max-width: 324px;
+}
+
+.multiInput {
+    margin-top: 24px;
+    width: calc(100% - 40px);
+    max-width: calc(100% - 40px);
+    outline: none;
+    padding: 16px 20px;
+    border-width: 0;
+    display: flex;
+    min-height: 176px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    background: rgba(97,171,98,0.1);
+    border-radius: 10px;
+}
+.multiInput::placeholder {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0E5E0F;
+}
+.multiInput:focus {
+    color: #000000 !important;
+    width: calc(100% - 40px) !important;
+    max-width: calc(100% - 42px) !important;
+    min-height: 174px !important;
+    border: 1px solid #61AB62 !important;
+    background: #FFFFFF !important;
+}
+.multiInput:focus::placeholder {
+    color: rgba(0,0,0,0.5) !important;
+}
+
+
+.messageSentImage {
+    align-self: center;
+    margin-top: 40px;
+}
+
+.messageSentTitle {
+    margin-top: 40px;
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    color: #000000;
+    align-self: center;
+}
+
+.messageSentDescription {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+    color: #000000;
+    align-self: center;
+    max-width: 232px;
+    margin-top: 16px;
+    margin-bottom: 40px;
+}
+
+
+@media only screen and (max-width: 860px) {
+    .root {
+        width: calc(100% - 32px);
+        padding: 16px 16px 40px;
+    }
+    .rowContainer {
+        width: 100%;
+        flex-direction: column;
+    }
+    .singleRowInput {
+        margin-right: 0 !important;
+        width: calc(100% - 32px);
+        max-width: 320px;
+        padding: 0 16px;
+    }
+    .selectContainer {
+        width: calc(100% - 28px);
+        max-width: 324px;
+        padding: 0 16px 0 12px;
+    }
+    .multiInput {
+        width: calc(100% - 32px);
+        max-width: calc(100% - 32px);
+        padding: 16px 16px;
+    }
+    .messageSentTitle {
+        margin-top: 24px;
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .messageSentDescription {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .messageSentImage {
+        width: 96px;
+        height: 96px;
+    }
+}

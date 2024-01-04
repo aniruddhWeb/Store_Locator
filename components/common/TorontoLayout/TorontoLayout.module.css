@@ -1,0 +1,1306 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 1440px);
+}
+
+.heroSection {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 80px);
+    position: relative;
+    padding: 40px 40px;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 860px) {
+    .heroSection {
+        width: calc(100% - 32px);
+        padding: 24px 16px;
+    }
+}
+
+.heroSectionRow {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 1280px) {
+    .heroSectionRow {
+        flex-direction: column;
+    }
+}
+
+.heroSectionRowItem40 {
+    display: flex;
+    width: calc(40% - 40px);
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1280px) {
+    .heroSectionRowItem40 {
+        width: 100%;
+    }
+}
+
+.heroSectionRowItem60 {
+    display: flex;
+    width: calc(60% - 40px);
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1280px) {
+    .heroSectionRowItem60 {
+        position: unset;
+        top: unset;
+        right: unset;
+        width: 100%;
+    }
+}
+
+.cardImage {
+    background-blend-mode: multiply;
+    background-size: contain;
+    position: relative;
+    border-radius: 20px;
+    height: 100%;
+    display: flex;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 860px) {
+    .heroSection .cardImage, .infoCarts .cardImage {
+        width: initial !important;
+        flex: 0 0 100%;
+        margin-right: 0 !important;
+        height: 280px !important;
+        margin-bottom: 24px;
+        padding-bottom: 0 !important;
+        background-size: cover;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .heroSection .cardImage, .infoCarts .cardImage {
+        width: initial !important;
+        flex: 0 0 100%;
+        margin-right: 0 !important;
+        height: 230px !important;
+        margin-bottom: 24px;
+        padding-bottom: 0 !important;
+        background-size: cover;
+    }
+}
+
+.cardImageContent {
+    padding-bottom: 75px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    z-index: 1;
+    align-items: center;
+}
+
+@media only screen and (max-width: 860px) {
+    .heroSection .cardImageContent, .infoCarts .cardImageContent {
+        margin: 0 !important;
+        padding: 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.link {
+    text-decoration: none !important;
+}
+
+.cardImageTitleLink {
+    cursor: pointer;
+    text-decoration: none !important;
+    transition: all 300ms ease-in-out;
+}
+
+.cardImageTitleLink:hover {
+    transform: scale(1.05);
+}
+
+.cardImageTitleLink:active {
+    transform: scale(0.95);
+}
+
+.cardImageTitle {
+    font-family: Windsor;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+}
+
+.heroSection .cardImageTitle {
+    padding-left: 64px;
+    padding-right: 64px;
+}
+
+@media only screen and (max-width: 860px) {
+    .otherLocationMap .cardImageTitle {
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .heroSection .cardImageTitle {
+        margin-bottom: 0;
+        font-size: 24px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .infoCarts .cardImageTitle {
+        margin-bottom: 0;
+        font-size: 24px;
+    }
+}
+
+.cardImage .cardImageContent .button {
+    font-family: SuisseIntlMono;
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 14px;
+    display: inline-flex;
+    justify-content: center;
+    padding: 16px 24px;
+    text-align: center;
+    text-transform: uppercase;
+    background: #000000;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: all 300ms ease-in-out;
+}
+
+.cardImage .cardImageContent .button:hover {
+    transform: scale(1.05);
+}
+
+.cardImage .cardImageContent .button:active {
+    transform: scale(0.95);
+    opacity: 0.5;
+}
+
+
+@media only screen and (max-width: 860px) {
+    .heroSection .cardImage .cardImageContent a, .infoCarts .cardImage .cardImageContent a {
+        margin-top: 14px !important;
+    }
+}
+
+.cardImageText {
+    font-family: SuisseIntl;
+    font-size: 12px;
+    margin-top: 24px;
+    line-height: 21px;
+    text-align: center;
+}
+
+.heroTitle {
+    font-weight: normal;
+    font-family: Windsor;
+    font-style: normal;
+    font-size: 64px;
+    line-height: 75px;
+}
+
+@media only screen and (max-width: 860px) {
+    .heroTitle {
+        font-size: 32px;
+        line-height: initial;
+    }
+}
+
+.locationInfo {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.locationInfoText {
+    color: #EF845C;
+    font-family: Gilroy;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    margin-left: 10px;
+}
+
+.description {
+    margin: 40px 0 0 0;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 28px;
+    color: #2B5A52;
+    max-width: 100%;
+    width: 100%;
+}
+
+.description div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.description ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.description ol {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+@media only screen and (max-width: 860px) {
+    .description {
+        margin-bottom: 34px;
+        margin-top: 27px;
+        font-size: 14px;
+        line-height: 21px;
+    }
+}
+
+.heroSectionCardImages {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1280px) {
+    .heroSectionCardImages {
+        flex-wrap: wrap;
+        margin-top: 40px;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .heroSectionCardImages {
+        margin-top: 0;
+    }
+}
+
+.otherLocationMap .cardImage {
+    width: 100%;
+}
+
+.infoCarts .infoCart .cardImage {
+    flex-direction: column;
+    display: flex;
+}
+
+.heroSection .heroSectionCardImages .cardImage {
+    box-shadow: 0 10px 20px rgba(103, 47, 27, 0.25)
+}
+
+.heroSection .heroSectionCardImages .cardImage:first-child {
+    margin-right: 28px;
+}
+
+.otherLocationBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(to bottom,
+    rgba(215,235,233, 0),
+    rgba(215,235,233, 0.7),
+    rgba(215,235,233, 0.9)
+    100%);
+    z-index: 0;
+    display: flex;
+}
+
+.otherLocationMain {
+    z-index: 1;
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+}
+
+.otherLocation {
+    position: relative;
+    background-blend-mode: multiply;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 860px) {
+    .otherLocation {
+        margin-top: 0;
+    }
+
+    .otherLocation [class*="Banner_scrollItem"] > [class*="BannerItem"] {
+        background-color: #fff;
+        overflow: hidden;
+    }
+
+    .otherLocation [class*="Banner_scrollItem"] > [class*="BannerItem_root"] {
+        background-color: #fff;
+        overflow: hidden;
+    }
+
+    .otherLocation [class*="Banner_scrollItem"] > [class*="BannerItem_root"] [class*="contentContainer"] {
+        background-color: #fff;
+        padding-bottom: 24px;
+        padding-top: 0;
+    }
+
+    .otherLocation [class*="Banner_scrollItem"] > [class*="BannerItem_root"] [class*="contentContainer"] [class*="BannerItem_title"] {
+        font-family: Windsor;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        text-align: center;
+        color: #2B5A52;
+    }
+
+    .otherLocation [class*="Banner_scrollItem"] > [class*="BannerItem_root"] [class*="contentContainer"] [class*="BannerItem_description"] {
+        font-family: SuisseIntl;
+        padding-left: 16px;
+        padding-right: 24px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 175%;
+        text-align: center;
+        color: #2B5A52;
+        display: initial;
+        -webkit-line-clamp: initial;
+        -webkit-box-orient: initial;
+    }
+
+    .otherLocation [class*="Banner_scrollItem"] > [class*="BannerItem_root"] [class*="imageContainer"] {
+        border: 0;
+    }
+}
+
+.otherLocationDescriptionWrapper {
+    padding-top: 96px;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+
+@media only screen and (max-width: 860px) {
+    .otherLocationDescriptionWrapper {
+        padding: 40px 24px 0;
+    }
+}
+
+.otherLocationTitle {
+    text-align: center;
+    font-family: Windsor;
+    font-weight: normal;
+    align-self: center;
+    font-size: 32px;
+    line-height: 38px;
+}
+
+@media only screen and (max-width: 860px) {
+    .otherLocationTitle {
+        font-size: 24px;
+    }
+}
+
+.otherLocationDescription {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 175%;
+    max-width: 720px;
+    align-self: center;
+    text-align: center;
+    margin: 24px 0 0 0;
+}
+
+@media only screen and (max-width: 860px) {
+    .otherLocationDescription {
+        font-size: 14px;
+        line-height: 24px;
+    }
+}
+
+.otherLocationMaps {
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-top: 64px;
+}
+
+@media only screen and (max-width: 1280px) {
+    .otherLocationMaps {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+.otherLocationMap {
+    width: 100%;
+    min-width: 160px;
+}
+
+.otherLocationMap .cardImageTitle {
+    padding: 0 16px;
+}
+
+.otherLocationMap .cardImageText {
+    overflow: hidden;
+    display: flex;
+    padding-top: 0 !important;
+    flex: 1;
+}
+
+.otherLocationMap .cardImageContent {
+    padding-bottom: 0;
+    justify-content: space-between;
+}
+
+.otherLocationMapsMobile {
+    display: none;
+}
+
+@media only screen and (max-width: 860px) {
+    .otherLocationMaps {
+        display: none;
+    }
+    .otherLocationMap {
+        min-width: unset;
+        min-height: 480px;
+    }
+    .otherLocationMapsMobile {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        z-index: 2;
+    }
+    .otherLocationMap .cardImage {
+        display: flex;
+        flex-direction: column;
+        width: 100% !important;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .otherLocationMap .cardImageText {
+        overflow: hidden;
+        display: flex;
+        padding-top: 0 !important;
+        flex: unset;
+    }
+    .otherLocationMap .fadeWhite {
+        background-image: linear-gradient(to bottom,
+        rgba(255, 255, 255, 0.4) 40%,
+        rgba(255, 255, 255, 1) 50%);
+    }
+    .otherLocationMap .cardImageContent {
+        padding-bottom: 0;
+        justify-content: space-around;
+        height: 100%;
+    }
+    .otherLocationMap .cardImageText {
+        flex-grow: 1;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .otherLocationMap .cardImage {
+        background-size: contain;
+    }
+}
+
+.otherLocationMap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+    flex-grow: 1;
+    background: #FFFFFF !important;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.otherLocationMap:not(:last-child) {
+    margin-right: 24px;
+}
+
+@media only screen and (max-width: 860px) {
+    .otherLocationMap {
+        margin-bottom: 24px;
+    }
+}
+
+.torontoDescription1 {
+    font-family: SuisseIntl;
+    line-height: 175%;
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+@media only screen and (max-width: 860px) {
+    .torontoDescription1 {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+
+.torontoDescription2 {
+    font-family: SuisseIntl;
+    font-size: 12px;
+    line-height: 175%;
+    margin-top: 24px;
+}
+
+@media only screen and (max-width: 860px) {
+    .torontoDescription2 {
+        margin-top: 16px;
+    }
+}
+
+.aboutToronto {
+    background-color: #F0F7F0;
+    padding-top: 90px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 860px) {
+    .aboutToronto {
+        background-image: none;
+        padding: 60px 16px 50px;
+    }
+}
+
+.torontoTitle {
+    font-family: Windsor;
+    font-size: 32px;
+    line-height: 38px;
+    color: black;
+}
+
+@media only screen and (max-width: 860px) {
+    .torontoTitle {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .marijuanaCards .torontoDescription1 {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+.torontoTitleColor {
+    color: black;
+}
+
+.torontoTitleGHighligstColor {
+    color: #61AB62;
+}
+
+
+.torontoServiceContainer {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 860px) {
+    .torontoServiceContainer {
+        margin-top: 0;
+        flex-wrap: wrap;
+    }
+}
+
+.torontoServiceTitle {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #2B5A52;
+    max-width: 145px;
+    margin: 8px auto 0;
+}
+
+@media only screen and (max-width: 860px) {
+    .torontoServiceTitle {
+        font-size: 16px;
+        text-align: left;
+        margin-bottom: 12px;
+        margin-left: 0;
+        margin-right: 0;
+        max-width: unset;
+    }
+}
+
+.torontoServiceWrapper {
+    text-align: center;
+    margin-right: 38px;
+    margin-left: 38px;
+    margin-bottom: 70px;
+}
+
+.deliveryIcon {
+    height: 86px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media only screen and (max-width: 860px) {
+    .deliveryIcon {
+        width: 50px;
+        height: 50px;
+        padding-right: 16px;
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        padding-top: 8px;
+        background-size: 50px 50px;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .torontoServiceWrapper {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .torontoServiceWrapper:not(:last-child) {
+        margin-bottom: 24px;
+    }
+
+    .torontoServiceWrapper:first-child {
+        margin-top: 50px;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .torontoServiceWrapper {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+}
+
+.torontoServiceDescription {
+    margin-top: 18px;
+    font-family: SuisseIntl;
+    font-size: 12px;
+    line-height: 175%;
+    text-align: center;
+    color: #2B5A52;
+    max-width: 264px;
+}
+
+@media only screen and (max-width: 860px) {
+    .torontoServiceDescription {
+        font-size: 10px;
+        text-align: left;
+    }
+}
+
+.torontoDeliveryCannabis {
+    width: 699px;
+    height: 100%;
+    padding-left: 20px;
+    background-image: url('/images/torontocannabis.png');
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    position: relative;
+}
+
+@media only screen and (max-width: 1024px) {
+    .torontoDeliveryCannabis {
+        width: 100%;
+        background-size: contain;
+        height: 223px;
+        background-position: center;
+        padding: 7px 0;
+    }
+}
+
+.torontoDeliveryCannabis::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 88%;
+    height: 100%;
+    background-color: #61AB62;
+    z-index: -1;
+}
+
+@media only screen and (max-width: 1024px) {
+    .torontoDeliveryCannabis::after {
+        width: 100%;
+    }
+}
+
+.torontoDeliveryContainer {
+    display: flex;
+}
+
+@media only screen and (max-width: 1024px) {
+    .torontoDeliveryContainer {
+        flex-direction: column;
+    }
+}
+
+.torontoOrderCannabisWrapper {
+    margin-left: 40px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .torontoOrderCannabisWrapper {
+        margin-left: 0;
+    }
+}
+
+.torontoOrderCannabisTitle {
+    padding: 80px 40px 80px 0;
+}
+
+@media only screen and (max-width: 1024px) {
+    .torontoOrderCannabisTitle {
+        padding: 40px 16px;
+    }
+}
+
+.downloadAppContainer {
+    height: 508px;
+    overflow: hidden;
+    background: #EF845C;
+    position: relative;
+}
+
+@media only screen and (max-width: 860px) {
+    .downloadAppContainer {
+        height: 554px;
+    }
+}
+
+.downloadAppContainerPhone {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: 77% top;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 860px) {
+    .downloadAppContainerPhone {
+        width: 330px;
+        background-size: contain;
+        background-position: 50% bottom;
+    }
+}
+
+.markText {
+    background: transparent !important;
+    color: #61AB62 !important;
+}
+
+.downloadAppContainerCannabis {
+    position: absolute;
+    right: -140px;
+    bottom: 0;
+    width: 810px;
+    height: 480px;
+    object-fit: cover;
+    filter: blur(4px);
+}
+
+@media only screen and (max-width: 860px) {
+    .downloadAppContainerCannabis {
+        right: unset;
+        height: 320px;
+        width: 640px;
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .downloadAppContainerCannabis {
+        right: unset;
+        height: 240px;
+        width: 320px;
+        left: 0;
+    }
+}
+
+.downloadAppTitle {
+    font-family: Windsor;
+    font-size: 48px;
+    line-height: 56px;
+    max-width: 50%;
+    color: #FFFFFF;
+}
+
+@media only screen and (min-width: 1280px) {
+    .downloadAppTitle {
+        max-width: 40%;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .downloadAppTitle {
+        font-size: 24px;
+        text-align: center;
+        line-height: 28px;
+        max-width: unset;
+    }
+}
+
+.downloadAppDescription {
+    font-family: SuisseIntl;
+    font-size: 16px;
+    line-height: 175%;
+    color: #FFFFFF;
+    padding: 32px 0;
+}
+
+@media only screen and (max-width: 860px) {
+    .downloadAppDescription {
+        font-size: 14px;
+        text-align: center;
+        line-height: 24px;
+        padding: 28px 0 24px;
+    }
+}
+
+.storeButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 16px;
+}
+
+@media only screen and (max-width: 860px) {
+    .storeButtons {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .storeButtons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 16px;
+        padding: 0;
+    }
+}
+
+.downloadAppWrapper {
+    padding-left: 80px;
+    padding-top: 96px;
+    position: relative;
+    z-index: 2;
+}
+
+@media only screen and (max-width: 860px) {
+    .downloadAppWrapper {
+        padding: 48px 16px;
+    }
+}
+
+.downloadIcon {
+    display: flex;
+    height: 61px;
+    width: 200px;
+    position: relative;
+    background: transparent;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+}
+
+.downloadIcon:hover {
+    transform: scale(1.05);
+}
+
+.downloadIcon:active {
+    transform: scale(0.95);
+    opacity: 0.5;
+}
+
+.downloadIcon:not(:first-child) {
+    margin-left: 24px;
+}
+
+@media only screen and (max-width: 860px) {
+    .downloadIcon {
+        height: 42px;
+        width: 140px;
+    }
+
+    .downloadIcon:not(:first-child) {
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .deliveryAnswer .torontoTitle {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .deliveryAnswer .torontoDescription1,
+    .deliveryAnswer .torontoDescription2 {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.secondCannabisBg {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 810px;
+}
+
+.secondCannabisBg img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.desktopImage {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 4px);
+    max-width: 810px;
+}
+@media only screen and (max-width: 1024px) {
+    .desktopImage {
+        display: none;
+    }
+    .secondCannabisBg {
+        min-width: unset;
+        order: -1;
+    }
+}
+
+.marijuanaCards {
+    margin-top: -4px;
+    padding: 70px 0;
+    background-color: rgba(97, 171, 98, 0.1);
+    background-position: left 70px;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+.marijuanaCardsBackground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 350px;
+}
+
+@media only screen and (max-width: 860px) {
+    .marijuanaCards {
+        padding: 60px 0 0;
+        background-image: unset !important;
+    }
+    .marijuanaCardsBackground {
+        height: 640px;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .marijuanaCardsBackground {
+        height: 800px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .marijuanaCardsBackground {
+        height: 1024px;
+    }
+}
+
+.marijuanaCards .contactBtn {
+    line-height: 14px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 17px;
+    background: #000000;
+    border-radius: 10px;
+    border: none;
+    align-self: center;
+    cursor: pointer;
+    margin: 40px auto 70px;
+    color: #FFFFFF;
+    font-family: SuisseIntlMono;
+    letter-spacing: 1px;
+    max-width: 210px;
+    font-weight: 400;
+    font-size: 14px;
+    transition: all 300ms ease-in-out;
+}
+
+.marijuanaCards .contactBtn:hover {
+    transform: scale(1.05);
+}
+
+.marijuanaCards .contactBtn:active {
+    transform: scale(0.95);
+    opacity: 0.5;
+}
+
+@media only screen and (max-width: 860px) {
+    .marijuanaCards .contactBtn {
+        margin: 32px auto 44px;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .marijuanaCards .torontoTitle {
+        max-width: 380px !important;
+    }
+}
+
+.linkStyle {
+    display: inline-block;
+    color: #61AB62;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.25s ease-out;
+    opacity: 1;
+}
+
+.linkStyle:hover {
+    transform: scale(1.02);
+}
+
+.linkStyle:active {
+    opacity: 0.5;
+    transform: scale(0.98);
+}
+
+
+.linkDisabledStyle {
+    display: inline-block;
+    color: #61AB62;
+    font-weight: bold;
+    text-decoration: none;
+    opacity: 1;
+}
+
+.infoCart {
+    margin-right: 28px;
+}
+
+@media only screen and (max-width: 860px) {
+    .infoCarts {
+        margin-right: 0;
+    }
+}
+
+.infoCarts {
+    padding-left: 54px;
+    padding-right: 54px;
+    display: flex;
+    margin-top: 64px;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 860px) {
+    .infoCarts {
+        margin-top: 0;
+        flex-wrap: wrap;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .infoCarts .infoCart {
+        margin-right: 0;
+    }
+
+    .infoCarts .cardImage {
+        height: auto !important;
+        background-position: center 24px !important;
+        padding-bottom: 15px !important;
+    }
+
+    .infoCarts .cardImage .cardImageContent {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        margin-top: 112px !important;
+        padding-top: 125px;
+    }
+
+    .infoCarts .cardImage .cardImageContent .cardImageTitle {
+        font-size: 18px;
+        line-height: 21px;
+        height: auto !important;
+        max-width: unset !important;
+        margin-bottom: 0;
+    }
+}
+
+.infoCarts .infoCart:last-child {
+    margin-right: 0;
+}
+
+
+@media only screen and (max-width: 1024px) and (min-width: 860px) {
+    .infoCarts {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .infoCarts .infoCart {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .infoCarts .infoCart .cardImage {
+        height: auto !important;
+        width: 100% !important;
+        flex-direction: column;
+        display: flex;
+    }
+
+    .infoCarts .infoCart .cardImage .cardImageTitle {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    .infoCarts .infoCart .cardImage .cardImageText {
+        font-size: 14px;
+        line-height: 25px;
+    }
+
+    .footerCannabisBg {
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 1000px !important;
+        margin-top: -95% !important;
+    }
+}
+
+.footerCannabisBg {
+    width: 100%;
+    height: 352px;
+    margin-top: -262px;
+    background-blend-mode: overlay;
+    background-color: rgba(97, 171, 98, 0.1);
+}
+
+@media only screen and (max-width: 860px) {
+    .footerCannabisBg {
+        height: 1090px;
+        margin-top: -1070px;
+    }
+}
+
+.fadeOrange {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-image: linear-gradient(to bottom,
+    rgba(235, 129, 90, 0),
+    rgba(235, 129, 90, 0.8),
+    rgba(235, 129, 90, 1) 100%);
+}
+
+.fadeGreen {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-image: linear-gradient(to bottom,
+    rgba(97, 171, 98, 0),
+    rgba(97, 171, 98, 0.8),
+    rgba(97, 171, 98, 1) 100%);
+}
+
+.fadeWhite {
+    position: absolute;
+    top: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-image: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 1) 100%);
+}
+
+.torontoProduct {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.torontoProductBorder {
+    height: 2px;
+    margin-bottom: 24px;
+    width: calc(100% - 80px);
+    background: #61AB62;
+}
+
+
+@media only screen and (max-width: 860px) {
+    .torontoProduct {
+        margin-top: -8px;
+        margin-bottom: 24px;
+    }
+
+    .torontoProductBorder {
+        margin-bottom: 16px;
+        width: calc(100% - 32px);
+    }
+}

@@ -1,0 +1,118 @@
+.root {
+    --tw-bg-opacity: 1;
+    background-color: rgba(f, f, f, var(--tw-bg-opacity));
+    width: 100%;
+    box-shadow: 0 0 0;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+}
+
+.emptyGridContainer {
+    width: 100%;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyGridText {
+    color: #000000;
+    font-family: Windsor;
+    font-size: 18px;
+    line-height: 21px;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    text-overflow: initial;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+
+.title {
+    color: #000000;
+    font-family: Windsor;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0;
+    text-align: left;
+    margin-left: 40px;
+    text-overflow: initial;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+
+@media only screen and (max-width: 1440px) {
+    .gridContainer {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: calc(100% - 40px);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .gridContainer {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: calc(100% - 40px);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .gridContainer {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: calc(100% - 40px);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .title {
+        text-align: center;
+        margin: 0;
+        font-size: 18px;
+        line-height: 22px;
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .gridContainer {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        width: calc(100% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+
+@media only screen and (max-width: 358px) {
+    .gridContainer {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        width: calc(100% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+

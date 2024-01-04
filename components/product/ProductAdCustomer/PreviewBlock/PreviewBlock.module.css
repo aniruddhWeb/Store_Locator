@@ -1,0 +1,482 @@
+.previewValueContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    background: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 300ms ease-in-out;
+}
+
+.previewValueContainer:hover {
+    transform: scale(1.025);
+}
+
+.previewValueContainer.active {
+    transform: scale(1);
+    background: #FFFFFF;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.previewValueHeader {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.previewValueHeaderTitle {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 600;
+    margin-right: 12px;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.previewValueDropdown {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.previewValueDropdownValue {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: right;
+    color: #000000;
+}
+
+.previewValueDropdownArrow {
+    transform: rotate(-90deg);
+}
+
+.previewValueDropdownArrow.active {
+    transform: rotate(0deg);
+}
+
+.previewValueContentContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.previewValueContent {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 8px 0;
+}
+
+.previewValueContent:not(:last-child) {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.previewValueContent:last-child {
+    padding-bottom: 0;
+}
+
+.previewValueContentRow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.previewValueContentTitle {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #000000;
+}
+
+.previewValueContentValue {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+    color: #000000;
+    margin-right: 18px;
+}
+
+.previewValueContentPath {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
+    color: #61AB62;
+}
+
+.previewBlock {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    height: calc(100vh - 64px);
+    padding: 32px 16px;
+    overflow-y: scroll;
+    background: rgba(216, 223, 222, .3);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    z-index: 2;
+}
+
+@media only screen and (min-width: 1600px) {
+    .previewBlock {
+        width: 25vw;
+    }
+}
+
+.previewBlockMain {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.previewTitleHeaderContainer {
+    display: flex;
+    border-bottom: 2px solid #000000;
+    flex-direction: row;
+    align-items: center;
+    width: calc(100% - 32px);
+    margin: 0 16px;
+    column-gap: 24px;
+    padding-bottom: 16px;
+    justify-content: flex-start;
+}
+
+.previewTitleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.previewTitle {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
+
+.currentValues {
+    margin-top: 12px;
+}
+
+.currentAttribution {
+    font-family: SuisseIntl;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+    color: #61AB62;
+}
+
+.currentBalance {
+    font-family: SuisseIntl;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -0.02em;
+    color: #000000;
+}
+
+.attributedPercentage {
+    width: calc(100% - 32px);
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    padding-bottom: 24px;
+    margin: 8px 16px 0 16px;
+    color: #000000;
+}
+
+.tabContainer {
+    width: calc(100% - 32px);
+    padding: 24px 0 0 0;
+    margin: 0 16px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    justify-content: flex-start;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    column-gap: 16px;
+}
+
+.tab {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    padding-bottom: 12px;
+}
+
+.tabSelected {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #EF845C;
+    border-bottom: 2px solid #EF845C;
+    cursor: pointer;
+    padding-bottom: 12px;
+}
+
+.tabPercentage {
+    margin-left: 6px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 13px;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.5);
+}
+
+.tabPercentage.active {
+    color: #EF845C;
+}
+
+
+.previewValuesBlock {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 16px;
+}
+
+.chartWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-top: 16px;
+}
+
+.chartContainer {
+    width: calc(100% - 16px);
+    padding: 8px 8px 0 8px;
+    background: #FFFFFF;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatHeaderContainer {
+    width: calc(100% - 16px);
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chartHeaderTitle {
+    flex: 1;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.chatHeaderButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.arrowLeftButton {
+    margin-left: 8px;
+    display: flex;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.arrowLeft {
+    transform: rotate(180deg);
+    width: 20px;
+    height: 20px;
+}
+
+.arrowRightButton {
+    margin-left: 8px;
+    display: flex;
+    width: 20px;
+    cursor: pointer;
+    height: 20px;
+}
+
+.arrowRight {
+    width: 20px;
+    height: 20px;
+}
+
+.emptyText {
+    display: flex;
+    align-self: center;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #000000;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 200px;
+}
+
+.chartValuesContainer {
+    width: calc(100% - 32px);
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.chartValueContainer {
+    display: flex;
+    width: 100%;
+    padding: 12px 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chartValueContainer:not(:last-child) {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.chartValueTitle {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #000000;
+    flex: 1;
+}
+
+.chartValue {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+    color: #61AB62;
+}
+
+.chartValueRed {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+    color: #EF5C5C !important;
+}
+
+.buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    width: calc(100% - 32px);
+    margin: 0 16px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.tooltip {
+    border: 1px solid #61AB62;
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    outline: none !important;
+    background: #FFFFFF;
+    display: flex;
+    padding: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tooltipTitle {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 13px;
+    color: #000000;
+    margin-bottom: 4px;
+}
+
+.tooltipValueContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tooltipValueTitle {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 4px;
+    text-align: right;
+    color: #000000;
+}
+
+
+.tooltipValue {
+    font-family: SuisseIntl;
+    font-style: normal;
+    margin-left: 24px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 4px;
+    text-align: right;
+    color: #000000;
+}

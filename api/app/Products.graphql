@@ -1,0 +1,49 @@
+query productTypeItems {
+    productListTypes(brandFilter: false, strainNameFilter: false) {
+        productTypes {
+            available
+            name
+            slug
+            id
+            categoriesItems {
+                available
+                name
+                slug
+                id
+                categoriesItems{
+                    available
+                    name
+                    slug
+                    id
+                }
+            }
+            typeItems {
+                available
+                name
+                slug
+                id
+                categoriesItems {
+                    available
+                    name
+                    slug
+                    id
+                    categoriesItems{
+                        available
+                        name
+                        slug
+                        id
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+query productTypeStrainNameSearch($strainName: String!) {
+    strainNameSearch(strainName: $strainName, offset: 0, limit: 50) {
+        slug
+        name
+        id
+    }
+}

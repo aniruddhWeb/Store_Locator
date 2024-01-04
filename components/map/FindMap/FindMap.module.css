@@ -1,0 +1,344 @@
+.root {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.mapContainer {
+    width: 100%;
+    height: 100%;
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+}
+
+.groupContainer {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    top: 10px;
+    right: 64px;
+    background: #FFFFFF;
+    box-shadow: rgb(0 0 0 / 30%) 0 1px 4px -1px;
+    border-radius: 2px;
+    padding: 0 12px;
+    height: 40px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.groupContainer:hover {
+    transform: scale(1.05);
+}
+.groupContainer:active {
+    transform: scale(0.95);
+}
+
+.checkBoxText {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    margin-right: 8px;
+    color: #000000;
+}
+
+.checkBoxDisabled {
+    width: 22px;
+    height: 22px;
+    background: #FFFFFF;
+    border: 2px solid #61AB62;
+    border-radius: 5px;
+}
+
+.checkBox {
+    width: 24px;
+    height: 24px;
+}
+
+.sideWrapper {
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: calc(100% - 60px);
+    margin: 20px 20px 40px 0;
+    width: min(384px, calc(100vw - 16px));
+    transform: translateX(0);
+    transition: all 300ms ease-in-out;
+}
+.sideWrapperClosed {
+    transform: translateX(calc(-1 * min(350px, calc(100vw - 50px))));
+}
+
+.handle {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 16px;
+    width: 24px;
+    height: 48px;
+    padding-right: 12px;
+    background: #61AB62;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.handle:hover {
+    transform: scale(1.25);
+}
+.handleClosed:hover {
+    transform: scale(1.25);
+}
+.chevron {
+    width: 12px;
+    height: 12px;
+    transition: all 300ms ease-in-out;
+    transform: rotate(0deg);
+}
+.chevronClosed {
+    transform: rotate(180deg);
+}
+
+.sideContainer {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: min(330px, calc(100vw - 70px));
+    margin-left: 20px;
+    background: #FFFFFF;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+}
+
+.sideTabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 54px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.sideTab {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    height: 53px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 2px solid rgba(0,0,0,0);
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.sideTabSelected {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    height: 53px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 2px solid #EF845C;
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #EF845C;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.itemsContainer {
+    display: flex;
+    flex: 1;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-bottom: 144px;
+    flex-direction: column;
+}
+
+.sellAllDeals {
+    width: 100%;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #EF845C;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.sellAllDeals:hover {
+    transform: scale(1.05);
+}
+.sellAllDeals:active {
+    transform: scale(0.95);
+}
+
+.searchButton {
+    z-index: 1;
+    position: absolute;
+    top: 10px;
+    right: 222px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    background: #61AB62;
+    box-shadow: rgb(0 0 0 / 30%) 0 1px 4px -1px;
+    border-radius: 2px;
+    padding: 0 12px;
+    height: 40px;
+    text-align: center;
+    text-overflow: ellipsis;
+    color: #FFFFFF;
+    overflow: hidden;
+    text-decoration: none;
+    font-family: SuisseIntlMono;
+    text-transform: uppercase;
+    min-width: 116px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    opacity: 1;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+.searchButton:hover {
+    transform: scale(1.05);
+}
+.searchButtonClosed {
+    opacity: 0.5;
+}
+.searchButtonClosed:hover {
+    transform: scale(1);
+}
+.searchButtonHidden {
+    opacity: 0;
+    transform: scale(1);
+    top: -50px !important;
+}
+
+.mapPopup {
+    display: flex;
+    position: absolute;
+    background-color: #000000;
+    left: -100px;
+    min-width: 224px;
+    width: 224px;
+    padding: 0 12px;
+    height: 48px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: SuisseIntl;
+    text-align: center;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.15);
+}
+.mapPopup:after {
+    content: "";
+    display: block;
+    border: 8px solid transparent;
+    border-bottom-color: #000;
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    margin-left: -8px;
+}
+
+.fade {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: min(328px, calc(100vw - 80px));
+    height: 144px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-image: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+    100%);
+}
+
+@media only screen and (min-width: 860px) {
+    .sideTab:hover {
+        border-bottom: 2px solid rgba(0,0,0,0);
+        transform: scale(1.05);
+    }
+    .sideTab:active {
+        border-bottom: 2px solid rgba(0,0,0,0);
+        transform: scale(0.95);
+    }
+    .sideTabSelected:hover {
+        border-bottom: 2px solid rgba(0,0,0,0);
+        transform: scale(1.05);
+    }
+    .sideTabSelected:active {
+        border-bottom: 2px solid rgba(0,0,0,0);
+        transform: scale(0.95);
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .groupContainer {
+        display: none;
+    }
+    .searchButton {
+        transition: all 200ms ease-in-out;
+        right: 64px;
+    }
+    .searchButtonClosed {
+        opacity: 0.5;
+    }
+    .searchButtonHidden {
+        opacity: 0;
+        transform: scale(1);
+        top: -50px !important;
+    }
+    .mapPopup {
+        display: none;
+    }
+}

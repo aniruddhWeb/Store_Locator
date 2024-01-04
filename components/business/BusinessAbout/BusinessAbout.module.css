@@ -1,0 +1,538 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-decoration: none;
+    color: #000000;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 24px;
+    padding: 0 0 20px 40px;
+}
+
+.title {
+    font-family: Windsor;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    text-overflow: initial;
+    display: block;
+    color: #000000;
+    overflow: hidden;
+}
+
+.descriptionClaimContainer {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 28px;
+    margin-right: 40px;
+    gap: 16px;
+}
+
+.descriptionClaimBar {
+    width: 100%;
+    max-width: 560px;
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(140,155,153,0.3);
+}
+
+.descriptionClaimBarShort {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(140,155,153,0.3);
+}
+
+.descriptionClaimBarLong {
+    width: 100%;
+    max-width: 640px;
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(140,155,153,0.3);
+}
+
+.description {
+    color: #000000;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    text-overflow: initial;
+    overflow: hidden;
+    white-space: pre-wrap;
+    display: -webkit-box;
+    -webkit-line-clamp: 100;
+    -webkit-box-orient: vertical;
+    margin-top: 12px;
+    margin-right: 40px;
+}
+
+.description div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.description ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.description ol {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.description p {
+    padding: 0;
+    margin: 16px 0;
+}
+
+.description img {
+    border-radius: 10px;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.subDescription {
+    margin-top: 24px;
+    color: #000000;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    text-overflow: initial;
+    overflow: hidden;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 10;
+    -webkit-box-orient: vertical;
+}
+
+.mapScheduleContainer {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.mapContainer {
+    margin-right: 24px;
+    display: flex;
+    max-width: 540px;
+    height: 320px;
+    flex: 1 1 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading {
+    display: flex;
+    width: 100%;
+    min-height: 320px;
+    align-items: center;
+    justify-content: center;
+}
+
+.map {
+    display: flex;
+    width: 100%;
+    min-height: 320px;
+    align-items: center;
+    justify-content: center;
+}
+
+.workingHoursContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.workingHoursRowContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.workingTimeRowContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 198px;
+}
+
+.workingHourTitle {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    text-overflow: initial;
+    display: block;
+    color: #000000;
+    overflow: hidden;
+}
+
+.workingHourClose {
+    margin-top: 8px;
+    margin-bottom: 16px;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    text-overflow: initial;
+    display: block;
+    overflow: hidden;
+    color: #000000;
+}
+
+.workingHourOpen {
+    margin-top: 8px;
+    margin-bottom: 16px;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    text-overflow: initial;
+    display: block;
+    color: #2DA771;
+    overflow: hidden;
+}
+
+.workingHourClaim {
+    display: block;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    min-height: 32px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.timeTableContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.timeTableDayColumn {
+    display: flex;
+    flex-direction: column;
+    margin-right: 24px;
+}
+
+.timeTableColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.timeTableItem {
+    margin-top: 8px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.timeTableItemActive {
+    margin-top: 8px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: #2DA771;
+}
+
+.workingHoursDisclaimer {
+    margin-top: 16px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #000000;
+    opacity: 0.5;
+}
+
+.workingHoursDisclaimerMobile {
+    display: none;
+}
+
+.streetAddress {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+    max-width: 100%;
+    text-overflow: initial;
+    color: #000000;
+    margin-top: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.streetAddressClaimContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    display: flex;
+    margin-top: 16px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.streetAddressMobile {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+    max-width: 100%;
+    text-overflow: initial;
+    color: #000000;
+    margin-top: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    white-space: initial;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: none;
+}
+
+.streetAddressMobileClaimContainer {
+    margin-top: 16px;
+    width: 100%;
+    max-width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+}
+
+.aboutClaimBar {
+    width: 100%;
+    max-width: 120px;
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(140,155,153,0.3);
+}
+
+.aboutClaimBarShort {
+    width: 100%;
+    max-width: 80px;
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(140,155,153,0.3);
+}
+
+.aboutClaimBarLong {
+    width: 100%;
+    max-width: 160px;
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(140,155,153,0.3);
+}
+
+@media only screen and (max-width: 860px) {
+    .root {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+        margin-top: 32px;
+        padding-bottom: 32px;
+    }
+    .title {
+        width: calc(100% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 17px;
+        line-height: 20px;
+    }
+    .description {
+        width: calc(100% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 4px;
+        margin-right: 0;
+    }
+    .descriptionClaimContainer {
+        width: calc(100% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+        margin-top: 20px;
+        margin-right: 0;
+        gap: 12px;
+    }
+    .descriptionClaimBar {
+        width: 100%;
+        max-width: 220px;
+        display: flex;
+        height: 8px;
+        border-radius: 4px;
+        background: rgba(140,155,153,0.3);
+    }
+    .descriptionClaimBarShort {
+        width: 100%;
+        max-width: 160px;
+        display: flex;
+        height: 8px;
+        border-radius: 4px;
+        background: rgba(140,155,153,0.3);
+    }
+    .descriptionClaimBarLong {
+        width: 100%;
+        max-width: 280px;
+        display: flex;
+        height: 8px;
+        border-radius: 4px;
+        background: rgba(140,155,153,0.3);
+    }
+    .mapScheduleContainer {
+        margin-top: 16px;
+        flex-direction: column;
+    }
+    .mapContainer {
+        width: 100%;
+        max-width: 100%;
+        margin-right: 0;
+        border-radius: 0;
+    }
+    .workingHoursContainer {
+        margin-top: 8px;
+        width: calc(100% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .workingHoursRowContainer {
+        flex-direction: column;
+        margin-right: 12px;
+    }
+    .workingTimeRowContainer {
+        flex-direction: column;
+        align-items: flex-end;
+        margin-right: 0;
+        flex: 1;
+    }
+    .timeTableDayColumn {
+        margin-right: 12px;
+    }
+    .workingHourTitle {
+        margin-top: 32px;
+    }
+    .workingHoursDisclaimer {
+        display: none;
+    }
+    .timeTableContainer {
+        margin-top: 24px;
+    }
+    .workingHoursDisclaimerMobile {
+        display: flex;
+        max-width: 120px;
+        font-family: SuisseIntl;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 18px;
+        opacity: 0.5;
+        color: #000000;
+    }
+    .streetAddress {
+        display: none;
+    }
+    .streetAddressClaimContainer {
+        display: none;
+    }
+    .streetAddressMobile {
+        display: block;
+        width: calc(100% - 32px);
+        margin-left: 16px;
+        margin-right: 16px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 150%;
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    .streetAddressMobileClaimContainer {
+        display: flex;
+        width: calc(100% - 32px);
+        margin-left: 16px;
+        margin-right: 16px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+}
+

@@ -1,0 +1,113 @@
+.menu {
+    position: relative;
+}
+
+.menuLabel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 12px;
+    padding-right: 12px;
+    transition: all 300ms ease-in-out;
+}
+.menuLabel:hover {
+    transform: scale(1.05);
+}
+.menuLabel:active {
+    transform: scale(0.95);
+}
+
+.profileLogged {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+}
+.profileLogged:hover {
+    opacity: 1;
+}
+.profileLogged:active {
+    opacity: 0.5;
+}
+
+.profile {
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+    transition: all 300ms ease-in-out;
+}
+.profile:hover {
+    opacity: 1;
+}
+.profile:active {
+    opacity: 0.5;
+}
+
+.loginLink {
+    padding: 12px 0 12px 12px;
+}
+
+.name {
+    font-family: SuisseIntl;
+    font-size: 14px;
+    line-height: 17px;
+    margin-left: 8px;
+    margin-right: 8px;
+    letter-spacing: -0.04em;
+    color: #000000;
+    overflow: hidden;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    max-width: 164px;
+    display: block;
+}
+
+.dropdown {
+    z-index: 4;
+    position: absolute;
+    right: 0;
+    top: 32px;
+    width: 200px;
+    background: #FFFFFF;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 4px 16px;
+}
+
+.dropdownItem {
+    font-family: Gilroy;
+    display: block;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.04em;
+    color: #000000;
+    padding: 14px 0;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.dropdownItem:hover {
+    transform: scale(1.05);
+}
+.dropdownItem:active {
+    transform: scale(1);
+}
+
+.dropdownItem:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width: 1080px) {
+    .name {
+        max-width: 96px;
+    }
+}
+
+@media only screen and (max-width: 860px) {
+    .menu {
+        margin-right: 12px;
+    }
+    .name {
+        display: none;
+    }
+}

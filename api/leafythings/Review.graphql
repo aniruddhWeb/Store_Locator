@@ -1,0 +1,9 @@
+mutation ReviewSave($input: ReviewInput!) {
+    reviewSave(input: $input) {
+        ...ReviewItem
+    }
+}
+
+mutation ReviewDelete($reviewId: String!) {
+    reviewDelete(reviewId: $reviewId)
+}

@@ -1,0 +1,3 @@
+query sendFeedback($message: String!, $questions: [[String]], $email: String) {
+    sendFeedback(message: $message, questions: $questions, email: $email)
+}

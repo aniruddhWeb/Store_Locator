@@ -1,0 +1,196 @@
+.mainContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 12;
+  cursor: default;
+  pointer-events: none;
+}
+div.mainContainer {
+  pointer-events: all !important;
+}
+.mainContainer::after {
+  content: '';
+  height: 100vh;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.popupDialog {
+  position: relative;
+  margin: 40px auto;
+  max-width: 960px;
+  height: calc(100% - 80px);
+  z-index: 2;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.mainContent {
+  width: 100%;
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 50px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.mainContent h2, .mainContent p, .mainContent h3, .mainContent sub {
+  white-space: normal;
+  font-family: Windsor;
+  position: relative;
+}
+.mainContent::-webkit-scrollbar{
+  display: block;
+  width: 10px;
+}
+.mainContent::-webkit-scrollbar-track {
+  display: block;
+  background: transparent;
+  border-radius: 6px;
+}
+.mainContent::-webkit-scrollbar-thumb {
+  display: block;
+  background: rgba(97,171,98,0.5);
+  border-radius: 6px;
+  background-clip: padding-box;
+}
+.mainContent::-webkit-scrollbar-thumb:hover {
+  background: rgba(97,171,98,1);
+}
+
+.fixedContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.close {
+  margin-left: auto;
+  cursor: pointer;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  transition: all 300ms ease-in-out;
+}
+.close:hover {
+  transform: scale(1.05);
+}
+.close:active {
+  transform: scale(0.95);
+}
+
+.popupDescription{
+  display: flex;
+  flex-direction: column;
+}
+.popupStars{
+  margin-bottom: 15px;
+}
+.popupText{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+.popupDescriptionInfo{
+  margin: 28px 0 0 0;
+  padding: 0;
+  font-family: SuisseIntl !important;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #000000;
+}
+.greenSection{
+  background: #61AB61;
+  border-radius: 10px;
+  padding: 21px;
+  position: relative;
+  margin-top: 34px;
+}
+.greenSection::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 21px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 11px 12px 11px;
+  border-color: transparent transparent #61AB61 transparent;
+}
+.greenSectionTitle{
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  color: #FFFFFF;
+}
+.greenSectionText{
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FFFFFF;
+  margin: 21px 0 0 0;
+}
+.greenSectionText:not(:last-child) {
+  margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 860px) {
+  .popupDialog{
+    width: calc(100vw - 48px);
+    border-radius: 10px;
+    margin: 24px 24px;
+    max-width: 960px;
+    height: calc(100vh - 48px);
+  }
+  .mainContent{
+    height: 100%;
+    padding: 24px;
+  }
+  .popupText {
+    margin-top: 4px;
+  }
+  .fullTextContent {
+    display: flex;
+    flex-direction: column;
+  }
+  .greenSectionTitle span {
+    display: block;
+  }
+  .close {
+    width: 24px;
+    height: 24px;
+  }
+  .fixedContainer {
+    width: calc(100vw - 96px);
+    background-color: #FFFFFF;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    overflow: hidden;
+    margin: 0 5px;
+    padding: 24px 19px 0 19px;
+    z-index: 2;
+    left: 24px;
+    right: 24px;
+    top: 24px;
+    position: fixed;
+  }
+  .popupDescription {
+    margin-top: 64px;
+  }
+}

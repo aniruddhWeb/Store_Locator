@@ -1,0 +1,224 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    opacity: 1;
+    transition: all 0.25s ease-out;
+    cursor: pointer;
+}
+.root:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+.root:active {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.shareIcon {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+.sharePopupContainer {
+    display: flex;
+    position: absolute;
+    top: -28px;
+    left: -32px;
+    flex-direction: row;
+    align-items: flex-start;
+    overflow-x: hidden;
+    padding: 16px;
+}
+
+.shareLeftPopupContainer {
+    display: flex;
+    position: absolute;
+    top: -28px;
+    left: -260px;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    overflow-x: hidden;
+    padding: 16px;
+}
+
+.shareIconActiveLeft {
+    z-index: 1;
+    background: #EF845C;
+    padding: 10px 12px 8px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: all 0.25s ease-out;
+    cursor: pointer;
+}
+.shareIconActiveLeft:hover {
+    transform: scale(1.05);
+}
+.shareIconActiveLeft:active {
+    transform: scale(0.95);
+}
+
+.shareIconActive {
+    z-index: 1;
+    background: #EF845C;
+    padding: 10px 12px 8px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 0.25s ease-out;
+    cursor: pointer;
+}
+.shareIconActive:hover {
+    transform: scale(1.05);
+}
+.shareIconActive:active {
+    transform: scale(0.95);
+}
+
+.sharePopup {
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
+    background-color: #FFFFFF;
+    width: 200px;
+    padding: 16px;
+    border-radius: 0 10px 10px 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.sharePopupLeft {
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
+    background-color: #FFFFFF;
+    width: 200px;
+    padding: 16px;
+    border-radius: 10px 0 10px 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.shareTitle {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.shareItemContainer {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.25s ease-out;
+    cursor: pointer;
+}
+.shareItemContainer:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+.shareItemContainer:active {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.shareItemIcon {
+    width: 32px;
+    height: 32px;
+}
+
+.shareDescription {
+    margin-top: 4px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 13px;
+    color: #000000;
+}
+
+.shareRow {
+    margin-top: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.closeIcon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    transition: all 0.25s ease-out;
+    cursor: pointer;
+}
+.closeIcon:hover {
+    transform: scale(1.05);
+}
+.closeIcon:active {
+    transform: scale(0.95);
+}
+
+@media only screen and (max-width: 860px) {
+    .shareIconActive {
+        display: none;
+    }
+    .shareIconActiveLeft {
+        display: none;
+    }
+    .sharePopupContainer {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        z-index: 19;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        top: 0;
+        height: calc(100vh - 32px);
+        background: rgba(0,0,0,0.4);
+    }
+    .shareLeftPopupContainer {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        top: 116px;
+        background: rgba(0,0,0,0.4);
+    }
+    .sharePopup {
+        border-radius: 10px;
+        width: 240px;
+    }
+    .sharePopupLeft {
+        border-radius: 10px;
+        width: 240px;
+        margin-top: 48px;
+    }
+}
+
+
+@media only screen and (max-width: 460px) {
+    .sharePopup {
+        border-radius: 10px;
+        width: calc(100% - 40px);
+    }
+}

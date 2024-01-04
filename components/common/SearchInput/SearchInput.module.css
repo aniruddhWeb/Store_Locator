@@ -1,0 +1,585 @@
+.searchQueryInputWrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: calc(min(100vw, 1440px));
+  position: fixed;
+  top: 151px;
+  left: 0;
+  right: 0;
+  padding-left: calc((100vw - min(100vw, 1440px)) * 0.5);
+  padding-right: calc((100vw - min(100vw, 1440px)) * 0.5);
+  z-index: 11;
+  background: #FFFFFF;
+}
+
+.searchQueryInputWrapperFullWidth {
+  width: calc(min(100%, 1440px));
+}
+
+.searchQueryInputWrapperNoMargin {
+  top: 61px;
+}
+
+.searchQueryInputWrapperMobile {
+  display: none;
+}
+
+.searchQueryInputWrapperDesktop {
+  display: flex;
+}
+
+.searchBackContainer {
+  pointer-events: none;
+  position: relative;
+}
+
+.searchQueryInputContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  width: calc(min(100%, 1440px));
+}
+
+.searchQueryInputContainerBottom {
+  margin-bottom: 16px;
+}
+
+.searchQueryInput {
+  outline: none;
+  width: calc(100% - 80px);
+  padding: 24px 0 20px;
+  margin-right: 40px;
+  margin-left: 40px;
+  border-width: 0;
+  display: flex;
+  height: 78px;
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 77px;
+  color: #000000;
+  border-bottom: 2px solid #000000;
+  background: transparent;
+}
+.searchQueryInput::placeholder {
+  color: #000000;
+  opacity: 0.1;
+}
+
+.searchResultTitle {
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  opacity: 0.5;
+
+  margin-top: 20px;
+  width: calc(100% - 80px);
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.searchTabsContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.filterContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 80px);
+  margin: 4px 40px 0;
+}
+
+.searchTabTextEmpty {
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 31px;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  border-bottom: 2px solid transparent;
+}
+
+.searchTabText {
+  user-select: none;
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 31px;
+  color: #000000;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  border-bottom: 2px solid transparent;
+}
+
+.searchTabTextSelected {
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 31px;
+  color: #EF845C;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #EF845C;
+}
+
+.tabCount {
+  margin-left: 4px;
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  opacity: 0.5;
+}
+
+.tabCountMobile {
+  display: none;
+  margin-left: 4px;
+  margin-top: -8px;
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+  opacity: 0.5;
+}
+
+.searchTabEmpty {
+  display: flex;
+  cursor: default;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 16px;
+  opacity: 0;
+}
+
+.searchTab {
+  display: flex;
+  cursor: pointer;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 16px;
+  margin-right: 24px;
+  transition: all 300ms ease-in-out;
+}
+.searchTab:hover {
+  transform: scale(1.05);
+}
+.searchTab:active {
+  transform: scale(0.95);
+}
+
+.brandSuggestionsMobile {
+  display: none;
+}
+
+.brandSuggestions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 28px;
+  right: calc((100vw - min(100vw, 1440px)) * 0.5 + 98px);
+  background: #F1F1F1;
+  padding: 16px 20px;
+  border-radius: 10px;
+}
+
+.brandSuggestionsList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brandSuggestionLabel {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  font-family: SuisseIntl;
+  width: 56px;
+  max-width: 56px;
+  margin-right: 12px;
+}
+
+.brandItemContainer {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: all 300ms ease-in-out;
+}
+.brandItemContainer:hover {
+  transform: scale(1.05);
+}
+.brandItemContainer:active {
+  transform: scale(0.95);
+}
+
+.brandItemImage {
+  margin-right: 8px;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+}
+
+.brandTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+.brandItemName {
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000000;
+  text-align: left;
+  max-width: 128px;
+  overflow: hidden;
+  text-decoration: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.brandItemType {
+  margin-top: 4px;
+  font-family: Nimbus;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: #EF845C;
+}
+
+.searchIcon {
+  cursor: pointer;
+  position: absolute;
+  top: 48px;
+  right: calc((100vw - min(100vw, 1440px)) * 0.5 + 40px);
+}
+
+.searchIconSvg {
+  height: 40px;
+  width: 40px;
+}
+
+@media only screen and (max-height: 860px) and (min-width: 861px) {
+  .searchIcon {
+    top: 24px !important;
+    right: calc((100vw - min(100vw, 1440px)) * 0.5 + 40px) !important;
+  }
+  .searchIconSvg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .searchQueryInput {
+    padding: 16px 0;
+    height: 32px;
+    font-size: 28px;
+    line-height: 32px;
+  }
+  .searchTabTextSelected {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    padding-bottom: 16px;
+  }
+  .searchTabText {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    padding-bottom: 16px;
+  }
+  .searchQueryInputContainerBottom {
+    margin-bottom: 0;
+  }
+  .brandSuggestions {
+    top: 10px;
+    right: calc((100vw - min(100vw, 1440px)) * 0.5 + 80px);
+    padding: 8px 12px;
+  }
+  .brandSuggestionsList {
+    gap: 8px;
+  }
+  .brandSuggestionLabel {
+    font-size: 12px;
+    line-height: 14px;
+    width: 48px;
+    max-width: 48px;
+    margin-right: 8px;
+  }
+  .brandItemContainer {
+    flex-direction: row;
+    align-items: center;
+  }
+  .brandItemImage {
+    margin-right: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+  }
+  .brandItemName {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+    text-align: left;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+  }
+  .brandItemType {
+    margin-top: 2px;
+    font-family: Nimbus;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: #EF845C;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .searchIcon {
+    top: 54px;
+    right: calc((100vw - min(100vw, 1440px)) * 0.5 + 40px);
+  }
+  .searchIconSvg {
+    width: 20px;
+    height: 20px;
+  }
+  .brandSuggestions {
+    top: 40px;
+    right: calc((100vw - min(100vw, 1440px)) * 0.5 + 80px);
+    padding: 8px 12px;
+  }
+  .brandSuggestionsList {
+    gap: 8px;
+  }
+  .brandSuggestionLabel {
+    font-size: 12px;
+    line-height: 14px;
+    width: 48px;
+    max-width: 48px;
+    margin-right: 8px;
+  }
+  .brandItemContainer {
+    flex-direction: row;
+    align-items: center;
+  }
+  .brandItemImage {
+    margin-right: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+  }
+  .brandItemName {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+    max-width: unset;
+    text-align: left;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+  }
+  .brandItemType {
+    margin-top: 2px;
+    font-family: Nimbus;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: #EF845C;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .searchBackContainer {
+    display: none;
+  }
+  .searchQueryInputWrapper {
+    top: unset;
+    z-index: unset;
+    display: flex;
+    position: relative;
+    background: #FFFFFF;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  .searchQueryInputContainer {
+    top: unset;
+    z-index: unset;
+    display: flex;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px 0 4px 16px;
+    width: calc(100% - 32px);
+  }
+  .searchQueryInput {
+    border-bottom: 0;
+    width: calc(100% - 60px);
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0 40px 0 20px;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    height: 48px;
+    background: #FFFFFF;
+    border-radius: 10px;
+  }
+  .searchIcon {
+    top: 36px;
+    right: 28px;
+  }
+  .searchIconSvg {
+    width: 16px;
+    height: 16px;
+  }
+  .searchResultTitle {
+    display: none;
+  }
+  .searchQueryInputWrapperMobile {
+    display: flex;
+  }
+  .searchQueryInputWrapperDesktop {
+    display: none;
+  }
+  .filterContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    width: calc(100% - 32px);
+    margin: 0 16px;
+  }
+  .searchTabsContainer {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 12px;
+  }
+  .searchTabContainer {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-bottom: 0;
+    width: calc(100% - 32px);
+  }
+  .searchTab {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+    margin-right: 0;
+  }
+  .searchTabTextSelected {
+    font-style: normal;
+    font-weight: 400;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    line-height: 23px;
+    padding-bottom: 16px;
+  }
+  .searchTabText {
+    font-style: normal;
+    font-weight: 400;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 18px;
+    line-height: 23px;
+    padding-bottom: 16px;
+  }
+  .tabCount {
+    display: none;
+  }
+  .tabCountMobile {
+    display: unset;
+  }
+  .brandSuggestions {
+    display: none;
+  }
+  .brandSuggestionsMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    background: #F1F1F1;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    width: calc(100% - 32px);
+  }
+  .brandSuggestionsMobile:only-child {
+    margin-top: 16px;
+  }
+  .brandSuggestionLabel {
+    margin-right: 0;
+    width: unset;
+    max-width: unset;
+    margin-bottom: 12px;
+  }
+  .brandSuggestionsList {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+  }
+  .searchTabEmpty {
+    display: none;
+  }
+}

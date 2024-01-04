@@ -1,0 +1,34 @@
+query blogListByType($limit: Int, $offset: Int, $type: String) {
+    blogListByType(type: $type, offset: $offset, limit: $limit) {
+        ...BlogItem
+        blgDescription
+        blgBody
+    }
+}
+
+query blogTypes {
+    blogTypeAll {
+        plBlogTypeID
+        plSlug
+        plType
+    }
+}
+
+query blogBySlug($blogSlug: String!) {
+    blogBySlug(blgSlug: $blogSlug) {
+        ...BlogItem
+        blgDescription
+        blgBody
+    }
+}
+
+query blogSearch($search: String!) {
+    blogSearch(name: $search) {
+        blogs {
+            ...BlogItem
+        }
+        plBlogTypeID
+        plSlug
+        plType
+    }
+}

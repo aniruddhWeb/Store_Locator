@@ -1,0 +1,250 @@
+.root {
+    --tw-bg-opacity: 1;
+    background-color: rgba(f, f, f, var(--tw-bg-opacity));
+    width: calc(100% - 420px);
+    padding-left: 380px;
+    padding-right: 40px;
+    box-shadow: 0 0 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.rootMobile {
+    display: none;
+}
+
+.rootDesktop {
+    display: flex;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    width: 100%;
+}
+
+.emptyGridContainer {
+    width: 100%;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.emptyGridText {
+    color: #000000;
+    font-family: Windsor;
+    font-size: 18px;
+    line-height: 21px;
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 0;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    text-overflow: initial;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    margin-top: 16px;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-left: 40px;
+}
+
+.titleContainerCenter {
+    display: flex;
+    flex-direction: row;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    justify-content: center;
+    align-items: flex-end;
+    margin-left: 0;
+}
+
+.actionsContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    min-width: 240px;
+    align-self: flex-end;
+}
+
+.title {
+    color: #000000;
+    font-family: Windsor;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 368;
+    line-height: 28px;
+    letter-spacing: 0;
+    text-align: left;
+    text-overflow: initial;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+
+.titleCenter {
+    text-align: center;
+}
+
+.titleContainerHidden {
+    display: flex;
+}
+
+@media only screen and (max-width: 1360px) {
+    .gridContainer {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        width: calc(100% - 40px);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+
+@media only screen and (max-width: 1180px) {
+    .gridContainer {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        justify-items: center;
+        width: calc(100% - 40px);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .titleContainerCenter {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    .gridContainer {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: center;
+        width: calc(100% - 40px);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .titleContainerCenter {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+
+@media only screen and (max-width: 860px) {
+    .rootMobile {
+        display: flex;
+    }
+    .rootDesktop {
+        display: none;
+    }
+    .root {
+        margin-top: 32px;
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .gridContainer {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        justify-items: center;
+        width: calc(100% - 40px);
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .titleContainer {
+        padding: 8px 0;
+        margin: 16px 16px 0;
+        justify-content: flex-end;
+    }
+    .titleContainerHidden {
+        display: none;
+    }
+    .titleContainerCenter {
+        display: flex !important;
+    }
+    .actionsContainer {
+        min-width: unset;
+    }
+    .title {
+        display: none;
+    }
+    .titleCenter {
+        font-family: Windsor;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        color: #000000;
+        display: block;
+    }
+    .titleContainer {
+        padding: 8px 0;
+        margin: 16px 16px 0;
+        justify-content: flex-end;
+    }
+    .titleContainerHidden {
+        display: none;
+    }
+    .titleContainerCenter {
+        display: flex !important;
+    }
+    .actionsContainer {
+        min-width: unset;
+    }
+    .title {
+        display: none;
+    }
+    .rootTopMargin {
+        margin-top: 16px;
+    }
+    .rootTopMarginSmall {
+        margin-top: 0;
+    }
+    .titleCenter {
+        text-align: left;
+        font-family: Windsor;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        color: #000000;
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .gridContainer {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        justify-items: center;
+        width: calc(100% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+
+@media only screen and (max-width: 360px) {
+    .gridContainer {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        justify-items: center;
+        width: calc(100% - 32px);
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+

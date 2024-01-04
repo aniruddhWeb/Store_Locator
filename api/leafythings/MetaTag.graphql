@@ -1,0 +1,42 @@
+query MetaTagsRegion($plRegionID: Int!, $categoryType: String!) {
+    metaTagByRegionIDByType(plRegionID: $plRegionID, categoryType: $categoryType) {
+        id
+        categoryType
+        plRegionID
+        plMetaTitle
+        plMetaDescription
+        plCustomH1
+        plDescription1
+        plDescription2
+    }
+}
+
+query MetaTagsProvince($plProvinceID: Int!, $categoryType: String!) {
+    metaTagByProvinceIDByType(plProvinceID: $plProvinceID, categoryType: $categoryType) {
+        id
+        categoryType
+        plProvinceID
+        plMetaTitle
+        plMetaDescription
+        plCustomH1
+        plDescription1
+        plDescription2
+    }
+}
+
+query MetaTagsProductCategory {
+    metaTagProductTypes {
+        id
+        title
+        description
+        content
+        product_type_id
+        product_type {
+            id
+            name
+            slug
+            typeParent
+            typeParentName
+        }
+    }
+}

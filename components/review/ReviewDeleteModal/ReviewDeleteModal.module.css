@@ -1,0 +1,110 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.title {
+    font-family: Windsor;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    color: #000000;
+}
+
+.text {
+    font-family: SuisseIntl;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #000000;
+    margin-top: 12px;
+    margin-bottom: 40px;
+}
+
+.review {
+    width: calc(100% - 32px);
+    display: flex;
+    margin: 0 16px 32px 16px;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 20px;
+    border: 1px solid rgba(14,94,15,0.1);
+    border-radius: 10px;
+}
+
+.reviewText {
+    font-family: SuisseIntl;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: #000000;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.cancel {
+    padding: 17px;
+    font-family: SuisseIntl;
+    font-size: 14px;
+    line-height: 18px;
+    color: #EF845C;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.cancel:hover {
+    transform: scale(1.05);
+}
+.cancel:active {
+    transform: scale(0.95);
+}
+
+.icon {
+    border-radius: 10px;
+    width: 32px;
+    height: 32px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.rating {
+    margin-top: 8px;
+    width: 100%;
+}
+
+.error {
+    font-family: SuisseIntl;
+    font-size: 12px;
+    color: #EF845C;
+}
+
+@media only screen and (max-width: 560px) {
+    .root {
+        height: unset;
+        width: calc(100vw - 64px);
+        padding: 24px 16px 20px;
+        flex-direction: column;
+    }
+    .title {
+        font-size: 18px;
+        line-height: 100%;
+    }
+    .text {
+        font-size: 12px;
+        line-height: 16px;
+        text-align: center;
+        margin-bottom: 24px;
+    }
+    .review {
+        width: calc(100% - 48px);
+        padding: 16px;
+        margin: 0 0 24px;
+    }
+}

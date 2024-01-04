@@ -1,0 +1,12 @@
+query CurrentUser {
+    currentUser {
+        email
+        username
+        usrFirstName
+        usrLastName
+        usrUserID
+        email_verified_at
+        userRoles
+        usrSubscription
+    }
+}

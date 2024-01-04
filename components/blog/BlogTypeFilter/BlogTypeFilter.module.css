@@ -1,0 +1,112 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    text-decoration: none;
+    color: #000000;
+    width: 100%;
+    margin-top: 32px;
+}
+
+.horizontalScrollContainer {
+    width: 100%;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.filterSelectedContainer {
+    display: flex;
+    margin-top: 8px;
+    align-items: center;
+    justify-content: center;
+    background: #EF845C;
+    border: 1px solid #EF845C;
+    overflow: hidden;
+    border-radius: 10px;
+    min-width: 76px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+}
+.filterSelectedContainer:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+.filterSelectedContainer:active {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.filterItemContainer {
+    display: flex;
+    margin-top: 8px;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF;
+    border: 1px solid #EF845C;
+    overflow: hidden;
+    border-radius: 10px;
+    min-width: 76px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 10px;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+}
+.filterItemContainer:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+.filterItemContainer:active {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.filterSelectedText {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
+.filterItemText {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #EF845C;
+}
+
+@media only screen and (max-width: 860px) {
+    .root {
+        margin-top: 0;
+    }
+    .horizontalScrollContainer {
+        margin-top: 16px;
+        flex-wrap: unset;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .filterItemContainer {
+        min-width: 96px;
+    }
+    .filterSelectedContainer {
+        min-width: 96px;
+    }
+}

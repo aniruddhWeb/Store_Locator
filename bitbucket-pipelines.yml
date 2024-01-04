@@ -1,0 +1,146 @@
+image: atlassian/default-image:2
+pipelines:
+  branches:
+    dev:
+      - step:
+          name: "Build Docker and push"
+          services:
+            - docker
+          script:
+            - EKS_KUBECTL_ROLE_ARN=arn:aws:iam::776347173081:role/EksCodeBuildKubectlRole
+            - REGISTRY_URL=776347173081.dkr.ecr.ca-central-1.amazonaws.com/leafythings-web
+            - ENV=dev
+            - NEXT_PUBLIC_SITEMAP_URL=https://leafyimages.s3.ca-central-1.amazonaws.com/download/dev/
+
+            - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            - unzip awscliv2.zip && ./aws/install
+            - aws --version
+            - aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin 776347173081.dkr.ecr.ca-central-1.amazonaws.com
+            - docker build -t ${REGISTRY_URL}:${BITBUCKET_BUILD_NUMBER} --build-arg SENTRY_AUTH_TOKEN --build-arg NEXT_PUBLIC_SITEMAP_URL=${NEXT_PUBLIC_SITEMAP_URL} -f .infra/Dockerfile .
+            - docker push ${REGISTRY_URL}:${BITBUCKET_BUILD_NUMBER}
+      - step:
+          name: "Deploy to EKS"
+          script:
+            - EKS_KUBECTL_ROLE_ARN=arn:aws:iam::776347173081:role/EksCodeBuildKubectlRole
+            - REGISTRY_URL=776347173081.dkr.ecr.ca-central-1.amazonaws.com/leafythings-web
+
+            - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            - unzip awscliv2.zip && ./aws/install
+            - aws --version
+
+            - cp -R .infra/helm /usr/bin/
+            - helm version
+            - aws eks --region ca-central-1 update-kubeconfig --name leafythings
+            - helm upgrade -n dev leafythings-web .infra/k8s --set=image.tag=$BITBUCKET_BUILD_NUMBER --values .infra/k8s/values-dev.yaml
+      - step:
+          name: "Verify Deploy to DEV"
+          script:
+            - pipe: atlassian/aws-eks-kubectl-run:2.0.0
+              variables:
+                AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                AWS_DEFAULT_REGION: "ca-central-1"
+                CLUSTER_NAME: "leafythings"
+                KUBECTL_COMMAND: "rollout --namespace dev status deployment web --timeout 420s"
+                DEBUG: "true"
+
+    stage:
+      - step:
+          name: "Build Docker and push"
+          services:
+            - docker
+          script:
+            - EKS_KUBECTL_ROLE_ARN=arn:aws:iam::776347173081:role/EksCodeBuildKubectlRole
+            - REGISTRY_URL=776347173081.dkr.ecr.ca-central-1.amazonaws.com/leafythings-web
+            - ENV=stage
+            - NEXT_PUBLIC_SITEMAP_URL=https://leafyimages.s3.ca-central-1.amazonaws.com/download/stage/
+
+            - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            - unzip awscliv2.zip && ./aws/install
+            - aws --version
+
+            - aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin 776347173081.dkr.ecr.ca-central-1.amazonaws.com
+            - docker build -t ${REGISTRY_URL}:${BITBUCKET_BUILD_NUMBER} --build-arg SENTRY_AUTH_TOKEN --build-arg NEXT_PUBLIC_SITEMAP_URL=${NEXT_PUBLIC_SITEMAP_URL} -f .infra/Dockerfile .
+            - docker push ${REGISTRY_URL}:${BITBUCKET_BUILD_NUMBER}
+      - step:
+          name: "Deploy to EKS"
+          script:
+            - EKS_KUBECTL_ROLE_ARN=arn:aws:iam::776347173081:role/EksCodeBuildKubectlRole
+            - REGISTRY_URL=776347173081.dkr.ecr.ca-central-1.amazonaws.com/leafythings-web
+
+            - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            - unzip awscliv2.zip && ./aws/install
+            - aws --version
+
+            - cp -R .infra/helm /usr/bin/
+            - helm version
+            - aws eks --region ca-central-1 update-kubeconfig --name leafythings
+            - helm upgrade -n stage leafythings-web .infra/k8s --set=image.tag=$BITBUCKET_BUILD_NUMBER --values .infra/k8s/values-stage.yaml
+      - step:
+          name: "Verify Deploy to STAGE"
+          script:
+            - pipe: atlassian/aws-eks-kubectl-run:2.0.0
+              variables:
+                AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                AWS_DEFAULT_REGION: "ca-central-1"
+                CLUSTER_NAME: "leafythings"
+                KUBECTL_COMMAND: "rollout --namespace stage status deployment web --timeout 420s"
+                DEBUG: "true"
+
+    master:
+      - step:
+          name: "prod: Build Docker and push"
+          services:
+            - docker
+          script:
+            - EKS_KUBECTL_ROLE_ARN=arn:aws:iam::776347173081:role/EksCodeBuildKubectlRole
+            - REGISTRY_URL=776347173081.dkr.ecr.ca-central-1.amazonaws.com/leafythings-web
+            - ENV=prod
+            - NEXT_PUBLIC_SITEMAP_URL=https://leafyimages.s3.ca-central-1.amazonaws.com/download/prod/
+
+            - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            - unzip awscliv2.zip && ./aws/install
+            - aws --version
+
+            - aws ecr get-login-password --region ca-central-1 | docker login --username AWS --password-stdin 776347173081.dkr.ecr.ca-central-1.amazonaws.com
+            - docker build -t ${REGISTRY_URL}:${BITBUCKET_BUILD_NUMBER} --build-arg SENTRY_AUTH_TOKEN --build-arg NEXT_PUBLIC_SITEMAP_URL=${NEXT_PUBLIC_SITEMAP_URL} -f .infra/Dockerfile .
+            - docker push ${REGISTRY_URL}:${BITBUCKET_BUILD_NUMBER}
+      - step:
+          name: "prod: Deploy to EKS"
+          script:
+            - EKS_KUBECTL_ROLE_ARN=arn:aws:iam::776347173081:role/EksCodeBuildKubectlRole
+            - REGISTRY_URL=776347173081.dkr.ecr.ca-central-1.amazonaws.com/leafythings-web
+
+            - curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            - unzip awscliv2.zip && ./aws/install
+            - aws --version
+
+            - cp -R .infra/helm /usr/bin/
+            - helm version
+
+            # Master Production Enviroment
+            - aws eks --region ca-central-1 update-kubeconfig --name leafythings-prod2
+            - helm upgrade --install -n prod leafythings-web .infra/k8s --set=image.tag=$BITBUCKET_BUILD_NUMBER --values .infra/k8s/values-prod.yaml
+
+            # # Replica Production Enviroment
+            # - aws eks --region ca-central-1 update-kubeconfig --name leafythings-dev
+            # - helm upgrade --install  -n prodreplica leafythings-web .infra/k8s --set=image.tag=$BITBUCKET_BUILD_NUMBER --values .infra/k8s/values-prod.yaml
+      - step:
+          name: "prod: Verify Deploy to PROD"
+          script:
+            - pipe: atlassian/aws-eks-kubectl-run:2.0.0
+              variables:
+                AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+                AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+                AWS_DEFAULT_REGION: "ca-central-1"
+                CLUSTER_NAME: "leafythings-prod2"
+                KUBECTL_COMMAND: "rollout --namespace prod status deployment web --timeout 420s"
+                DEBUG: "true"
+
+
+definitions:
+  services:
+    docker:
+      memory: 3072
+

@@ -1,0 +1,91 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+.root > table {
+    width: 100%;
+    border-spacing: 0 10px;
+}
+
+.root > table > thead > tr > td {
+    background-color: rgba(217, 217, 217, 0.22);
+    font-family: SuisseIntl;
+    font-weight: 400;
+    font-size: 12px;
+    color: #000000;
+    height: 40px;
+    padding: 0 20px;
+}
+
+.root > table > thead > tr > td > .columnTitle {
+    display: flex;
+    gap: 6px;
+}
+
+.root > table > thead > tr > td > .columnTitle > .sortBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.root > table > thead > tr > td > .columnTitle > .sortBtn:hover {
+    transform: scale(1.3);
+}
+
+.root > table > thead > tr > td > .columnTitle > .sortBtn > svg:last-child {
+    transform: rotate(180deg);
+    margin-left: -1.5px;
+}
+
+.root > table > thead > tr > td:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+.root > table > thead > tr > td:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+.root > table > tbody > tr {
+    margin: 5px 0;
+}
+
+.root > table > tbody > tr > td {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-size: 14px;
+    color: #000000;
+    height: 80px;
+    background: #FFFFFF;
+    border-top: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+    padding: 0 20px;
+}
+
+.root > table > tbody > tr > td:first-child {
+    border-radius: 10px 0 0 10px;
+    border-left: 1px solid #E6E6E6;
+}
+
+.root > table > tbody > tr > td:last-child {
+    border-radius: 0 10px 10px 0;
+    border-right: 1px solid #E6E6E6;
+}
+
+
+@media only screen and (max-width: 860px) {
+    .root > table > thead > tr > td {
+        min-height: 56px;
+        padding: 0 16px;
+    }
+    .root > table > tbody > tr > td {
+        min-height: 56px;
+        padding: 0 16px;
+    }
+}

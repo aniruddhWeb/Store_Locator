@@ -1,0 +1,270 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    text-decoration: none;
+    color: #000000;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding: 0;
+    position: relative;
+}
+
+.rootGrid {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    text-decoration: none;
+    color: #000000;
+    margin: 20px;
+    width: calc(100% - 20px);
+    padding: 0;
+    height: 240px;
+    position: relative;
+}
+
+.cardColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    width: 398px;
+    max-width: 398px;
+    transition: all 300ms ease-in-out;
+    background: rgba(152,204,198, 0.1);
+    border-radius: 10px;
+    height: 200px;
+}
+
+.cardColumnGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: calc(100% - 36px);
+    width: calc(100% - 40px);
+    padding: 20px;
+    transition: all 300ms ease-in-out;
+    background: rgba(152,204,198, 0.1);
+    border-radius: 10px;
+}
+
+.reviewText {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    letter-spacing: 0;
+    text-decoration: none;
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    margin-top: 16px;
+    overflow: hidden;
+    white-space: initial;
+    height: 84px;
+}
+
+
+.reviewTextGrid {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    letter-spacing: 0;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 16px;
+    overflow: hidden;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+
+.userText {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #000000;
+    text-align: left;
+    letter-spacing: 0;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.deleteContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    transition: all 0.25s ease-out;
+    cursor: pointer;
+}
+.deleteContainer:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+.deleteContainer:active {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+.deleteContainer:not(:first-child) {
+    margin-top: 8px;
+}
+
+.deleteIcon {
+    width: 24px;
+    height: 24px;
+}
+
+.deleteText {
+    margin-left: 4px;
+    background: #000000;
+    border-radius: 5px;
+    padding: 4px;
+    font-family: Nimbus;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.readMore {
+    display: inline-block;
+    color: #EF845C;
+    font-family: Windsor;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    cursor: pointer;
+    transition: all 0.25s ease-out;
+}
+.readMore:hover {
+    transform: scale(1.05) translateX(2.5%);
+}
+.readMore:active {
+    transform: scale(0.95);
+}
+
+.reviewContainer {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-left: 16px;
+    margin-top: 4px;
+    align-items: flex-end;
+}
+
+.viewOwner {
+    display: flex;
+    font-family: SuisseIntl;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color:#EF845C;
+    cursor: pointer;
+    text-align: right;
+    transition: all 0.25s ease-out;
+}
+.viewOwner:hover {
+    transform: scale(1.05) translateX(-2.5%);
+}
+.viewOwner:active {
+    transform: scale(0.95);
+}
+
+.userTextWrapper{
+    display: flex;
+    margin-top: auto;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.starsWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 860px) {
+    .cardColumnGrid{
+        height: calc(100% - 15px);
+    }
+    .root {
+        margin-left: 16px;
+        margin-right: 16px;
+        padding: 0;
+    }
+    .rootGrid {
+        margin-left: 16px;
+        margin-right: 16px;
+        padding: 0;
+    }
+    .cardColumn {
+        height: 180px;
+        width: 232px;
+        max-width: 232px;
+    }
+    .reviewText {
+        font-size: 14px;
+        line-height: 18px;
+        height: 100%;
+        margin-top: 8px;
+    }
+    .userTextWrapper {
+        gap: 5px;
+    }
+    .userText {
+        font-size: 12px;
+        line-height: 16px;
+        word-break: break-all;
+    }
+    .deleteIcon {
+        width: 20px;
+        height: 20px;
+    }
+    .readMore {
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+
+@media only screen and (max-width: 560px) {
+    .rootGrid {
+        height: unset;
+    }
+    .reviewTextGrid {
+        -webkit-line-clamp: unset;
+    }
+}

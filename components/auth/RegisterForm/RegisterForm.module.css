@@ -1,0 +1,481 @@
+.root {
+    display: flex;
+    background: #FFFFFF;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    align-self: center;
+    margin: 8px 0 8px;
+}
+
+.rootContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: 32px;
+    height: calc(100% - 64px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    min-width: 356px;
+    border-radius: 10px;
+}
+
+.checkContainer {
+    display: flex;
+    background: #EFF7EF;
+    flex-direction: column;
+    align-items: flex-start;
+    max-height: 582px;
+    overflow: scroll;
+    justify-content: space-between;
+    padding: 32px;
+    height: calc(100% - 64px);
+}
+.checkContainer::-webkit-scrollbar{
+    display: block;
+    width: 10px;
+}
+.checkContainer::-webkit-scrollbar-track {
+    display: block;
+    background: transparent;
+    border-radius: 6px;
+}
+.checkContainer::-webkit-scrollbar-thumb {
+    display: block;
+    background: rgba(97,171,98,0.5);
+    border-radius: 6px;
+    background-clip: padding-box;
+}
+.checkContainer::-webkit-scrollbar-thumb:hover {
+    background: rgba(97,171,98,1);
+}
+
+.checkTitleContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.checkTitle {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #61AB62;
+}
+
+.checkAll {
+    margin-top: 4px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: right;
+    color: #000000;
+    opacity: 0.5;
+}
+
+.checkBlockContainer {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    transition: all 300ms ease-in-out;
+}
+
+.checkBlockContainerDisabled {
+    opacity: 0.5;
+    pointer-events: none !important;
+}
+
+.checkBlockTitle {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+.checkBlockRowContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.checkBlockRowNoWrapContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.checkBoxItem {
+    display: flex;
+    margin-right: 8px;
+    margin-top: 10px;
+    min-width: 232px;
+}
+
+.checkBoxItemText {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #000000;
+}
+
+.title {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+    color: #000000;
+}
+
+.agreeContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 24px;
+    align-self: flex-start;
+    max-width: 414px;
+}
+
+.businessRegister {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 24px;
+    align-self: flex-start;
+    max-width: 414px;
+}
+
+.agreeText {
+    margin-top: -4px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.businessRegisterText {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.singleInputError {
+    background: rgba(239, 92, 92, 0.1) !important;
+    border: 1px solid #EF5C5C !important;
+}
+
+.singleInput {
+    margin-top: 24px;
+    width: calc(100% - 40px);
+    max-width: calc(100% - 40px);
+    outline: none;
+    padding: 0 20px;
+    border-width: 0;
+    display: flex;
+    height: 56px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    background: rgba(97,171,98,0.1);
+    border-radius: 10px;
+}
+.singleInput::placeholder {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0E5E0F;
+}
+.singleInput:focus {
+    color: #000000 !important;
+    width: calc(100% - 42px);
+    max-width: calc(100% - 42px);
+    height: 54px !important;
+    border: 1px solid #61AB62 !important;
+    background: #FFFFFF !important;
+}
+.singleInput:focus::placeholder {
+    color: rgba(0,0,0,0.5) !important;
+}
+
+.policyText {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: center;
+    color: #000000 !important;
+    text-decoration: none !important;
+    margin: 16px 0 0;
+    padding: 0;
+    max-width: 260px;
+}
+
+.policyText a {
+    color: #000000 !important;
+    text-decoration: none !important;
+    font-weight: bold;
+}
+
+.selectRowContainer {
+    margin-top: 24px;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selectHalfContainer {
+    width: calc(50% - 36px);
+    max-width: calc(50% - 36px);
+    outline: none;
+    padding: 0 20px 0 16px;
+    border-width: 0;
+    display: flex;
+    height: 56px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0E5E0F;
+    background: rgba(97,171,98,0.1);
+    border-radius: 10px;
+}
+.selectHalfContainer:first-child {
+    margin-right: 12px;
+}
+.selectHalfContainer:last-child {
+    margin-left: 12px;
+}
+
+.selectContainer {
+    margin-top: 24px;
+    width: calc(100% - 36px);
+    max-width: calc(100% - 36px);
+    outline: none;
+    padding: 0 20px 0 16px;
+    border-width: 0;
+    display: flex;
+    height: 56px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0E5E0F;
+    background: rgba(97,171,98,0.1);
+    border-radius: 10px;
+}
+
+.selectInput {
+    width: 100%;
+    max-width: 100%;
+    outline: none;
+    border-width: 0;
+    display: flex;
+    height: 56px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0E5E0F;
+    background: transparent;
+}
+
+.selectInput option {
+    width: 100%;
+    max-width: 324px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    margin-top: 24px;
+    width: 100%;
+}
+
+.buttonContainerMobile {
+    display: none;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+}
+
+.errorText {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    align-self: flex-start;
+    text-align: left;
+    color: #e3342f !important;
+    text-decoration: none !important;
+    margin: 4px 00px 0 0;
+    padding: 0;
+    max-width: 260px;
+}
+
+.loginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: calc(100% - 40px);
+    max-width: calc(100% - 40px);
+    background: rgba(97,171,98,0.2);
+}
+
+.loginTitle {
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #000000;
+}
+
+.loginButton {
+    font-family: SuisseIntl;
+    margin-top: 16px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    text-decoration: none !important;
+    color: #EF845C !important;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.loginButton:hover {
+    transform: scale(1.01);
+}
+.loginButton:active {
+    transform: scale(0.99);
+}
+
+@media only screen and (max-width: 1024px) {
+    .root {
+        width: calc(100% - 40px);
+        max-width: 420px;
+        padding: 8px 0 0;
+        margin: 0 0 8px;
+    }
+    .rootContainer {
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+    }
+    .main {
+        padding: 24px 20px;
+        width: calc(100% - 40px);
+        min-width: unset;
+        box-shadow: unset;
+    }
+    .checkContainer {
+        padding: 24px 20px;
+        width: calc(100% - 40px);
+        min-width: unset;
+        box-shadow: unset;
+        max-height: 320px;
+    }
+    .checkBoxItem {
+        min-width: 120px;
+    }
+    .checkBlockTitle {
+        text-align: center;
+    }
+    .singleInput {
+        margin-top: 16px;
+    }
+    .selectRowContainer {
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 0;
+    }
+    .selectContainer {
+        margin-top: 16px;
+    }
+    .selectHalfContainer {
+        margin-top: 16px;
+        width: calc(100% - 36px);
+        max-width: calc(100% - 36px);
+    }
+    .selectHalfContainer:first-child {
+        margin-right: 0;
+    }
+    .selectHalfContainer:last-child {
+        margin-left: 0;
+    }
+    .title {
+        margin-bottom: 8px;
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .checkTitleContainer {
+        flex-direction: column;
+    }
+    .buttonContainer {
+        display: none;
+    }
+    .buttonContainerMobile {
+        margin-top: 24px;
+        margin-bottom: 24px;
+        display: flex;
+        width: calc(100% - 40px);
+    }
+    .agreeContainer {
+        width: 100%;
+        max-width: unset;
+    }
+    .loginButton {
+        margin-top: 8px;
+    }
+    .checkBlockRowNoWrapContainer {
+        flex-direction: column;
+    }
+}

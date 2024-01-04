@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /cpanel/
+Disallow: /dashboard/*
+Disallow: /profile/*
+Disallow: /find
+Disallow: /find/*
+Disallow: /find?*
+Disallow: /featured
+Disallow: /featured/*
+Disallow: /verified
+Disallow: /verified/*
+Disallow: /all
+Disallow: /all/*
+Disallow: /status-check

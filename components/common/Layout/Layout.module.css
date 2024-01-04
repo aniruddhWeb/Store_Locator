@@ -1,0 +1,116 @@
+.root {
+  background: #ffffff;
+  height: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rootGrey {
+  background: #F1F1F1;
+}
+
+.mainLayout {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  margin-top: 151px;
+  width: min(100%, 1440px);
+  position: relative;
+  transition: margin-top 300ms ease-in-out, width 300ms ease-in-out;
+}
+
+.mainLayoutFull {
+  width: 100%;
+}
+
+.mainLayoutNoHeader {
+  margin: 0 !important;
+}
+
+.mainContent {
+  width: min(100%, 1440px);
+  margin-bottom: 32px;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainBackgroundPortal {
+  pointer-events: none;
+  width: 100vw;
+  position: absolute;
+  left: calc(-1 * (100vw - min(100vw, 1440px)) / 2);
+  right: calc(-1 * (100vw - min(100vw, 1440px)) / 2);
+  top: 0;
+  bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.mainBackgroundPortalFull {
+  left: 0;
+  right: 0;
+}
+
+.mainContentHorizontal {
+  width: min(100%, 1440px);
+  margin: 32px 0;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: row;
+}
+
+.mainContentNoBottom {
+  margin-bottom: 0;
+}
+
+.mainContentFull {
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+.loadingIndicatorOverlay {
+  position: fixed;
+  top: 151px;
+  width: 100vw;
+  height: calc(100vh - 151px);
+  background: #FFFFFF;
+}
+
+@media only screen and (max-width: 860px) {
+  .mainLayout {
+    margin-top: 211px;
+  }
+  .mainLayoutFull {
+    margin-top: 63px;
+  }
+  .mainContentHorizontal {
+    margin-top: 0;
+    flex-direction: column;
+  }
+  .loadingIndicatorOverlay {
+    position: fixed;
+    top: 211px;
+    width: 100vw;
+    height: calc(100vh - 91px);
+    background: #FFFFFF;
+  }
+  .mainLayoutLoading {
+    transform: translateY(-150px);
+  }
+  .mainLayoutNoSearch {
+    margin-top: 159px !important;
+  }
+  .mainLayoutNoSearchScroll {
+    margin-top: 63px !important;
+  }
+}

@@ -1,0 +1,447 @@
+query businessMonthlyTopPicks($plRegionID: Int!, $offset: Int, $limit: Int) {
+    businessMonthlyTopPicks(plRegionID: $plRegionID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessNearBy($countryId: Int!, $plRegionID: Int!, $offset: Int, $limit: Int, $plType: String) {
+    businessNearBy(countryId: $countryId, plRegionID: $plRegionID, offset: $offset, limit: $limit, plType: $plType) {
+        ...BusinessItem
+    }
+}
+
+query businessMonthlyTopPicksBrands($plRegionID: Int!, $offset: Int, $limit: Int) {
+    businessMonthlyTopPicksBrands(plRegionID: $plRegionID,  offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessMonthlyTopPicksMail($plRegionID: Int!, $offset: Int, $limit: Int) {
+    businessMonthlyTopPicksMail(plRegionID: $plRegionID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessMonthlyTopPicksDeliveries($plRegionID: Int!, $offset: Int, $limit: Int) {
+    businessMonthlyTopPicksDeliveries(plRegionID: $plRegionID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessMonthlyTopPicksDispensaries($plRegionID: Int!, $offset: Int, $limit: Int) {
+    businessMonthlyTopPicksDispensary(plRegionID: $plRegionID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessFeaturedBrands($plCountryID: Int, $linkProvinceID: Int!, $offset: Int, $limit: Int) {
+    businessFeaturedBrands(plCountryID: $plCountryID, linkProvinceID: $linkProvinceID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessVerifiedBrands($plCountryID: Int, $linkProvinceID: Int!, $offset: Int, $limit: Int) {
+    businessVerifiedBrands(plCountryID: $plCountryID, linkProvinceID: $linkProvinceID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessAllBrands($plCountryID: Int, $linkProvinceID: Int!, $offset: Int, $limit: Int) {
+    businessAllBrands(plCountryID: $plCountryID, linkProvinceID: $linkProvinceID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessFeaturedDeliveries($plCountryID: Int, $linkProvinceID: Int!, $plRegionID: Int, $offset: Int, $limit: Int) {
+    businessFeaturedDeliveries(plCountryID: $plCountryID, linkProvinceID: $linkProvinceID, plRegionID: $plRegionID,offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessVerifiedDeliveries($plCountryID: Int, $linkProvinceID: Int!, $plRegionID: Int, $offset: Int, $limit: Int) {
+    businessVerifiedDeliveries(plCountryID: $plCountryID, linkProvinceID: $linkProvinceID, plRegionID: $plRegionID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessAllDeliveries($plCountryID: Int, $linkProvinceID: Int!, $plRegionID: Int, $offset: Int, $limit: Int) {
+    businessAllDeliveries(plCountryID: $plCountryID, linkProvinceID: $linkProvinceID, plRegionID: $plRegionID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessFeaturedDispensary($plCountryID: Int, $linkProvinceID: Int!, $plRegionID: Int, $offset: Int, $limit: Int) {
+    businessFeaturedDispensary(plCountryID: $plCountryID, linkProvinceID: $linkProvinceID, plRegionID: $plRegionID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessVerifiedDispensary($plCountryID: Int, $linkProvinceID: Int!, $plRegionID: Int, $offset: Int, $limit: Int) {
+    businessVerifiedDispensary(plCountryID: $plCountryID, linkProvinceID: $linkProvinceID, plRegionID: $plRegionID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessAllDispensary($plCountryID: Int, $linkProvinceID: Int!, $plRegionID: Int, $offset: Int, $limit: Int) {
+    businessAllDispensary(plCountryID: $plCountryID, linkProvinceID: $linkProvinceID, plRegionID: $plRegionID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessFeaturedMail($plCountryID: Int, $linkProvinceID: Int!, $offset: Int, $limit: Int) {
+    businessFeaturedMail(plCountryID: $plCountryID, linkProvinceID: $linkProvinceID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessVerifiedMail($plCountryID: Int, $linkProvinceID: Int!, $offset: Int, $limit: Int) {
+    businessVerifiedMail(plCountryID: $plCountryID, linkProvinceID: $linkProvinceID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessAllMail($plCountryID: Int, $linkProvinceID: Int!, $offset: Int, $limit: Int) {
+    businessAllMail(plCountryID: $plCountryID, linkProvinceID: $linkProvinceID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessBySlug($plSlugType: String!, $bizSlug: String!, $regionSlug: String, $prdGenetics: [String], $prdProductType: [String], $prdProductCategories: [String], $search: String, $productOffset: Int, $productLimit: Int, $filterByLocation: Boolean, $latitudeFront: Float, $longitudeFront: Float, $regionID: Int, $type: String, $clientIp: String, $sort: [String], $resellersLimit: Int = 300, $brandsLimit: Int = 12) {
+    businessBySlug(plSlugType: $plSlugType, bizSlug: $bizSlug, regionSlug: $regionSlug) {
+        plType
+        mdaLocalFileName
+        rvwScoreAvg
+        rvwCount
+        isOpen
+        isToday
+        bizClaim
+        bizClaimUnblurred
+        willOpen
+        canAddReview
+        canAddReview
+        bizBusinessID
+        bizName
+        bizSlug
+        productType {
+            ...ProductTypeItem
+        }
+        productAvailable
+        productCount(prdGenetics: $prdGenetics, prdProductType: $prdProductType, prdProductCategories: $prdProductCategories, search: $search)
+        dutchieAPI
+        bizDescription
+        bizFeaturedPosition
+        bizIsVerified
+        bizIsLite
+        bizHasMapPin
+        bizSortOption
+        brands(offset: 0, limit: $brandsLimit) {
+            ...BusinessItem
+        }
+        resellers(clientIp: $clientIp, type: $type, filterByLocation: $filterByLocation, latitudeFront: $latitudeFront, longitudeFront: $longitudeFront, regionID: $regionID, offset: 0, limit: $resellersLimit) {
+            ...BusinessItem
+            contact {
+                ...ContactItem
+            }
+        }
+        contact {
+            ...ContactItem
+        }
+        deals(offset: 0, limit: 12) {
+            ...DealItem
+        }
+        products(offset: $productOffset, limit: $productLimit, prdGenetics: $prdGenetics, prdProductType: $prdProductType, prdProductCategories: $prdProductCategories, search: $search, sort: $sort) {
+            ...ProductItem
+        }
+        reviews(offset: 0, limit: 12) {
+            ...ReviewItem
+        }
+        workingHours {
+            ...WorkingHourItem
+        }
+    }
+}
+
+query businessProductsBySlug($plSlugType: String!, $bizSlug: String!, $regionSlug: String, $limit: Int!, $prdGenetics: [String], $prdProductType: [String], $prdProductCategories: [String], $search: String, $sort: [String]) {
+    businessBySlug(plSlugType: $plSlugType, bizSlug: $bizSlug, regionSlug: $regionSlug) {
+        plType
+        mdaLocalFileName
+        rvwScoreAvg
+        rvwCount
+        isOpen
+        isToday
+        willOpen
+        canAddReview
+        canAddReview
+        bizBusinessID
+        bizName
+        bizSlug
+        productType {
+            ...ProductTypeItem
+        }
+        productAvailable
+        productCount(prdGenetics: $prdGenetics, prdProductType: $prdProductType, prdProductCategories: $prdProductCategories, search: $search)
+        dutchieAPI
+        bizDescription
+        bizFeaturedPosition
+        bizIsVerified
+        bizIsLite
+        bizHasMapPin
+        bizSortOption
+        contact {
+            ...ContactItem
+        }
+        products(offset: 0, limit: $limit, prdGenetics: $prdGenetics, prdProductType: $prdProductType, prdProductCategories: $prdProductCategories, search: $search, sort: $sort) {
+            ...ProductItem
+        }
+        workingHours {
+            ...WorkingHourItem
+        }
+    }
+}
+
+
+query businessDealsBySlug($plSlugType: String!, $bizSlug: String!, $regionSlug: String, $limit: Int!) {
+    businessBySlug(plSlugType: $plSlugType, bizSlug: $bizSlug, regionSlug: $regionSlug) {
+        plType
+        mdaLocalFileName
+        rvwScoreAvg
+        rvwCount
+        isOpen
+        isToday
+        willOpen
+        canAddReview
+        canAddReview
+        bizBusinessID
+        bizName
+        bizSlug
+        productType {
+            ...ProductTypeItem
+        }
+        dutchieAPI
+        bizDescription
+        bizFeaturedPosition
+        bizIsVerified
+        bizIsLite
+        bizHasMapPin
+        contact {
+            ...ContactItem
+        }
+        deals(offset: 0, limit: $limit) {
+            ...DealItem
+        }
+        workingHours {
+            ...WorkingHourItem
+        }
+    }
+}
+
+query businessReviewsBySlug($plSlugType: String!, $bizSlug: String!, $regionSlug: String, $limit: Int!) {
+    businessBySlug(plSlugType: $plSlugType, bizSlug: $bizSlug, regionSlug: $regionSlug) {
+        plType
+        mdaLocalFileName
+        rvwScoreAvg
+        rvwCount
+        isOpen
+        isToday
+        willOpen
+        canAddReview
+        canAddReview
+        bizBusinessID
+        bizName
+        bizSlug
+        productType {
+            ...ProductTypeItem
+        }
+        dutchieAPI
+        bizDescription
+        bizFeaturedPosition
+        bizIsVerified
+        bizIsLite
+        bizHasMapPin
+        contact {
+            ...ContactItem
+        }
+        reviews(offset: 0, limit: $limit) {
+            ...ReviewItem
+        }
+        workingHours {
+            ...WorkingHourItem
+        }
+    }
+}
+
+
+query businessResellersBySlug($plSlugType: String!, $bizSlug: String!, $regionSlug: String, $limit: Int!, $filterByLocation: Boolean, $latitudeFront: Float, $longitudeFront: Float, $regionID: Int, $type: String, $clientIp: String) {
+    businessBySlug(plSlugType: $plSlugType, bizSlug: $bizSlug, regionSlug: $regionSlug) {
+        plType
+        mdaLocalFileName
+        rvwScoreAvg
+        rvwCount
+        isOpen
+        isToday
+        willOpen
+        canAddReview
+        canAddReview
+        bizBusinessID
+        bizName
+        bizSlug
+        productType {
+            ...ProductTypeItem
+        }
+        dutchieAPI
+        bizDescription
+        bizFeaturedPosition
+        bizIsVerified
+        bizIsLite
+        bizHasMapPin
+        contact {
+            ...ContactItem
+        }
+        brands(offset: 0, limit: $limit) {
+            ...BusinessItem
+        }
+        resellers(clientIp: $clientIp, type: $type, filterByLocation: $filterByLocation, latitudeFront: $latitudeFront, longitudeFront: $longitudeFront, regionID: $regionID, offset: 0, limit: $limit) {
+            ...BusinessItem
+            contact {
+                ...ContactItem
+            }
+        }
+        workingHours {
+            ...WorkingHourItem
+        }
+    }
+}
+
+query businessInterlinking($locationSlug: String!, $type: String!, $countryId: Int!) {
+    locationListNearLocation(countryId: $countryId, locationSlug: $locationSlug, type: $type, offset: 0, limit: 50) {
+        provinces {
+            plProvinceID
+            plName
+            plInitials
+        }
+        regions {
+            plRegionID
+            plProvinceID
+            plName
+            plSlug
+            province {
+                plProvinceID
+                plName
+                plInitials
+            }
+        }
+    }
+}
+
+query businessOnlyBySlug($bizSlug: String!) {
+    businessBySlugHasLanding(bizSlug: $bizSlug) {
+        ...BusinessItem
+    }
+}
+
+query businessAllVerified($provinceID: Int!, $regionID: Int!, $offset: Int, $limit: Int) {
+    businessAllVerified(linkProvinceID: $provinceID, plRegionID: $regionID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessAllByLocation($provinceID: Int!, $regionID: Int!, $offset: Int, $limit: Int) {
+    businessAllByLocation(linkProvinceID: $provinceID, plRegionID: $regionID, offset: $offset, limit: $limit) {
+        ...BusinessItem
+    }
+}
+
+query businessGetAll($userId: String!, $sort: [String], $limit: Int, $offset: Int) {
+    businessByUserId(userId: $userId, limit: $limit, offset: $offset, sort: $sort) {
+        businesses {
+            ...BusinessItem
+        }
+    }
+}
+
+query businessForProductAds($userId: String!, $sort: [String], $limit: Int, $offset: Int) {
+    businessByUserId(userId: $userId, limit: $limit, offset: $offset, sort: $sort) {
+        businesses {
+            plType
+            bizName
+            bizClaim
+            bizClaimUnblurred
+            bizPublishDate
+            bizExpirationDateToronto
+            bizExpirationDate
+            bizBusinessID
+            bizIsLite
+            contact {
+                regionName
+                provinceInitial
+            }
+            productType {
+                totalImpressions
+                available
+                counter
+                name
+                slug
+                id
+                price
+                categoriesItems {
+                    totalImpressions
+                    available
+                    name
+                    slug
+                    id
+                    counter
+                    categoriesItems {
+                        totalImpressions
+                        available
+                        name
+                        slug
+                        id
+                        counter
+                        price
+                    }
+                }
+                typeItems {
+                    totalImpressions
+                    available
+                    name
+                    slug
+                    id
+                    counter
+                    price
+                }
+            }
+        }
+    }
+}
+
+query businessAdvertisementForProductPage($productId: String!, $limit: Int, $offset: Int, $plProvinceID: Int, $plRegionID: Int, $longitudeGPS: Float, $latitudeGPS: Float) {
+    businessAdvertisementForProductPage(prdProductID: $productId, limit: $limit, offset: $offset, plProvinceID: $plProvinceID, plRegionID: $plRegionID, longitudeGPS: $longitudeGPS, latitudeGPS: $latitudeGPS) {
+        ...BusinessItem
+        products {
+            ...ProductItem
+            business {
+                bizBusinessID
+            }
+        }
+    }
+}
+
+mutation saveBusinessAdPriceIn($input: [BusinessFinanceInput]!) {
+    saveBusinessAdPriceIn(input: $input)
+}
+
+query businessAdvertisementAnalytics($userId: String!, $startDate: String!, $endDate: String!) {
+    userAdPositiveTransactionsByUserId(userId: $userId, startDate: $startDate, endDate: $endDate) {
+        hisAmount
+        hisCreationDate
+    }
+    userAdNegativeTransactionsByUserId(userId: $userId, startDate: $startDate, endDate: $endDate) {
+        amount
+        creationDate
+        count
+    }
+    userAdBudgetByUserIdByDate(userId: $userId, startDate: $startDate, endDate: $endDate) {
+        budget
+        date
+    }
+}

@@ -1,0 +1,81 @@
+.topNavigation {
+    background: #FFFFFF;
+    display: flex;
+    min-height: 56px;
+    width: calc(100vw - 440px);
+    column-gap: 24px;
+    padding: 16px 24px 0 24px;
+    overflow-x: scroll;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+}
+
+@media only screen and (min-width: 1600px) {
+    .topNavigation {
+        width: calc(75vw - 80px);
+    }
+}
+
+.topNavigationItem {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #FFFFFF;
+}
+
+.topNavigationItem:hover {
+    transform: scale(1.05);
+}
+
+.topNavigationItem.active {
+    transform: scale(1);
+    border-bottom: 2px solid #EF845C;
+}
+
+.topNavigationItemTitle {
+    overflow: hidden;
+    display: flex;
+    white-space: nowrap;
+    text-overflow: initial;
+    max-height: 72px;
+    font-family: SuisseIntl;
+    font-size: 18px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.topNavigationItemTitle.active {
+    font-weight: 600;
+    color: #EF845C;
+}
+
+.topNavigationItemPercentage {
+    font-family: SuisseIntl;
+    margin-left: 8px;
+    font-style: normal;
+    min-width: 32px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(0,0,0,0.5);
+}
+
+.topNavigationItemPercentage.active {
+    color: #EF845C;
+}
+
+.topNavigationItemRegion {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 13px;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.5);
+}
+
+.topNavigationItemRegion.active {
+    color: #EF845C;
+}

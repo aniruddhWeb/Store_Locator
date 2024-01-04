@@ -1,0 +1,423 @@
+.clearSearchIcon {
+    margin-right: 12px;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    display: flex;
+}
+
+.searchIcon {
+    margin-right: 12px;
+    height: 20px;
+    width: 20px;
+    display: flex;
+}
+
+.searchConstContainer {
+    display: flex;
+    width: 252px;
+    min-height: 44px;
+    transition: all 0.3s ease-in-out;
+}
+
+.searchWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    margin-right: 12px;
+    transition: all 0.3s ease-in-out;
+    justify-content: flex-end;
+}
+
+.searchWrapperFocused {
+    position: fixed;
+    right: calc((100vw - min(100vw, 1440px)) * 0.5);
+    width: 540px;
+    transition: all 0.3s ease-in-out;
+}
+
+.searchWrapperFocusedWithSignUp {
+    position: fixed;
+    right: calc((100vw - min(100vw, 1440px)) * 0.5 + 104px);
+    width: 540px;
+    transition: all 0.3s ease-in-out;
+}
+
+.searchWrapperMobile {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    background: #FFFFFF;
+}
+
+.showMap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 12px;
+    margin-right: 12px;
+    border-radius: 10px;
+    height: 44px;
+    transition: all 0.25s ease-out;
+    cursor: pointer;
+    background: rgba(239,132,92,0.2);
+}
+.showMap:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+.showMap:active {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.search {
+    width: 20px;
+    height: 20px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.textIcon {
+    font-family: SuisseIntl;
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 12px;
+    line-height: 16px;
+    color: #EF845C;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    min-width: 64px;
+}
+
+.searchContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 240px;
+    height: 44px;
+    background: rgba(97,171,98,0.2);
+    border-width: 0;
+    border-radius: 10px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    transition: width 0.3s ease-in-out;
+}
+
+.searchContainerFocused {
+    height: 42px !important;
+    width: 100%;
+    background: #FFFFFF !important;
+    border: 1px solid #EBEBEB !important;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
+}
+
+.searchInputDiv {
+    padding-right: 12px;
+    padding-left: 12px;
+    display: flex;
+    height: 38px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: calc(100% - 32px);
+    background: transparent;
+    outline: none;
+    border-width: 0;
+    font-family: SuisseIntl;
+    font-style: normal !important;
+    font-weight: bold !important;
+    font-size: 12px;
+    line-height: 16px;
+    color: #61AB62;
+}
+
+.searchInput {
+    padding-right: 12px;
+    padding-left: 12px;
+    display: flex;
+    height: 44px;
+    width: calc(100% - 32px);
+    background: transparent;
+    outline: none;
+    border-width: 0;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    color: #0E5E0F;
+}
+.searchInput:focus {
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+.searchInput::placeholder {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    color: rgb(14,94,15,0.5);
+}
+
+.activeSearchBox {
+    position: absolute;
+    width: 500px;
+    max-width: 95%;
+    right: 12px;
+    transform: translateY(-50%);
+    background-color: #fff;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.25);
+}
+
+.mobileActiveSearchBox {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+.mobileActiveSearchBox input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+@keyframes anim {
+    0% {
+        position: relative;
+        right: 0;
+        width: 237px;
+    }
+    100% {
+        position: absolute;
+        width: 500px;
+    }
+}
+
+.activeSearchBox.notEmpty {
+    border-radius: 10px 10px 0 0;
+    font-family: SuisseIntl;
+}
+.noData {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    height: 100%;
+    font-family: 'SuisseIntl';
+}
+.activeSearchBox .searchInput::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+.searchDropDown {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: -1px;
+    border-left: 1px solid #EBEBEB !important;
+    border-right: 1px solid #EBEBEB !important;
+    top: calc(100% + 1px);
+    background-color: #FFFFFF;
+    padding: 18px 14px;
+    z-index: 2;
+    box-shadow: 0 28px 40px rgba(0, 0, 0, .12);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 436px;
+    max-height: 436px;
+    overflow: auto;
+}
+.searchDropDown::-webkit-scrollbar{
+    display: block;
+    width: 10px;
+}
+.searchDropDown::-webkit-scrollbar-track {
+    display: block;
+    background: transparent;
+    border-radius: 6px;
+}
+.searchDropDown::-webkit-scrollbar-thumb {
+    display: block;
+    background: rgba(97,171,98,0.5);
+    border-radius: 6px;
+    background-clip: padding-box;
+}
+.searchDropDown::-webkit-scrollbar-thumb:hover {
+    background: rgba(97,171,98,1);
+}
+.searchDropDownLoader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
+    min-height: 24px;
+}
+.findAllByWord a {
+    font-family: 'SuisseIntl';
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #EF845C;
+    transition: all 300ms ease-in-out;
+    display: inline-block;
+}
+.findAllByWord a:hover {
+    transform: scale(1.05);
+}
+.findAllByWord a:active {
+    transform: scale(0.95);
+}
+
+.searchedItems {
+    padding-top: 24px;
+}
+.itemContainer:not(:first-child) {
+    margin-top: 24px;
+}
+
+.itemContainer .itemTitle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.itemContainer .itemTitle h2 {
+    font-family: 'Windsor';
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+}
+.itemContainer .itemTitle a {
+    font-family: 'SuisseIntl';
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    color: #EF845C;
+    display: inline-block;
+    padding-left: 10px;
+    margin-left: auto;
+    transition: all 300ms ease-in-out;
+}
+
+.itemContainer .itemList  {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.itemContainer .itemList li  {
+    margin-left: -14px;
+    margin-right: -14px;
+}
+.itemContainer .itemList li a {
+    display: flex;
+    align-items: flex-start;
+    width: calc(100% - 28px);
+    padding: 8px 14px;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+}
+.itemContainer .itemList li a img {
+    border-radius: 6px;
+    flex: 0 0 50px;
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 8px;
+    object-fit: contain;
+}
+
+.itemContainer .itemTitle a:hover {
+    transform: scale(1.05);
+}
+.itemContainer .itemTitle a:active {
+    transform: scale(0.95);
+}
+.itemContainer .itemList li a:hover {
+    background-color: rgba(152, 204, 198, 0.2);
+}
+.itemContainer .itemList li a .productInfo {
+    width: 100%;
+}
+.itemContainer .itemList li a .productInfo .productTitle{
+    display: flex;
+    align-items: center;
+}
+.itemContainer .itemList li a .productInfo h2{
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+.itemContainer .itemList li a .productInfo .productRating{
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.itemContainer .itemList li a .productInfo .productRating span{
+    font-family: 'SuisseIntlMono';
+    font-size: 12px;
+    line-height: 100%;
+    margin-left: 5px;
+    color: #000000;
+
+}
+.itemContainer .itemList li a .productInfo .productTags{
+    font-family: Nimbus;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 14px;
+    text-transform: uppercase;
+    margin: 0;
+    color: #000;
+}
+.itemContainer .itemList li a .productInfo .productTagsColored{
+    margin-top: 4px;
+    color: #EF845C;
+}
+
+@media only screen and (max-width: 860px) {
+    .searchWrapper {
+        display: none;
+    }
+    .searchWrapperMobile {
+        display: flex !important;
+    }
+    .searchConstContainer {
+        display: none;
+    }
+    .searchContainer {
+        align-self: center;
+        display: flex;
+        flex-grow: 1;
+        max-width: calc(100% - 24px);
+        margin: 0 12px;
+        height: 44px;
+        position: unset;
+        box-shadow: unset;
+    }
+    .searchContainer:empty {
+        display: none;
+    }
+    .searchInput:focus {
+        padding-left: 11px !important;
+        color: #000000 !important;
+    }
+    .searchDropDown {
+        display: none;
+    }
+}

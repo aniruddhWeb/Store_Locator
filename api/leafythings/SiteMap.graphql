@@ -1,0 +1,45 @@
+query SiteMap {
+    siteMapTop5 {
+        brands {
+            province
+            provinceId
+        }
+        mail_order_marijuana {
+            province
+            provinceId
+        }
+        marijuana_dispensary {
+            province
+            city {
+                name
+                slug
+            }
+        }
+        weed_delivery {
+            province
+            city {
+                name
+                slug
+            }
+        }
+    }
+}
+
+query LocationListProvinceForSiteMap {
+    locationListProvinceForSiteMap {
+        plProvinceID
+        plDescription
+        plInitials
+        plName
+    }
+}
+
+query locationListRegionByProvinceForSiteMap($provinceId: Int!) {
+    locationListRegionByProvinceForSiteMap(provinceId: $provinceId) {
+        plProvinceID
+        plRegionID
+        plDescription
+        plSlug
+        plName
+    }
+}

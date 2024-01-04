@@ -1,0 +1,164 @@
+.root {
+    width: 292px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 32px;
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+}
+
+.rootMarginTop {
+    margin-top: 20px;
+    margin-left: 32px;
+    width: 292px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.rootContent {
+    width: 292px;
+    display: flex;
+    overflow-x: visible !important;
+    overflow-y: scroll;
+    flex-direction: column;
+    max-height: calc(100vh - 219px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: fixed;
+}
+
+.rootMainContent {
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 292px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.navItems {
+    width: 292px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: all 300ms ease-in-out;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.navItem {
+    width: calc(100% - 48px);
+    display: flex;
+    padding: 8px 24px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background: #FFFFFF;
+    transition: all 0.25s ease-out;
+}
+.navItem:first-child {
+    padding-top: 12px;
+}
+.navItem:last-child {
+    padding-bottom: 12px;
+}
+.navItem a {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    opacity: 0;
+    transition: all 0.25s ease-out;
+}
+.navItem:hover {
+    background: #F5FAF9;
+    transform: scale(1.05);
+}
+.navItem:hover a {
+    opacity: 1;
+}
+.navItem:active {
+    background: #FFFFFF;
+    transform: scale(0.95);
+}
+.navItem:active a {
+    opacity: 0.5;
+}
+
+.navItemText {
+    flex: 1;
+    text-align: left;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 21px;
+    color: #000000;
+}
+
+
+.fadeContainer {
+    position: fixed;
+    z-index: 1;
+    cursor: pointer;
+    bottom: 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 292px;
+    height: 40px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-image: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.9)
+    100%);
+}
+
+.fadeContainerInvisible {
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+}
+
+.chevronDown {
+    transform: rotate(180deg);
+}
+
+@media only screen and (max-width: 860px) {
+    .root {
+        width: 100%;
+        margin: 0;
+    }
+    .rootMarginTop {
+        width: 100%;
+        margin: 0 0 0;
+    }
+    .rootContent {
+        position: unset;
+        border-radius: 0 0 10px 10px;
+        max-height: unset;
+        min-height: unset;
+        overflow: unset;
+        width: 100%;
+    }
+    .rootMainContent {
+        position: unset;
+        border-radius: 0 0 10px 10px;
+        width: 100%;
+    }
+    .navItems {
+        width: 100%;
+        display: none;
+    }
+    .fadeContainer {
+        display: none;
+    }
+}

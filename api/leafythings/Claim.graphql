@@ -1,0 +1,3 @@
+query claimListing($name: String!, $phone: String!, $time: String!, $url: String!) {
+    claimYourListing(phoneNumber: $phone, name: $name, timeToCall: $time, url: $url)
+}

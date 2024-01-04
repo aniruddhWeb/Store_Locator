@@ -1,0 +1,127 @@
+.pin {
+    position: relative;
+    height: 38px;
+    width: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    transform: translateY(-38px) translateX(-17px);
+}
+.pin:hover {
+    transform: scale(1.5) translateY(-32px) translateX(-11px);
+}
+.pinHighlight {
+    transform: scale(1.5) translateY(-32px) translateX(-11px);
+}
+
+.pinNoHover {
+    pointer-events: none !important;
+}
+
+.questionCircle {
+    display: flex;
+    position: absolute;
+    top: -29px;
+    height: 96px;
+    width: 96px;
+    border-radius: 48px;
+    border: 2px solid #61AB62;
+    background: rgb(97,171,98,0.3)
+}
+
+.pinBigger {
+    position: relative;
+    height: 66px;
+    width: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    transform: translateY(-66px) translateX(-29px);
+}
+.pinBigger:hover {
+    transform: scale(1.5) translateY(-54px) translateX(-19px);
+}
+.pinHighlightBigger {
+    transform: scale(1.5) translateY(-54px) translateX(-19px);
+}
+
+.marker {
+    width: 100%;
+    height: 100%;
+}
+
+.imageContainer {
+    display: flex;
+    position: absolute;
+    top: 5px;
+}
+
+.markerText {
+    display: flex;
+    position: absolute;
+    top: calc(-100% + 5px);
+    background: #FFFFFF;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-family: Windsor;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    color: #000000;
+}
+
+.imageContainerBigger {
+    top: 7px;
+}
+
+.image {
+    border-radius: 12px;
+    overflow: hidden;
+    object-fit: cover;
+    width: 24px;
+    height: 24px;
+}
+
+.imageBigger {
+    border-radius: 22px;
+    width: 44px;
+    height: 44px;
+}
+
+.typeImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.typeImageBigger {
+    width: 44px;
+    height: 44px;
+}
+
+.svgImageBigger {
+    margin-top: 2px;
+    width: 28px;
+    height: 28px;
+}
+
+.dispensary {
+    width: 17px;
+    margin-right: 1px;
+}
+
+.dispensaryBigger {
+    margin-top: 2px;
+    width: 27px;
+    height: 24px;
+    margin-right: 1px;
+}

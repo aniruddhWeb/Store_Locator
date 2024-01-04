@@ -1,0 +1,65 @@
+.root {
+  display: flex;
+  width: calc(min(100vw, 420px) - 82px);
+  margin-left: 16px;
+  margin-right: 16px;
+  padding: 24px 24px;
+  background: #000000;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  border: 1px solid #FFFFFF;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+}
+
+.text {
+  margin-left: 24px;
+  font-family: SuisseIntl;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  color: #FFFFFF;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: initial;
+  display: -webkit-box;
+  -webkit-line-clamp: 15;
+  -webkit-box-orient: vertical;
+}
+
+.textWithOpacity {
+  opacity: 0.8;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+}
+
+@media only screen and (max-width: 560px) {
+  .root {
+    width: calc(100vw - 66px);
+    padding: 16px 16px;
+  }
+  .textContainer {
+    flex-direction: column;
+  }
+  .text {
+    margin-left: 16px;
+  }
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+}

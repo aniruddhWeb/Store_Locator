@@ -1,0 +1,1668 @@
+"""Exposes a URL that specifies the behaviour of this scalar."""
+directive @specifiedBy(
+  """The URL that specifies the behaviour of this scalar."""
+  url: String!
+) on SCALAR
+
+input AnalyticsCategoryHeader {
+  """ for example ["Edibles"] or if selected 'Shop All' for example ["Concentrates"] 
+  """
+  category: [String]!
+
+  """ for example ["Other"] """
+  subcategory: [String]
+
+  """ for example ["Strength", "High - 251mg to 1000mg"] """
+  tier3: [String]
+  usrRegionID: Int
+  anaUserIP: String
+}
+
+type AnalyticsDaily {
+  creationDate: Date!
+  count: Int!
+}
+
+type AnalyticsInfo {
+  bizBusinessID: String
+  name: String
+  bizRegionID: Int
+  regionName: String
+  plType: String
+  start: Date
+  end: Date
+  creation: Date
+  dealCategory: String
+  dealBusinessName: String
+  email: String
+  verified: Int
+  usrRegistrationIP: String
+  bizFeaturedPosition: Int
+  webViews: Int
+  appViews: Int
+  dealViews: Int
+  topPickViews: Int
+  verifiedViews: Int
+  engagements: Int
+  bizCount: Int
+  featured: Int
+  bizEmailAddress: String
+}
+
+input AnalyticsSave {
+  anaBusinessID: String!
+  anaDealID: String
+  anaUserAction: String
+}
+
+input AnalyticsSearch {
+  searchWords: String!
+  tag: String!
+}
+
+type AuthUser {
+  currentUser: CurrentUser
+  token: String
+}
+
+type Blog {
+  blgBlogID: String!
+  blgTitle: String!
+  blgSlug: String!
+  blgDescription: String
+  blgBody: String
+  mdaLocalFileName: String
+  blgPublishedAt: Date
+  created_at: Date
+  updated_at: Date
+  authorName: User
+  plType: String
+  types: [String]
+  comment: [Comment]
+  canAddComment: Boolean
+}
+
+input BlogInput {
+  blgBlogID: String
+  blgTitle: String!
+  blgDescription: String!
+  blgBody: String!
+  mdaLocalFileName: String!
+  blgPublished: Boolean!
+  types: [String]!
+}
+
+type BlogType {
+  plBlogTypeID: Int!
+  plType: String!
+  plSlug: String
+  blogs: [Blog]
+}
+
+type Budget {
+  date: Date!
+  budget: Float
+}
+
+type Business {
+  plType: String!
+  mdaLocalFileName: String
+  rvwScoreAvg: Float
+  rvwCount: Int
+  contact: Contact
+  dutchieAPI: String
+  canAddReview: Boolean
+  isOpen: Boolean
+  isToday: Int
+  willOpen: String
+  productAvailable: Boolean
+  productTypes: [String]
+  productType: [ProductType]
+  productGenetics: [String]
+  bizTags: [String]
+  bizExpirationDateToronto: Date
+  accountManagerId: String
+  accountManager: String
+  bizUserBudget: Float
+  bizCanonical: Business
+
+  """ 0 - pending, 1 - approved, null - not reseller """
+  resellersApproved: Int
+  reviews(offset: Int, limit: Int): [Review!]!
+  deals(offset: Int, limit: Int): [BusinessDeals!]!
+  workingHours(offset: Int, limit: Int): [WorkingHours]
+  productCount(prdProductType: [String], prdGenetics: [String], prdProductCategories: [String], search: String): Int!
+  products(
+    offset: Int
+    limit: Int
+    prdProductType: [String]
+    prdGenetics: [String]
+    prdProductCategories: [String]
+    search: String
+    productId: String
+
+    """ sort[0] - type or name or price. For example ['Weed'] or ['Name'] or ['Price'] 
+    """
+    sort: [String]
+  ): [Product!]!
+  resellers(
+    filterByLocation: Boolean
+    clientIp: String
+
+    """ 'Delivery' or 'Dispensary' or 'Mail Order' """
+    type: String
+    latitudeFront: Float
+    longitudeFront: Float
+    regionID: Int
+    offset: Int
+    limit: Int
+  ): [Business!]!
+  brands(offset: Int, limit: Int): [Business!]!
+  monthlyTopPicks: [MonthlyTopPicks]
+  bizID: Int!
+  bizBusinessID: String!
+  bizUserID: String!
+  bizName: String!
+  bizSlug: String!
+  bizLicenseNumber: String
+  bizDescription: String
+  bizHasDeals: Boolean!
+  bizHasLandingPage: Int!
+  bizIsVerified: Int!
+  bizIsFeatured: Int!
+  bizFeaturedPosition: Int!
+  bizCreationDate: DateTime!
+  bizPublishDate: DateTime
+  bizExpirationDate: DateTime
+  deleted_at: DateTime
+  bizAlwaysOpen: Int!
+  bizMultiDeal: Int!
+  bizHasMapPin: Int!
+  bizDirectorName: String
+  bizCorporateProfileFileName: String
+  bizAuthorizationDocumentFileName: String
+  bizPassportOrDriverLicenseFileName: String
+  bizSubscription: Int
+  bizScrapUrl: String
+  bizClaim: Int
+  bizSortOption: String
+  bizCHP: Int
+  bizIsRegulated: Int
+  bizIsLite: Int
+  bizBadge: Int
+  bizComingSoon: Int
+  bizClaimUnblurred: Int
+  bizCanTradeWholesale: Boolean
+  wholesaleCartItemQuantity: Float
+}
+
+input BusinessAdminInput {
+  usrAccountManager: String
+  bizIsVerified: Int
+  bizHasDeals: Int
+  dutchieAPI: String
+  bizHasLandingPage: Int
+  bizLatitude: Float
+  bizLongitude: Float
+
+  """ Date format YYYY-MM-DD """
+  bizExpirationDate: Date
+
+  """ Date format YYYY-MM-DD """
+  bizPublishDate: Date
+  bizIsFeatured: Int
+  bizFeaturedPosition: Int
+  bizMultiDeal: Int
+  bizCanonicalID: String
+  bizClaim: Int
+  bizClaimUnblurred: Int
+  bizCHP: Int
+  bizIsLite: Int
+  bizBadge: Int
+  bizComingSoon: Int
+  bizCanTradeWholesale: Boolean
+}
+
+type BusinessDeals {
+  dlsDealsID: String!
+  dlsName: String!
+  dlsSlug: String!
+  dlsApplyTo: String
+  mdaLocalFileName: String
+  bizName: String! @deprecated(reason: "bizName is deprecated. Use business[0] instead.")
+  dlsDescription: String
+  dlsInstructions: String
+  dlsExpireDate: Date
+  dlsExpireDateToronto: Date
+  dlsPublishDate: Date
+  dlsCreationDate: Date
+  dlsCouponCode: String
+  dlsUrl: String
+  dlsStatus: Boolean
+  business(offset: Int, limit: Int): [Business!]!
+}
+
+input BusinessFinanceInput {
+  bizBusinessID: String!
+  productTypes: [ProductTypeInput]!
+}
+
+input BusinessInput {
+  bizBusinessID: String
+  bizName: String!
+  bizSlug: String
+  plType: String!
+  mdaLocalFileName: String
+  contact: ContactInput!
+  bizDescription: String!
+  bizLicenseNumber: String
+  bizTags: String
+  bizAlwaysOpen: Int
+  bizCorporateProfileFileName: String
+  bizDirectorName: String
+  bizPassportOrDriverLicenseFileName: String
+  bizAuthorizationDocumentFileName: String
+  bizSubscription: Int!
+  bizUserID: String
+  bizSortOption: String
+  bizLatitude: Float
+  bizLongitude: Float
+  bizClaim: Int
+  bizIsLite: Int
+  bizBadge: Int
+  bizComingSoon: Int
+  bizIsRegulated: Int
+  workingHours: [WorkingHoursInput]
+}
+
+type BusinessPage {
+  pagination: Pagination!
+  businesses: [Business!]!
+}
+
+enum BusinessSortField {
+  bizCreationDate
+  bizExpirationDate
+  bizName
+  rvwScoreAvg
+}
+
+type CartItem {
+  cartID: String!
+  cartQuantity: Int!
+  cartPriceID: String!
+  price: Price!
+  total: Float!
+}
+
+input CartItemInput {
+  cartQuantity: Int!
+  cartPriceID: String!
+}
+
+type Comment {
+  commentId: Int!
+  userID: String!
+  blogID: String!
+  commentBody: String!
+  createdAt: Date
+  updatedAt: Date
+}
+
+input CommentInput {
+  blogID: String!
+  commentBody: String!
+}
+
+type Contact {
+  bizPostal: String
+  bizRegionID: String
+  regionName: String
+  regionSlug: String
+  plProvinceID: Int
+  plProvinceIDs: [Int]
+  plCountryID: Int
+  provinceName: String
+  provinceNames: [String]
+  provinceInitial: String
+  provinceInitials: String
+  provinceInitialArray: [String]
+  bizEmailAddress: String
+  bizPhone: String
+  bizText: String
+  bizWebsiteURL: String
+  bizChat: String
+  bizLatitude: Float
+  bizLongitude: Float
+  bizIntersection: String
+  bizStreetAddress: String
+  linkContactMethod: [String]
+}
+
+input ContactInput {
+  bizPostal: String
+  bizRegionID: String
+  bizEmailAddress: String!
+  bizPhone: String
+  bizWebsiteURL: String
+  bizScrapUrl: String
+  bizIntersection: String
+  bizStreetAddress: String
+  plProvinceIDs: [Int]
+  linkContactMethod: [String]!
+}
+
+type Country {
+  plCountryID: Int!
+  plCountrySlug: String!
+  plCountryName: String!
+}
+
+type CurrentUser {
+  accountManager: User
+  usrUserID: String!
+  username: String!
+  email: String!
+  usrFirstName: String
+  usrLastName: String
+  usrBirthDate: DateTime
+  usrLocationLongitude: String
+  usrLocationLatitude: String
+  usrCreationDate: DateTime!
+  usrLastModifiedDate: DateTime!
+  usrLastLoginDate: DateTime!
+  email_verified_at: DateTime
+  usrRegionID: Int
+  usrProvinceID: Int
+  usrSubscription: Int
+  userRoles: [String!]
+  availableClaim: Boolean!
+  mailPreferences: [String!]
+  cartCount: Float!
+  canBuyWholesaleProducts: Boolean!
+  canSellWholesaleProducts: Boolean!
+}
+
+scalar Date
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+input DealInput {
+  dlsDealsID: String
+  dlsName: String!
+  dlsApplyTo: String!
+  mdaLocalFileName: String
+  dlsDescription: String!
+  dlsInstructions: String!
+  dlsExpireDate: Date!
+  dlsPublish: Boolean!
+  bizBusinessIDs: [String]!
+  dlsCouponCode: String
+  dlsUrl: String
+}
+
+type Event {
+  evtEventID: Int!
+  evtTitle: String!
+  evtSlug: String!
+  evtUserId: String!
+  evtDescription: String
+  evtBody: String
+  evtDate: Date
+  created_at: Date
+  updated_at: Date
+  evtPublishDate: Date
+  deleted_at: Date
+  mdaLocalFileName: [String]
+  authorName: User
+}
+
+input EventInput {
+  evtEventID: Int
+  evtTitle: String
+  evtDescription: String
+  evtBody: String
+
+  """ Date format YYYY-MM-DD """
+  evtDate: Date
+  evtPublishDate: Date
+  mdaLocalFileName: [String]
+}
+
+scalar File
+
+type List {
+  business: [Business!]
+  products: [Product!]
+  deals: [BusinessDeals!]
+  productTypes: [ProductType]
+  productGenetics: [String]
+  businessPagination: Pagination
+  productsPagination: Pagination
+  dealsPagination: Pagination
+}
+
+type Location {
+  provinces: [Province!]
+  regions: [Region!]
+}
+
+input LocationMetaInput {
+  id: Int
+  categoryType: String!
+  locationID: Int!
+  plMetaTitle: String
+  plMetaDescription: String
+  plCustomH1: String
+  plDescription1: String
+  plDescription2: String
+}
+
+type MetaTag {
+  id: Int!
+  categoryType: String!
+  plRegionID: Int!
+  plMetaTitle: String
+  plMetaDescription: String
+  plCustomH1: String
+  updated_at: Date
+  plDescription1: String
+  plDescription2: String
+}
+
+type MetaTagProvince {
+  id: Int!
+  categoryType: String!
+  plProvinceID: Int!
+  plMetaTitle: String
+  plMetaDescription: String
+  plCustomH1: String
+  updated_at: Date
+  plDescription1: String
+  plDescription2: String
+}
+
+type MetaTagType {
+  id: Int!
+  product_type_id: Int!
+  title: String
+  description: String
+  content: String
+  product_type: ProductType
+}
+
+input MetaTagTypeInput {
+  product_type_id: Int!
+  title: String
+  description: String
+  content: String
+}
+
+type MonthlyTopPicks {
+  linkTopPosition: Int
+  linkStartDate: Date
+  linkEndDate: Date
+  linkIsScheduled: Int
+  linkLocationID: Int
+}
+
+input MonthlyTopPicksInput {
+  linkBusinessID: String
+  linkLocationID: Int
+  linkTopPosition: Int
+  linkStartDate: Date
+  linkEndDate: Date
+  linkIsScheduled: Int
+}
+
+type Mutation {
+  login(email: String!, password: String!): AuthUser!
+  loginWithUserId(userId: String!): AuthUser!
+  userRegister(input: UserInput!, wired: Boolean, source: String): AuthUser!
+  editUser(
+    """ mailPreferences - for example 'Concentrates Price Muscle_tension' """
+    input: UserInput!
+  ): CurrentUser!
+  editUserRoleByAdmin(
+    userId: String!
+
+    """ userRoles - ['user', 'editor', 'admin', 'marketing', 'banned', 'sales2', 'tech', 'seo'] 
+    """
+    userRoles: [String]!
+  ): CurrentUser!
+  userVerification(code: String!, id: String!): Boolean!
+  resetPassword(email: String!): Boolean!
+  newPassword(email: String!, password: String!, token: String!): AuthUser!
+  changePasswordActualUser(passwordNew: String!, passwordOld: String!): AuthUser!
+  resendEmailConfirm(userId: String!): Boolean!
+  commentDelete(commentId: String!): Boolean!
+  commentSave(
+    """ CommentBody max 1000 character """
+    input: CommentInput!
+  ): Comment!
+  deleteByBusinessIdIn(bizBusinessIDs: [String]!): Boolean!
+  saveBusiness(
+    """
+     If the Business Input contains a businessid, then the entity with this id is
+    updated, if there is no id, then the entity is created 
+    """
+    business: BusinessInput!
+  ): Business!
+  addReseller(businessId: [String]!, resellerId: String!, selectAll: Boolean): Boolean!
+  deleteResellerByBusinessId(businessId: String!, resellerId: String!): Boolean!
+  approveReseller(businessId: String!, resellerId: String!): Boolean!
+  deleteByProductIdIn(productIds: [String]!): Boolean!
+  addLinkBusinessIdsProductIdsIn(businessIds: [String]!, prdProductIds: [String]!): [Int]
+  deleteLinkBusinessIdsProductIdsIn(businessIds: [String]!, prdProductIds: [String]!): Boolean!
+  addLinkProductReseller(brandProductID: String!, resellerProductID: String!): [Int]
+  deleteLinkProductReseller(brandProductID: String!, resellerProductID: String!): Boolean!
+  saveProduct(
+    """
+     If the Product Input contains a productid, then the entity with this id is
+    updated, if there is no id, then the entity is created 
+    """
+    product: ProductInput!
+  ): Product!
+  updateProductsStatusIn(
+    prdProductIDs: [String]!
+
+    """ InStock, Out, NotListed, Discontinued, Seasonal, Exclusive"""
+    status: String!
+  ): Boolean!
+  deleteDealByDealIdIn(dlsDealsIDs: [String]!): Boolean!
+  saveDeal(
+    """
+     If the Deal Input contains a dlsDealsID, then the entity with this id is
+    updated, if there is no id, then the entity is created 
+    """
+    deal: DealInput!
+  ): BusinessDeals!
+  businessRestoreIn(bizBusinessIDs: [String]!): Boolean!
+  editBusinessByAdmin(business: BusinessInput!, businessAdmin: BusinessAdminInput!): Business!
+  publishByBusinessIdIn(bizBusinessIDs: [String]!, publish: Boolean!, expiryDate: Date): Boolean!
+  verifyByBusinessIdIn(bizBusinessIDs: [String]!): Boolean!
+  unVerifyByBusinessIdIn(bizBusinessIDs: [String]!): Boolean!
+  publishByProductIdIn(prdProductIDs: [String]!, publish: Boolean!): Boolean!
+  saveImages(imgBase64: String!): String!
+  saveDoc(
+    base64: String!
+
+    """
+    type - 'CorporateProfile' or 'PassportOrDriverLicense' or 'AuthorizationDocument' 
+    """
+    type: String!
+
+    """fileType - '.pdf' or '.png' or '.jpg' or 'doc' or 'docx' """
+    fileType: String!
+  ): String!
+  saveMonthlyTopPicksIn(input: [MonthlyTopPicksInput]!): Boolean!
+  deleteMonthlyTopPicksIn(input: [MonthlyTopPicksInput]!): Boolean!
+  publishByBlogIdIn(blgBlogIDs: [String]!, publish: Boolean!): Boolean!
+  publishByDealIdIn(dlsDealsIDs: [String]!, publish: Boolean!, expiryDate: Date): Boolean!
+  deleteByBlogIdIn(blgBlogIDs: [String]!): Boolean!
+  editBlog(input: BlogInput!): Blog!
+  saveBlog(input: BlogInput!): Blog!
+  businessClaimListingPage(bizBusinessIDs: [String]!): Boolean!
+  editProductsCategories(
+    prdProductIDs: [String]!
+
+    """prdProductTypes -  for example ['Edibles', 'Other'] or ['Accessories']"""
+    prdProductTypes: [String]!
+
+    """
+    prdProductCategories -  for example ['Strain Type', 'Sativa', 'Strength',
+    'High Potency', 'Lab Testing', 'Cannabinoid Testing']
+    """
+    prdProductCategories: [String]
+  ): Boolean!
+  saveLocationMeta(
+    """
+     If the Meta Input contains a id, then the entity with this id is updated, if
+    there is no id, then the entity is created 
+    """
+    input: LocationMetaInput!
+  ): Boolean!
+  saveProvinceMeta(
+    """
+     If the Meta Input contains a id, then the entity with this id is updated, if
+    there is no id, then the entity is created 
+    """
+    input: LocationMetaInput!
+  ): Boolean!
+  editFooterPositionIn(plRegionIDs: [Int]!, footerPositions: [Int]!): Boolean!
+  deleteFooterPosition(plRegionID: Int!, footerPosition: Int!): Boolean!
+  saveBusinessAdPriceIn(input: [BusinessFinanceInput]!): Boolean!
+  saveUserAdBudget(usrUserID: String!, budget: Int!): Boolean!
+  saveProductTypePriceIn(
+    """
+    input -  for example [{id:3, typePriceDelivery: 55}, {id:4, typePriceBrand:15}]
+    """
+    input: [ProductTypeInput]!
+  ): Boolean!
+  scrape(businessId: String!, sha256Hash: String!, dutchieSlug: String!, dispensaryId: String!): Boolean!
+  scrapeImage(sha256Hash: String!, tokenProxy: String!, dispensaryId: String!): Boolean
+  fillProductStrainName: Boolean!
+  editMetaTagType(input: MetaTagTypeInput!): MetaTagType
+  sendPushNotification(
+    """operatingSystem -  for example 'Android' or 'IOS'"""
+    operatingSystem: String!
+    title: String!
+    action: String!
+    linkID: String
+  ): Boolean
+  saveEvent(input: EventInput!): Event!
+  deleteImagesEvent(mdaLocalFileName: [String]!, evtEventID: Int!): Boolean!
+  deleteEvent(evtEventID: Int!): Boolean!
+  saveFiles(stream: [File]!): [String]!
+  saveFileWaterMark(base64: String!, waterMark: Boolean): [String]!
+  analyticsSave(input: AnalyticsSave): Boolean
+  analyticsSaveSearch(input: AnalyticsSearch): Boolean
+  analyticsBannerClick(userAction: String!, userIP: String): Boolean
+  analyticsSaveCategoryHeader(input: AnalyticsCategoryHeader): Boolean
+  reviewSave(input: ReviewInput!): Review!
+  reviewReply(input: ReviewReplyInput!): Review!
+  reviewDelete(reviewId: String!): Boolean
+  reviewDeleteIn(reviewIds: [String]!): Boolean!
+  reviewRestore(reviewId: String!): Boolean!
+  wholesaleSaveProduct(product: ProductInput!): Product!
+  wholesaleAddToCart(cartItem: CartItemInput!): CartItem!
+  wholesaleRemoveFromCart(prcPriceID: String!): Boolean!
+  wholesaleSubmitOrder: Boolean!
+}
+
+type Pagination {
+  totalCount: Float
+  beforeCount: Float
+  afterCount: Float
+  pageIds: [Float!]
+  offset: Float
+  limit: Float
+}
+
+type Price {
+  prcPriceID: String!
+  prcProductID: String!
+  prcPrice: Float!
+  prcMinimumQuantity: Int
+  prcUnitsPerCase: Int
+  prcUnit: TradeUnit!
+  product: Product!
+  wholesaleCartItemQuantity: Float
+}
+
+input PriceInput {
+  prcPrice: Float!
+  prcMinimumQuantity: Int
+  prcUnitsPerCase: Int
+  prcUnit: TradeUnit!
+  prcPriceID: String
+}
+
+type PricePage {
+  pagination: Pagination!
+  items: [Price!]!
+}
+
+type Product {
+  mdaLocalFileName: String
+  rvwScoreAvg: Float
+  rvwCount: Int
+  prdInStockForBrand: Int
+  canAddReview: Boolean
+  reviews(offset: Int, limit: Int): [Review!]!
+  business(latitudeFront: Float, longitudeFront: Float, regionID: Int, ignoreStatuses: Boolean, offset: Int, limit: Int): [Business!]!
+  plSlugType: String
+  businessCount: Int
+  productReseller(filterByLocation: Boolean, latitudeFront: Float, longitudeFront: Float, regionID: Int): [Product]
+  businessProductReseller(latitudeFront: Float, longitudeFront: Float, regionID: Int): [Business]
+  productBrandReseller: Product
+  brand: Business
+  prdWeightWeed: String
+  prdID: Int!
+  prdProductID: String!
+  prdName: String!
+  prdSlug: String!
+  prdDescription: String!
+  prdTags: String
+  prdGenetics: String
+  prdTHCPercentage: String
+  prdCBDPercentage: String
+  prdPricePerUnit: Float
+  prdPriceHalfGram: Float
+  prdPriceOneGram: Float
+  prdPriceTwoGrams: Float
+  prdPriceEighthOunce: Float
+  prdPriceQuarterOunce: Float
+  prdPriceHalfOunce: Float
+  prdPriceOneOunce: Float
+  prdCreationDate: DateTime!
+  prdPublishDate: DateTime
+  prdProductTypes: String!
+  prdProductCategories: String
+  prdTypeIds: String
+  prdInStock: Boolean!
+  prdProductEffects: String
+  prdProductUses: String
+  prdProductTimes: String
+  prdStrainId: Int
+  prdStatus: String
+  prdIsWholesale: Boolean!
+  prices: [Price!]
+}
+
+input ProductFilterInput {
+  prdName: String
+  bizName: String
+  bizBusinessID: String
+  prdProductType: String
+}
+
+input ProductInput {
+  prdName: String!
+  prdTags: String
+  prdGenetics: String
+  prdTHCPercentage: String
+  prdCBDPercentage: String
+  prdPricePerUnit: Float
+  prdPriceHalfGram: Float
+  prdPriceOneGram: Float
+  prdPriceTwoGrams: Float
+  prdPriceEighthOunce: Float
+  prdPriceQuarterOunce: Float
+  prdPriceHalfOunce: Float
+  prdPriceOneOunce: Float
+  prdUserID: String
+  prdStrainId: Int
+  prdStatus: String
+  strainName: String
+  prdProductID: String
+  prdDescription: String
+  prdProductTypes: [String!]!
+  prdProductCategories: [String!]
+  prdProductEffects: [String!]
+  prdProductUses: [String!]
+  prdProductTimes: [String!]
+  prdInStock: String
+  mdaLocalFileName: String
+  prices: [PriceInput!]
+}
+
+type ProductPage {
+  pagination: Pagination!
+  items: [Product!]!
+}
+
+enum ProductSortOrder {
+  prdName
+  prdCreationDate
+}
+
+type ProductType {
+  id: Int
+  name: String
+  counter: Int
+  available: Boolean
+  slug: String
+  typeParent: String
+  typeParentName: [String]
+  parent: String
+  parentBusinessId: String
+  typePriceDelivery: Float
+  typePriceBrand: Float
+  typePriceDispensary: Float
+  typePriceMail: Float
+  price: Int
+  businessCounter: Int
+  engagements: Float
+  amountSpent: Float
+  totalImpressions: Int
+  typeItems: [ProductType]
+  categoriesItems: [ProductType]
+}
+
+input ProductTypeInput {
+  id: Int
+  slug: String
+  typeParent: String
+  price: Int
+  typePriceDelivery: Float
+  typePriceBrand: Float
+  typePriceDispensary: Float
+  typePriceMail: Float
+}
+
+type Province {
+  plProvinceID: Int!
+  plInitials: String!
+  plName: String!
+  plDescription: String
+  plCountryID: String!
+  country: Country!
+  bizCount: Int
+  bizBrandCount: Int
+  bizMailOrderCount: Int
+  bizDeliveryCount: Int
+  bizDispensaryCount: Int
+  bizFeaturedCount: Int
+  bizVerifiedCount: Int
+  bizLiteCount: Int
+}
+
+type Query {
+  locationSearchRegion(slug: String, sortPopular: Boolean, offset: Int, limit: Int): [Region!]!
+  locationListRegion(longitudeGPS: Float, latitudeGPS: Float, sortByLocation: Boolean, plCountryID: Int, sortPopular: Boolean, showAll: Boolean, offset: Int, limit: Int): [Region!]!
+  locationListRegionSEOPanel(plCountryID: Int, name: String, offset: Int, limit: Int): Result!
+  locationListProvinceSEOPanel(plCountryID: Int, name: String, offset: Int, limit: Int): Result!
+  locationListRegionByProvince(provinceId: Int!, offset: Int, limit: Int): [Region!]!
+  locationListRegionByProvinceForUser(provinceId: Int!): [Region!]!
+  locationListRegionNearRegion(regionId: Int!, offset: Int, limit: Int): [Region!]!
+  businessMonthlyTopPicks(plRegionID: Int!, offset: Int, limit: Int): [Business!]!
+  businessMonthlyTopPicksBrands(plRegionID: Int, offset: Int, limit: Int): [Business!]!
+  businessMonthlyTopPicksDeliveries(plRegionID: Int, offset: Int, limit: Int): [Business!]!
+  businessMonthlyTopPicksMail(plRegionID: Int, offset: Int, limit: Int): [Business!]!
+  businessMonthlyTopPicksDispensary(plRegionID: Int, offset: Int, limit: Int): [Business!]!
+  businessMonthlyTopPicksForAdmin(
+    """ Year-Month - 'yyyy-mm' month : 1-12 """
+    date: String!
+    plRegionID: Int!
+    offset: Int
+    limit: Int
+  ): [Business!]!
+  businessFeaturedBrands(linkProvinceID: Int!, offset: Int, limit: Int, plCountryID: Int): [Business!]!
+  businessFeaturedDeliveries(linkProvinceID: Int!, plRegionID: Int, offset: Int, limit: Int, plCountryID: Int): [Business!]!
+  businessFeaturedMail(linkProvinceID: Int!, offset: Int, limit: Int, plCountryID: Int): [Business!]!
+  businessFeaturedDispensary(linkProvinceID: Int!, plRegionID: Int, offset: Int, limit: Int, plCountryID: Int): [Business!]!
+  businessVerifiedBrands(linkProvinceID: Int!, offset: Int, limit: Int, plCountryID: Int): [Business!]!
+  businessVerifiedDeliveries(linkProvinceID: Int!, plRegionID: Int, offset: Int, limit: Int, plCountryID: Int): [Business!]!
+  businessVerifiedMail(linkProvinceID: Int!, offset: Int, limit: Int, plCountryID: Int): [Business!]!
+  businessVerifiedDispensary(linkProvinceID: Int!, plRegionID: Int, offset: Int, limit: Int, plCountryID: Int): [Business!]!
+  businessAllVerified(linkProvinceID: Int!, plRegionID: Int, offset: Int, limit: Int): [Business!]!
+  businessAllByLocation(linkProvinceID: Int!, plRegionID: Int, offset: Int, limit: Int): [Business!]!
+  businessAllBrands(linkProvinceID: Int!, offset: Int, limit: Int, plCountryID: Int): [Business!]!
+  businessAllDeliveries(linkProvinceID: Int!, plRegionID: Int, offset: Int, limit: Int, plCountryID: Int): [Business!]!
+  businessAllMail(linkProvinceID: Int!, offset: Int, limit: Int, plCountryID: Int): [Business!]!
+  businessAllDispensary(linkProvinceID: Int!, plRegionID: Int, offset: Int, limit: Int, plCountryID: Int): [Business!]!
+  productById(id: String!): [Product!]!
+  productByIdDashboard(id: String!): [Product]
+  productByIdForBrandLibrary(id: String!): [Product]!
+  productBySlug(plSlugType: String!, bizSlug: String!, prdSlug: String!, regionSlug: String): [Product!]!
+  businessListTypes: [Type!]!
+  businessById(bizBusinessID: String!, currentTime: String, bizIsRegulated: Boolean): Business
+  businessByIdDashboard(bizBusinessID: String!): Business
+  businessBySlug(
+    """ Type - weed-delivery, marijuana-dispensary, mail-order-marijuana, brands 
+    """
+    plSlugType: String!
+    bizSlug: String!
+    regionSlug: String
+  ): Business
+  dealById(dlsDealsID: String!): BusinessDeals
+  dealByIdForDashboard(dlsDealsID: String!): BusinessDeals
+  dealBySlug(bizSlug: String!, dlsSlug: String!): BusinessDeals
+  dealListByTypeByReg(linkProvinceID: Int!, plRegionID: Int, dlsApplyTo: String, offset: Int, limit: Int): [BusinessDeals!]!
+  busProdDealSearchByName(
+    name: String!
+    plRegionID: Int
+    latitudeGPS: Float
+    longitudeGPS: Float
+
+    """ Type - products, businesses, deals """
+    type: String
+    prdProductType: [[String]]
+    prdGenetics: [String]
+    prdProductCategories: [[String]]
+    isGlobalSearch: Boolean
+
+    """
+     sort[0] - [prdPricePerUnit +- prdPriceHalfGram +- prdPriceOneGram +-
+    prdPriceOneOunce] or ['Name'], sort[1] - 'desc' or 'asc' 
+    """
+    sort: [[String]]
+    countryId: Int
+    showPagination: Boolean
+    showBrand: Boolean
+    withPrice: Boolean
+    offset: Int
+    limit: Int
+  ): List!
+  blogListByType(
+    """
+     Type - how-to, health, cannabis-culture, promotions, diy, industry,
+    grow-your-own, cannabis-101, strains, lifestyle, recipes 
+    """
+    type: String
+    offset: Int
+    limit: Int
+  ): [Blog!]!
+  provinceByInitial(initial: String!): Province!
+  blogById(blgBlogID: String): Blog!
+  blogBySlug(blgSlug: String): Blog
+  blogTypeAll(offset: Int, limit: Int): [BlogType!]!
+  locationListNearLocation(locationSlug: String!, type: String!, countryId: Int, offset: Int, limit: Int): Location!
+  locationListProvince(offset: Int, limit: Int): [Province]!
+  locationListProvinceForUser: [Province]!
+  businessByCoordinates(
+    firstLongitude: Float!
+    firstLatitude: Float!
+    secondLongitude: Float!
+    secondLatitude: Float!
+
+    """ plSlugType - delivery, dispensary """
+    plSlugType: String
+    plRegionID: Int
+
+    """ sort - rating, largest, distance """
+    sort: String
+  ): [Business!]!
+  dealListByRegRandom(plRegionID: Int!, offset: Int, limit: Int): [BusinessDeals!]!
+  metaTagByRegionIDByType(plRegionID: Int!, categoryType: String!): [MetaTag!]!
+  metaTagByProvinceIDByType(plProvinceID: Int!, categoryType: String!): [MetaTagProvince!]!
+  metaTagProductTypes: [MetaTagType!]!
+  contactUs(name: String!, subject: String!, message: String!, emailFrom: String!, city: String!, RegionID: String!, province: String!): Boolean!
+  siteMap: SiteMap!
+  userRegionId: String
+  blogSearch(name: String!): [BlogType!]!
+  businessBySlugHasLanding(bizSlug: String!): Business
+  siteMapTop5(offset: Int, limit: Int): SiteMapWeb!
+  userSubscription(name: String!, email: String!, usrRegionID: String, mailPreferences: String): Boolean!
+  locationListProvinceForSiteMap(longitudeGPS: Float, latitudeGPS: Float, sortByLocation: Boolean): [Province]!
+  locationListRegionByProvinceForSiteMap(provinceId: Int!): [Region!]!
+  productsByRegions(bizRegionIDs: [String]!, offset: Int, limit: Int): [Product]!
+  userRegionCountry(clientIp: String): String
+  userRegion(clientIp: String): Region
+  usersSalesNameAll: [User!]!
+  reportIssue(name: String!, emailFrom: String!, description: String!, city: String!, regionID: String!, province: String!, stepsReproduce: String, page: String, originalPage: String): Boolean!
+  businessNearBy(
+    countryId: Int!
+    plRegionID: Int!
+
+    """ Delivery, Dispensary, Mail Order, Brand """
+    plType: String
+    offset: Int
+    limit: Int
+  ): [Business]
+  businessByUserId(
+    userId: String!
+    regionID: Int
+    type: String
+    published: Boolean
+    expired: Boolean
+    featured: Boolean
+    verified: Boolean
+    reviews: Boolean
+    bizClaim: Boolean
+    email: String
+
+    """ sort[0] - 'creation' or 'name' or 'expiration', sort[1] - 'desc' or 'asc' 
+    """
+    sort: [String]
+    name: String
+    offset: Int
+    limit: Int
+  ): Result!
+  userUnSubscription(email: String!, id: String!): Boolean!
+  sendEmail(id: String!, emailFrom: String!, emailTo: String!, subject: String!, message: String!, button: String, buttonSecond: String): Boolean!
+  sendFeedback(message: String!, questions: [[String]], email: String): Boolean!
+  productByUserId(
+    userId: String!
+    name: String
+    bizName: String
+    businessId: String
+    type: String
+    published: Boolean
+
+    """ sort[0] - 'creation' or 'name' or 'type', sort[1] - 'desc' or 'asc' """
+    sort: [String]
+    offset: Int
+    limit: Int
+  ): Result!
+  locationFooterPosition: [Region!]!
+  locationFooterPositionSEOPanel(plCountryID: Int, name: String, offset: Int, limit: Int): Result!
+  dealByUserId(
+    userId: String!
+    dlsName: String
+    bizBusinessID: String
+
+    """ sort[0] - 'creation' or 'name' or 'type', sort[1] - 'desc' or 'asc' """
+    sort: [String]
+    offset: Int
+    limit: Int
+  ): Result!
+  businessHasDealsByUserId(userId: String!, offset: Int, limit: Int): [Business!]!
+  businessAll(
+    name: String
+    userId: String
+    regionID: Int
+
+    """ 'Delivery' or 'Dispensary' or 'Mail Order' or 'Brand' or 'Clinic' or 'Doctor' or 'Licensed Producer' 
+    """
+    type: String
+    published: Boolean
+    expired: Boolean
+    featured: Boolean
+    verified: Boolean
+    reviews: Boolean
+    bizClaim: Boolean
+    email: String
+    back: Boolean
+    offset: Int
+    limit: Int
+  ): Result!
+  locationListAllRegion(plCountryID: Int, offset: Int, limit: Int): [Region!]!
+  businessAllRestore(offset: Int, limit: Int): Result!
+  businessFeaturedSearch(
+    regionId: Int!
+    name: String
+
+    """ 'Delivery' or 'Dispensary' or 'Mail Order' or 'Brand' or 'Licensed Service' 
+    """
+    type: String
+    published: Boolean
+    verified: Boolean
+
+    """ sort[0] - 'creation'or 'name' (default bizFeaturedPosition), sort[1] - 'desc' or 'asc' 
+    """
+    sort: [String]
+    featured: Boolean
+    bizIsLite: Boolean
+    offset: Int
+    limit: Int
+  ): Result!
+  productAll(
+    name: String
+    businessId: String
+
+    """ 'Accessories' or 'Concentrates' or 'Edibles' or 'Weed' or 'Topicals' or 'Vape Pens' 
+    """
+    type: String
+    published: Boolean
+    reviews: Boolean
+    createdDateStart: String
+    createdDateEnd: String
+    back: Boolean
+    offset: Int
+    limit: Int
+  ): Result!
+  productAllByType(
+    bizSlugType: [String]
+
+    """ prdProductType[0] (type) - for example 'Weed', prdProductType[1] (subType) - for example 'Pre-Milled' 
+    """
+    prdProductType: [String]
+    prdProductCategories: [String]
+    prdProductTypeSlug: [String]
+    prdProductCategoriesSlug: [String]
+
+    """
+    If distance[0] - 0, distance[1] - 2 - in this case, products will be shown in the distance from 0 km to 2 km
+    """
+    distance: [Int]
+    clientIp: String
+    longitudeGPS: Float
+    latitudeGPS: Float
+    name: String
+
+    """ sort[0] - 'Name' or 'Price' or 'Rating', sort[1] - 'desc' or 'asc'"""
+    sort: [String]
+    offset: Int
+    limit: Int
+  ): [Product]
+  nearRegionByProductType(plRegionID: Int!, prdProductType: [String]!, prdProductCategories: [String], strainSlug: String, search: String, offset: Int, limit: Int): [Region]
+  productAllByTypeDistance2km(
+    bizSlugType: [String]
+
+    """ prdProductType[0] (type) - for example 'Weed', prdProductType[1] (subType) - for example 'Pre-Milled' 
+    """
+    prdProductType: [String]
+    prdProductCategories: [String]
+    prdProductTypeSlug: [String]
+    prdProductCategoriesSlug: [String]
+    clientIp: String
+    longitudeGPS: Float
+    latitudeGPS: Float
+    name: String
+
+    """ sort[0] - 'Name' or 'Price' or 'Rating', sort[1] - 'desc' or 'asc'"""
+    sort: [String]
+    plRegionID: Int
+    offset: Int
+    limit: Int
+  ): Result!
+  productAllByTypeDistance10km(
+    bizSlugType: [String]!
+
+    """ prdProductType[0] (type) - for example 'Weed', prdProductType[1] (subType) - for example 'Pre-Milled' 
+    """
+    prdProductType: [String]
+    prdProductCategories: [String]
+    prdProductTypeSlug: [String]
+    prdProductCategoriesSlug: [String]
+    clientIp: String
+    longitudeGPS: Float
+    latitudeGPS: Float
+    name: String
+
+    """ sort[0] - 'Name' or 'Price' or 'Rating', sort[1] - 'desc' or 'asc'"""
+    sort: [String]
+    plRegionID: Int
+    offset: Int
+    limit: Int
+  ): Result!
+  productAllByTypeMailOrder(
+    """ prdProductType[0] (type) - for example 'Weed', prdProductType[1] (subType) - for example 'Pre-Milled' 
+    """
+    prdProductType: [String]
+    prdProductCategories: [String]
+    prdProductTypeSlug: [String]
+    prdProductCategoriesSlug: [String]
+
+    """
+    If distance[0] - 0, distance[1] - 2 - in this case, products will be shown in the distance from 0 km to 2 km
+    """
+    distance: [Int]
+    clientIp: String
+    longitudeGPS: Float
+    latitudeGPS: Float
+    name: String
+
+    """ sort[0] - 'Name' or 'Price' or 'Rating', sort[1] - 'desc' or 'asc'"""
+    sort: [String]
+    plRegionID: Int
+    offset: Int
+    limit: Int
+  ): [Product]
+  productAllByTypeMailOrderLinkBrand(
+    """ prdProductType[0] (type) - for example 'Weed', prdProductType[1] (subType) - for example 'Pre-Milled' 
+    """
+    prdProductType: [String]
+    prdProductCategories: [String]
+    prdProductTypeSlug: [String]
+    prdProductCategoriesSlug: [String]
+    name: String
+
+    """ sort[0] - 'Name' or 'Price' or 'Rating', sort[1] - 'desc' or 'asc'"""
+    sort: [String]
+    offset: Int
+    limit: Int
+  ): [Product]
+  productAllByTypeBrandLinkMailOrder(
+    """ prdProductType[0] (type) - for example 'Weed', prdProductType[1] (subType) - for example 'Pre-Milled' 
+    """
+    prdProductType: [String]
+    prdProductCategories: [String]
+    prdProductTypeSlug: [String]
+    prdProductCategoriesSlug: [String]
+    name: String
+
+    """ sort[0] - 'Name' or 'Price' or 'Rating', sort[1] - 'desc' or 'asc'"""
+    sort: [String]
+    offset: Int
+    limit: Int
+  ): [Product]
+  businessByIdForAdmin(bizBusinessID: String!): Business
+  productListTypes(
+    """ 'Delivery' or/and 'Dispensary' or/and 'Mail Order' or/and 'Brand'"""
+    businessType: [String]
+    brandFilter: Boolean
+    strainNameFilter: Boolean
+  ): List!
+  businessFeaturedPositionByRegion(
+    bizBusinessID: String!
+    regionId: Int!
+
+    """ 'Delivery' or 'Dispensary' """
+    type: String!
+  ): [Int]!
+  productCategoriesCounter(name: String!, scope: Int): List!
+  userById(userId: String!): User
+  claimYourListing(name: String!, phoneNumber: String!, timeToCall: String!, url: String): Boolean!
+  userAll(
+    name: String
+    email: String
+
+    """ IP format 'xxx.xxx.xxx.xxx' """
+    ip: String
+    verified: Boolean
+    leafythingsEmailsOnly: Boolean
+
+    """ sort[0] - 'creation' or 'name' or 'loginDate', sort[1] - 'desc' or 'asc' 
+    """
+    sort: [String]
+    offset: Int
+    limit: Int
+  ): Result!
+  blogsAll(name: String, userId: String, published: Boolean, offset: Int, limit: Int): Result!
+  authorsBlogsAll: [User]!
+  blogByIdForAdmin(blgBlogID: String!): Blog
+  businessAllBrandsForDashboard(offset: Int, limit: Int): [Business!]!
+  businessAllDashboardSearch(name: String): [Business]
+  productTypeBySlug(slug: String!): String
+  allBrandsForBrandLibrary: [Business]!
+  productsByBusinessIdForBrandLibrary(bizBusinessID: String!): [Product]!
+  productTypesByBusinessID(bizBusinessID: String!): [ProductType]!
+  userAdBudgetByUserId(userId: String): Float
+  userAdBudgetByUserIdByDate(
+    userId: String!
+
+    """ Year-Month-Day - 'yyyy-mm-01'"""
+    startDate: String!
+
+    """ Year-NextMonth-Day - 'yyyy-mm-01' first day next month"""
+    endDate: String!
+  ): [Budget]!
+  userAdPositiveTransactionsByUserId(
+    userId: String!
+
+    """ Year-Month-Day - 'yyyy-mm-01'"""
+    startDate: String!
+
+    """ Year-NextMonth-Day - 'yyyy-mm-01' first day next month"""
+    endDate: String!
+  ): [Transaction]!
+  userAdNegativeTransactionsByUserId(
+    userId: String!
+
+    """ Year-Month-Day - 'yyyy-mm-01'"""
+    startDate: String!
+
+    """ Year-NextMonth-Day - 'yyyy-mm-01' first day next month"""
+    endDate: String!
+  ): [TransactionNegative]!
+  productAdvertisement(
+    """ Type - weed-delivery, marijuana-dispensary, mail-order-marijuana, brands 
+    """
+    bizSlugType: [String]!
+
+    """ productTypeNames[0] (type) - for example 'Weed', productTypeNames[1] (subType) - for example 'Pre-Milled' 
+    """
+    productTypeNames: [String]!
+
+    """productCategoriesNames -  for example ['Strain Type', 'Sativa']"""
+    productCategoriesNames: [String]
+    clientIp: String
+    plProvinceID: Int
+    longitudeGPS: Float
+    latitudeGPS: Float
+    plRegionID: Int
+    offset: Int
+    limit: Int
+  ): [Product]!
+  productAdvertisementForProductPage(prdProductID: String!, offset: Int, limit: Int): [Product]!
+  businessAdvertisementForProductPage(prdProductID: String!, clientIp: String, plProvinceID: Int, longitudeGPS: Float, latitudeGPS: Float, plRegionID: Int, offset: Int, limit: Int): [Business]!
+  productListTypesForAdminAdvertisement(
+    name: String
+
+    """ sort[0] - 'name' or 'id', sort[1] - 'desc' or 'asc' """
+    sort: [String]
+    offset: Int
+    limit: Int
+  ): [ProductType]!
+  strainNameSearch(strainName: String!, offset: Int, limit: Int): [ProductType]!
+  brandBusinessByProductType(
+    prdProductType: [String]!
+    prdProductCategories: [String]
+    strainSlug: String
+    longitudeGPS: Float
+    latitudeGPS: Float
+
+    """ distance: [0,2] or [2,10] or [0,10] """
+    distance: [Int]
+    plRegionID: Int
+    offset: Int
+    limit: Int
+  ): [String]
+  strainNameByRegionByType(regionId: Int!, prdProductType: [String]!, prdProductCategories: [String], longitudeGPS: Float, latitudeGPS: Float): [String]!
+  productTypeAll(search: String, offset: Int, limit: Int): Result!
+  metaTagProductTypesById(typeId: Int): MetaTagType
+  productAllTotalCount(name: String, businessId: String, type: String, published: Boolean, reviews: Boolean, createdDateStart: String, createdDateEnd: String, offset: Int, limit: Int): Result!
+  productAllBeforeCount(name: String, businessId: String, type: String, published: Boolean, reviews: Boolean, createdDateStart: String, createdDateEnd: String, offset: Int, limit: Int): Result!
+  productAllAfterCount(name: String, businessId: String, type: String, published: Boolean, reviews: Boolean, createdDateStart: String, createdDateEnd: String, offset: Int, limit: Int): Result!
+  businessAllTotalCount(name: String, userId: String, regionID: Int, type: String, published: Boolean, expired: Boolean, featured: Boolean, verified: Boolean, reviews: Boolean, bizClaim: Boolean, email: String, offset: Int, limit: Int): Result!
+  businessAllBeforeCount(name: String, userId: String, regionID: Int, type: String, published: Boolean, expired: Boolean, featured: Boolean, verified: Boolean, reviews: Boolean, bizClaim: Boolean, email: String, offset: Int, limit: Int): Result!
+  businessAllAfterCount(name: String, userId: String, regionID: Int, type: String, published: Boolean, expired: Boolean, featured: Boolean, verified: Boolean, reviews: Boolean, bizClaim: Boolean, email: String, offset: Int, limit: Int): Result!
+  productAllPageIds(name: String, businessId: String, type: String, published: Boolean, reviews: Boolean, createdDateStart: String, createdDateEnd: String, offset: Int, limit: Int): Result!
+  businessAllPageIds(name: String, userId: String, regionID: Int, type: String, published: Boolean, expired: Boolean, featured: Boolean, verified: Boolean, reviews: Boolean, bizClaim: Boolean, email: String, offset: Int, limit: Int): Result!
+  eventById(evtEventID: Int!): Event
+  eventAll(
+    search: String
+
+    """ Year-Month-Day - 'yyyy-mm-dd'"""
+    startDate: String
+    endDate: String
+
+    """ default published - true"""
+    published: Boolean
+    offset: Int
+    limit: Int
+  ): Result!
+  productsByBusinessId(
+    bizBusinessID: String!
+    name: String
+    regionID: Int
+    published: Boolean
+    reviews: Boolean
+    type: String
+    productId: String
+    wholeSale: Boolean
+
+    """ sort[0] - 'creation' or 'name' or 'type', sort[1] - 'desc' or 'asc' """
+    sort: [String]
+    offset: Int
+    limit: Int
+  ): Result!
+  sendMailWholeSale(name: String!, email: String!, phone: String!, message: String!, bizEmail: String!): Boolean!
+  analyticsBusinessesCount: Int!
+  analyticsProductsCount: Int!
+  analyticsUsersCount: Int!
+  analyticsRegionsCount: Int!
+  analyticsDealsCount: Int!
+  analyticsBannerClicks: Int!
+  analyticsBannerClicksList(
+    """ Year-Month-Day - 'yyyy-mm-01'"""
+    startDate: String!
+
+    """ Year-NextMonth-Day - 'yyyy-mm-01' first day next month"""
+    endDate: String!
+  ): Result!
+  analyticsBusinessesDailyCount(
+    startDate: String!
+    endDate: String!
+
+    """ sort[0] - 'date' or 'count', sort[1] - 'desc' or 'asc' """
+    sort: [String]
+  ): Result!
+  analyticsUsersDailyCount(
+    startDate: String!
+    endDate: String!
+
+    """ sort[0] - 'date' or 'count', sort[1] - 'desc' or 'asc' """
+    sort: [String]
+  ): Result!
+  analyticsBusinessesAdmin(
+    """ Year-Month-Day - 'yyyy-mm-01'"""
+    startDate: String!
+
+    """ Year-NextMonth-Day - 'yyyy-mm-01' first day next month"""
+    endDate: String!
+
+    """
+     sort[0] - 'name' or 'webViews' or 'appViews' or 'topPickViews' or
+    'verifiedViews' or 'engagements' or 'featuredPosition', sort[1] - 'desc' or 'asc' 
+    """
+    sort: [String]
+    name: String
+
+    """If Canada regionID = 0 """
+    regionID: Int
+    offset: Int
+    limit: Int
+  ): Result!
+  analyticsBusinessesSale(
+    """ Year-Month-Day - 'yyyy-mm-01'"""
+    startDate: String!
+
+    """ Year-NextMonth-Day - 'yyyy-mm-01' first day next month"""
+    endDate: String!
+
+    """
+     sort[0] - 'name' or 'webViews' or 'appViews' or 'topPickViews' or
+    'verifiedViews' or 'engagements' or 'featuredPosition', sort[1] - 'desc' or 'asc' 
+    """
+    sort: [String]
+    name: String
+
+    """If Canada regionID = 0 """
+    regionID: Int
+    offset: Int
+    limit: Int
+  ): Result!
+  analyticsRegions(
+    """ Year-Month-Day - 'yyyy-mm-01'"""
+    startDate: String!
+
+    """ Year-NextMonth-Day - 'yyyy-mm-01' first day next month"""
+    endDate: String!
+
+    """ sort - 'webViews' or 'appViews' or 'engagements' """
+    sort: String
+    regionID: Int
+    offset: Int
+    limit: Int
+  ): Result!
+  analyticsDeals(
+    """ Year-Month-Day - 'yyyy-mm-01'"""
+    startDate: String!
+
+    """ Year-NextMonth-Day - 'yyyy-mm-01' first day next month"""
+    endDate: String!
+
+    """ sort[0] - 'name' or 'webViews' or 'engagements', sort[1] - 'desc' or 'asc' 
+    """
+    sort: [String]
+    name: String
+    offset: Int
+    limit: Int
+  ): Result!
+  analyticsUsers(
+    """ Year-Month-Day - 'yyyy-mm-01'"""
+    startDate: String
+
+    """ Year-NextMonth-Day - 'yyyy-mm-01' first day next month"""
+    endDate: String
+    verified: Boolean
+
+    """ sort[0] - 'name', sort[1] - 'desc' or 'asc' """
+    sort: [String]
+    offset: Int
+    limit: Int
+  ): Result!
+  reviewsByBusinessId(businessId: String!, showDeleted: Boolean, offset: Int, limit: Int): Result!
+  reviewsByProductId(productId: String!, showDeleted: Boolean, offset: Int, limit: Int): Result!
+  reviewsByUserId(userId: String!, showDeleted: Boolean, offset: Int, limit: Int): Result!
+  currentUser: CurrentUser
+  wholesaleBrands(limit: Int, offset: Int, sortField: BusinessSortField, sortOrder: SortOrder, name: String): BusinessPage!
+  wholesalePrices(sortField: ProductSortOrder, sortOrder: SortOrder, filter: ProductFilterInput!, limit: Int, offset: Int): PricePage!
+  wholesaleEditProductList(sortField: ProductSortOrder, sortOrder: SortOrder, filter: ProductFilterInput!, limit: Int, offset: Int): ProductPage!
+  wholesaleSellerBrands: [Business!]!
+  wholesaleSellerProducts(filter: ProductFilterInput!): [Product!]!
+  wholesaleCart: [CartItem!]!
+}
+
+type Region {
+  plRegionID: Int!
+  plProvinceID: Int!
+  plName: String!
+  plSlug: String!
+  plLatitude: Float
+  plLongitude: Float
+  plFooterPosition: Int
+  plDescription: String
+  plDescription2: String
+  plNeighbourhood: String
+  mdaLocalFileName: String
+  province: Province!
+  bizCount: Int
+  bizBrandCount: Int
+  bizMailOrderCount: Int
+  bizDeliveryCount: Int
+  bizDispensaryCount: Int
+  bizFeaturedCount: Int
+  bizVerifiedCount: Int
+  bizLiteCount: Int
+  topPickCount: Int
+}
+
+type Result {
+  pagination: Pagination
+  products: [Product]
+  businesses: [Business]
+  deals: [BusinessDeals]
+  users: [User]
+  reviews: [Review]
+  blogs: [Blog]
+  regions: [Region]
+  province: [Province]
+  events: [Event]
+  analyticsInfo: [AnalyticsInfo]
+  analyticsDaily: [AnalyticsDaily]
+  productType: [ProductType]
+  productStrainName: [String]
+}
+
+type Review {
+  rvwReviewID: String!
+  rvwAssociateID: String!
+  rvwScore: Int!
+  rvwComment: String!
+  username: String
+  rvwCreationDate: Date
+  deleted_at: Date
+  rvwReply: String
+  canDeleteReview: Boolean
+  rvwReplyCreatedAt: Date
+  rvwReplyAuthorName: User
+}
+
+input ReviewInput {
+  rvwAssociateID: String!
+  rvwScore: Int!
+  rvwComment: String!
+}
+
+input ReviewReplyInput {
+  rvwAssociateID: String!
+  rvwReply: String!
+  rvwReviewID: String!
+}
+
+type SiteMap {
+  static: [String]!
+  brands: [String]!
+  deals: [String]!
+  mail_order_marijuana: [String]!
+  marijuana_dispensary: [String]!
+  medical_marijuana_prescription: [String]!
+  weed_delivery: [String]!
+  blog: [String]!
+}
+
+type SiteMapCity {
+  name: String!
+  slug: String!
+}
+
+type SiteMapProvince {
+  provinceId: Int!
+  province: String!
+  type: String!
+  city(offset: Int, limit: Int): [SiteMapCity]
+}
+
+type SiteMapWeb {
+  brands: [SiteMapProvince]!
+  mail_order_marijuana: [SiteMapProvince]!
+  weed_delivery: [SiteMapProvince]!
+  marijuana_dispensary: [SiteMapProvince]!
+}
+
+enum SortOrder {
+  asc
+  desc
+}
+
+enum TradeUnit {
+  SevenGrams
+  FourteenGrams
+  TwentyEightGrams
+  QuarterPound
+  HalfPound
+  OnePound
+  OneKilogram
+  Case
+}
+
+type Transaction {
+  hisCreationDate: Date!
+  hisAmount: Float!
+}
+
+type TransactionNegative {
+  creationDate: Date!
+  amount: Float!
+  count: Int!
+  budget: Float!
+}
+
+type Type {
+  plBusinessTypeID: Int
+  plType: String!
+  plCategory: String
+  plSlug: String!
+  plSortOrder: Int
+}
+
+scalar Upload
+
+type User {
+  usrUserID: String
+  username: String
+  email: String
+  usrRegistrationIP: String
+  usrRegionID: String
+  usrProvinceID: String
+  usrBirthDate: Date
+  usrFirstName: String
+  usrLastName: String
+  usrCreationDate: Date
+  usrLastLoginDate: Date
+  email_verified_at: Date
+  usrSubscription: Int
+  userRoles: [String]
+  bizName: String
+  accountManager: User
+  mailPreferences: [String]
+  rvwCount: Int
+  bizCount(published: Boolean): Int
+  region: Region
+  province: Province
+}
+
+input UserInput {
+  username: String!
+  email: String
+  usrProvinceID: String
+  password: String
+  usrRegionID: String
+  usrUserID: String
+  userSubscription: Boolean
+  mailPreferences: String
+  usrFirstName: String
+  usrLastName: String
+  usrBirthDate: String
+  usrRegistrationSource: String
+}
+
+input VerificationsInput {
+  userID: String
+  verification_code: String
+  created_at: String!
+}
+
+type WorkingHours {
+  ophBusinessID: String
+  ophDayOfWeek: Int
+  ophOpenTime: Date
+  ophCloseTime: Date
+  ophIsOpen: Int
+}
+
+input WorkingHoursInput {
+  ophDayOfWeek: Int!
+  ophOpenTime: Date!
+  ophCloseTime: Date!
+  ophIsOpen: Int!
+}
+

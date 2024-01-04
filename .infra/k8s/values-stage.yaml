@@ -1,0 +1,68 @@
+replicaCount: 1
+
+image:
+  repository: 776347173081.dkr.ecr.ca-central-1.amazonaws.com/leafythings-web
+  pullPolicy: Always
+  tag: 21508
+
+# This value set through the GitLab ci process dynamically. Pls, see gitlab-ci.yml.
+app:
+  cm: leafythings-web
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: "web"
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+podAnnotations: {}
+#podAnnotations:
+#  prometheus.io/scrape: "true"
+#  prometheus.io/path: "/actuator/prometheus"
+#  prometheus.io/port: "3000"
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  enabled: false
+
+resources:
+  limits:
+    cpu: 400m
+    memory: 2000Mi
+  requests:
+    cpu: 200m
+    memory: 1000Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 5
+  maxReplicas: 30
+  targetCPUUtilizationPercentage: 50
+  targetMemoryUtilizationPercentage: 70
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

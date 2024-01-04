@@ -1,0 +1,147 @@
+.linkRow {
+    display: block;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000 !important;
+    opacity: 1;
+    cursor: pointer;
+    text-align: left;
+    align-self: flex-start;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    letter-spacing: 0;
+    text-decoration: none !important;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 12px;
+    transition: all 0.25s ease-out;
+}
+
+.linkClaimContainer {
+    opacity: 1;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    cursor: default;
+    margin-left: 12px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.linkClaimBar {
+    width: 100%;
+    max-width: 120px;
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(140,155,153,0.3);
+}
+
+.linkClaimBarShort {
+    width: 100%;
+    max-width: 80px;
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(140,155,153,0.3);
+}
+
+.linkClaimBarLong {
+    width: 100%;
+    max-width: 160px;
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(140,155,153,0.3);
+}
+
+.linkRowAbsolute {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000 !important;
+    cursor: pointer;
+    text-align: left;
+    align-self: flex-start;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    letter-spacing: 0;
+    background: #FFFFFF;
+    padding: 8px 12px;
+    word-wrap: break-word;
+    border-radius: 10px;
+    z-index: 1;
+    max-width: 100%;
+    text-decoration: none !important;
+    top: -8px;
+    left: -12px;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.15);
+    transition: all 0.25s ease-out;
+}
+
+.icon {
+    display: flex;
+}
+
+.link {
+    position: relative;
+    transition: all 0.25s ease-out;
+    width: 100%;
+    margin-top: 4px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    overflow: visible;
+}
+.link:hover .icon {
+    display: none;
+}
+.link:hover .linkRowAbsolute {
+    opacity: 1;
+    display: block;
+}
+.link:hover .linkRow {
+    opacity: 0;
+}
+.link:active {
+    transform: scale(0.95);
+}
+
+.linkDisabled {
+    position: relative;
+    transition: all 0.25s ease-out;
+    width: 100%;
+    margin-top: 4px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    overflow: visible;
+}
+
+@media only screen and (max-width: 860px) {
+    .linkRow {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .linkRowAbsolute {
+        display: none;
+    }
+    .link:hover .icon {
+        display: flex;
+    }
+    .link:hover .linkRow {
+        opacity: 1;
+    }
+}

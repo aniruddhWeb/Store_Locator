@@ -1,0 +1,521 @@
+.root {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.resultShowing {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    margin-right: 8px;
+    align-items: center;
+    color: #000000;
+}
+
+.filterIcon {
+    margin-right: 4px;
+    display: flex;
+    width: 16px;
+    height: 16px;
+}
+
+.filterItemContainer {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: calc(100% - 16px);
+    justify-content: flex-start;
+    transition: all 300ms ease-in-out;
+}
+
+.filterItemText {
+    margin-left: 4px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-decoration: none;
+    white-space: nowrap;
+    display: block;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
+.dropdownSortContainer {
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    border-radius: 10px;
+    height: 38px;
+    padding: 0 12px;
+    background: rgba(239, 132, 92, 0.1);
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+.dropdownSortContainer:hover .filterItemContainer {
+    transform: scale(1.05);
+}
+.dropdownSortContainer:active .filterItemContainer {
+    transform: scale(0.95);
+}
+.dropdownSortContainer .filterItemText {
+    color: #EF845C !important;
+    text-align: right !important;
+}
+
+.dropdownSortContainerDisabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+}
+
+.dropdownSortingArrow {
+    display: flex;
+    width: 16px;
+    margin-left: 1px;
+    height: 16px;
+    transition: all 300ms ease-in-out;
+}
+
+.dropdownSortingArrowOpen {
+    display: flex;
+    width: 12px;
+    margin-left: 1px;
+    height: 12px;
+    transform: rotate(180deg);
+    transition: all 300ms ease-in-out;
+}
+
+.dropdownItems {
+    z-index: 11;
+    position: absolute;
+    left: 0;
+    top: calc(100% + 8px);
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    background: #FFFFFF;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: all 200ms ease-in-out;
+}
+
+.dropdownItemsFullWidth {
+    width: 100% !important;
+}
+
+.dropdownItemsHidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.dropdownItemsTop {
+    top: unset;
+    bottom: calc(100% + 8px);
+}
+
+.dropdownRightSide {
+    right: 0;
+    left: unset !important;
+}
+
+.dropdownScroll {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.dropdownScrollItems {
+    display: flex;
+    padding: 8px 0;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 232px;
+}
+.dropdownScrollItems::-webkit-scrollbar{
+    display: block;
+    width: 10px;
+}
+.dropdownScrollItems::-webkit-scrollbar-track {
+    display: block;
+    background: transparent;
+    border-radius: 6px;
+}
+.dropdownScrollItems::-webkit-scrollbar-thumb {
+    display: block;
+    background: rgba(97,171,98,0.5);
+    border-radius: 6px;
+    background-clip: padding-box;
+}
+.dropdownScrollItems::-webkit-scrollbar-thumb:hover {
+    background: rgba(97,171,98,1);
+}
+
+.dropdownScrollItemsNoPadding {
+    display: flex;
+    padding: 8px 0;
+    flex-direction: column;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 232px;
+}
+
+.dropdownBorder {
+    display: flex;
+    align-self: center;
+    width: calc(100% - 48px);
+    height: 1px;
+    background: rgba(0,0,0,0.1);
+}
+
+.dropdownItemDelivery {
+    display: flex;
+    height: 18px;
+    margin-top: 1px;
+    width: 18px;
+    margin-right: 10px;
+}
+
+.dropdownItemDispensary {
+    display: flex;
+    height: 16px;
+    margin-top: 2px;
+    width: 18px;
+    margin-right: 10px;
+}
+
+.dropdownItemAll {
+    display: flex;
+    height: 18px;
+    margin-top: 2px;
+    width: 18px;
+    margin-right: 10px;
+}
+
+.dropdownItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 48px);
+    padding: 10px 24px;
+    transition: all 100ms ease-in-out;
+}
+.dropdownItem:hover {
+    opacity: 1;
+}
+.dropdownItem:active {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.dropdownItemCounterRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.dropdownItemCounter {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    margin-right: 2px;
+    text-align: center;
+    color: #8C9B99;
+}
+
+.dropdownItemText {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+    color: #000000;
+    transition: all 100ms ease-in-out;
+}
+
+.radioInputOrange {
+    margin: 2px 8px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    max-width: 16px;
+    max-height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    border: 1px solid #A9A9A9;
+    border-radius: 50%;
+}
+
+.radioCircle {
+    display: flex;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #EF845C;
+}
+
+.selectedDropdownItemText {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+    color: #EF845C;
+    transition: all 100ms ease-in-out;
+}
+
+.childSelectedDropdownItemText {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: normal;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+    color: #8C9B99 !important;
+    transition: all 100ms ease-in-out;
+}
+
+.collapseItems {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.mobileCollapseItems {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.selectedCollapseItem {
+    display: flex;
+    width: calc(100% - 84px);
+    padding: 12px 20px 12px 64px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    background-color: #FFFFFF;
+    color: #61AB62;
+    transition: all 300ms ease-in-out;
+}
+.selectedCollapseItem:active {
+    transform: scale(0.95);
+}
+
+.collapseItem {
+    display: flex;
+    width: calc(100% - 84px);
+    padding: 12px 20px 12px 64px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    transition: all 300ms ease-in-out;
+}
+.collapseItem:hover {
+    background-color: #61AB62;
+    color: #FFFFFF;
+}
+.collapseItem:active {
+    transform: scale(0.95);
+}
+
+.collapseHeader {
+    width: 100%;
+    position: relative;
+}
+
+.collapseHeader svg {
+    position: absolute;
+    right: 8px;
+    display: flex;
+    width: 16px;
+    height: 16px;
+}
+.collapseHeader svg path {
+    fill: #000;
+}
+.mobileCollapseItem {
+    display: flex;
+    width: calc(100% - 92px);
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    padding: 8px 24px 8px 68px;
+    transition: all 300ms ease-in-out;
+}
+.mobileCollapseItem:hover {
+    background-color: #61AB62;
+    color: #fff;
+}
+
+.mobileSelectedCollapseItem {
+    display: flex;
+    width: calc(100% - 92px);
+    padding: 8px 24px 8px 68px;
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    background-color: #FFFFFF;
+    color: #61AB62;
+    transition: all 300ms ease-in-out;
+}
+.mobileSelectedCollapseItem:active {
+    transform: scale(0.95);
+}
+
+.nameContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.selectedTypeMobile {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    background: #61AB62;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+}
+
+.selectedTypeMobileInner {
+    width: 8px;
+    height: 8px;
+    border: 2px solid #FFFFFF;
+    background: #61AB62;
+    border-radius: 10px;
+}
+
+.resetButton {
+    display: flex;
+    padding: 16px 24px 8px;
+    font-family: Gilroy;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12px;
+    color: #EF845C;
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
+}
+.resetButton:active {
+    transform: scale(0.95);
+}
+
+.filterBlockContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 128px;
+}
+
+.filterBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 0 0;
+    width: 100%;
+}
+
+.filterItems {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-bottom: 8px;
+}
+
+.filterBlockBorder {
+    display: flex;
+    align-self: center;
+    width: calc(100% - 48px);
+    height: 1px;
+    background: rgba(0,0,0,0.1);
+}
+
+.filterTitle {
+    font-family: SuisseIntl;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #A8A8A8;
+    padding: 0 24px 8px;
+}
+
+.closeIcon {
+    background-color: #000000;
+    border: none;
+    border-radius: 50px;
+}
+
+.buttonContainer {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(100% - 40px);
+    position: fixed;
+    bottom: 20px;
+    background: #FFFFFF;
+}
+
+@media only screen and (max-width: 860px) {
+    .root {
+        width: calc(100% - 32px);
+        background: #F3F3F3;
+        margin-top: -16px;
+        justify-content: flex-end;
+        padding: 24px 16px 12px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        margin-bottom: 16px;
+    }
+    .resultShowing {
+        color: rgba(0,0,0,0.5);
+    }
+    .dropdownSortContainer {
+        width: unset;
+        min-width: 128px;
+        flex-grow: 1;
+        background: #FFFFFF !important;
+    }
+    .dropdownItems {
+        width: calc(100vw - 64px);
+        max-width: 240px;
+    }
+}
